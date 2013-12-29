@@ -1,0 +1,66 @@
+---
+layout: post
+title: Brincando com Matemática, Python e PHP
+categories:
+- PHP
+- python
+- Tutoriais
+tags:
+- matemática
+- PHP
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/37w64fa
+  _sexybookmarks_permaHash: 0e185e00d7a50848b343b21babc318f4
+---
+[ad#propaganda]
+<p style="text-align: justify;">Olá!</p>
+<p style="text-align: justify;">Estava aqui elaborando uns exercícios e me surgiu a ideia de fazer uma função para calcular as raízes de funções do 2º grau. Eu acabei implementando as funções em duas linguagens, Python e PHP:</p>
+<p style="text-align: justify;">Veja a solução em Python:</p>
+<code lang="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from math import sqrt
+
+def bhaskara(a, b, c):
+    delta = (b * b) - (4 * a * c)
+    print(delta)
+    if delta < 0:
+        # Delta menor que 0, a função não tem raízes
+        return False
+    else:
+        delta = sqrt(delta)
+        r1 = (-b + delta) / (2 * a)
+        r2 = (-b - delta) / (2 * a)
+        raizes = [r1, r2]
+        # Retornando as raízes
+        return raizes
+</code>
+<p style="text-align: justify;">Agora em PHP:</p>
+<code lang="php"><?php
+    function bhaskara($a, $b, $c) {
+        $delta = ($b * $b) - (4 * $a * $c);
+        if ($delta < 0) {
+            /* Delta menor que 0, a função não tem raízes */
+            return False;
+        }
+        else {
+            $delta = sqrt($delta);
+            $r1 = (-$b + $delta) / (2 * $a);
+            $r2 = (-$b - $delta) / (2 * $a);
+            $raizes = array(
+                'raiz1' => $r1,
+                'raiz2' => $r2
+            );
+            /* Retornando as raízes */
+            return $raizes;
+        }
+    }
+?>
+</code>
+<p style="text-align: justify;">E aí? Qual implementação ficou melhor? Eu gostei das duas =). Se você fizer uma implementação em outra linguagem, coloque nos comentários.</p>
+<p style="text-align: justify;">InFog</p>

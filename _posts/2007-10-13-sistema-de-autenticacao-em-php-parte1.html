@@ -1,0 +1,40 @@
+---
+layout: post
+title: Sistema de Autenticação em PHP - Parte1
+categories:
+- Desenvolvimento
+- PHP
+- WEB
+tags:
+- Desenvolvimento
+- PHP
+- WEB
+status: publish
+type: post
+published: true
+meta:
+  _sexybookmarks_shortUrl: http://tinyurl.com/36zb4ok
+  _sexybookmarks_permaHash: 9de320c5fdece2df65c9b672c7ea9cea
+---
+
+<p align="justify">Sistemas baseados em WEB são cada vez mais comuns. Não são raros os casos de sistemas de empresas rodando inteiramente na internet/intranet/extranet, mas porque será que os sistemas estão tomando esse rumo?</p>
+<p align="justify">Um dos grandes motivos para essa internetização é a mobilidade na hora do acesso, não podemos esquecer da facilidade de manutenção e atualização (Você atualiza/mantem apenas o servidor e não um monte de estações cliente) e também da indepêndencia da plataforma cliente, que passa a requerer apenas um browser.</p>
+<p align="justify">Tudo isso é muito legal, muito bonito, mas também é necessário que o desenvolvedor/equipe desenvolva algo realmente independente e uma ótima forma de desenvolver um sistema robusto e com custos não muito elevados (principalmente com licenças de software para o servidor) é a utilização de servidores GNU/Linux, com o servidor HTTP Apache, uma linguagem de script como o PHP e um SGBD como o MySQL ou o PostgreSQL.</p>
+<p align="justify">E como todo sistema empresarial requer autenticação do usuário, seja para manter registros de atividades, seja para dar acesso à determinadas área, em sistemas WEB a coisa não é diferente. Mas aqui surgem questões vindas de desenvolvedores desktop: Como manter dados/variáveis entre as páginas do sistema? Sim essa questão é muito comum, e por mais que a WEB esteja ficando "dinamica" ela ainda é uma coisa muito "estática", o desenvolvimento WEB tem grandes diferenças do desenvolvimento desktop.</p>
+<p align="justify">Então essa série de artigos visa demonstrar o desenvolvimento de um sistema de autenticação simples, utilizando a linguagem PHP e tendo como métodos de armazenagem de variáveis as sessões e os cookies.</p>
+<p align="justify">Então vamos montar um roteiro a ser seguido, o precisamos é:</p>
+<!--adsense#propaganda-->
+
+<p style="border: 2px dotted white; margin: 10px; padding: 10px; background-color: #dddddd"> - Definir o escopo do 'projeto';- Criar um pequeno fluxograma do que o sistema fará;
+- Preparar o banco de dados;
+- Desenvolver o script de autenticação;
+- Adicionar a obrigatoriedade de estar "logado" para acessar as páginas.
+<p align="justify">Bem, com a lista pronta podemos continuar.</p>
+<p align="justify">O que nosso sisteminha fará: Haverá uma página para que o usuário se identifique digitando o nome do usuário, a senha e selecionando, ou não, a opção "lembrar de mim", essa opção serve para que a pessoa não precise se identificar toda vez que acessar a página. Não preciso comentar que isso não é muito seguro né? Ainda mais para sistemas empresariais, mas aqui vamos oferecer a opção, também como modo de aprender.</p>
+<p align="justify">Haverá também um script que recebe os dados da página de login e autentique o usuário da forma escolhida, com ou sem o "lembrar de mim".</p>
+<p align="justify">E por último cada página acessada fará a verificação se o login ainda é válido.</p>
+<p align="justify">Então o nosso fluxograma deve ser este:</p>
+<p style="text-align: center"><img src="http://casoft.info/his.png" alt="Histograma" border="0" height="424" width="300" /></p>
+<p align="justify">Por enquanto é isso. Nos próximos capítulos vamos construir o banco de dados, falar e por em prática os conceitos de sessões e cookies e é claro fazer o login!</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">InFog</p>

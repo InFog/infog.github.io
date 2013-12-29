@@ -1,0 +1,75 @@
+---
+layout: post
+title: Dicas Away do InFog - 1
+categories:
+- dicas
+- mysql
+- PHP
+- subversion
+tags:
+- dicas
+- mysql
+- PHP
+- subversion
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/2vrgdlw
+  _sexybookmarks_permaHash: 63494d3facc73916411de0100a53eb43
+---
+<p style="text-align: justify;">Olá pessoal!</p>
+<p style="text-align: justify;">Bem, aqui começa uma nova série no blog, são as fantásticas "Dicas Away do InFog"!</p>
+<p style="text-align: justify;">"Mas o que são as dicas away?" Você deve estar se perguntando, pois eu respondo: Dicas Away são dicas em geral para várias atividades de vários softwares/comandos/arquivos de configuração... Enfim, um monte de dicas aleatórias de coisas que eu faço no dia-a-dia e estou afim de compartilhar aqui.</p>
+<p style="text-align: justify;">Então vamos começar! =)</p>
+
+<h3 style="text-align: justify;">Dica 1 - Subversion</h3>
+<p style="text-align: justify;">Adicionar coisas novas em um repositório subversion com apenas uma linha de comando.</p>
+<p style="text-align: justify;">Essa é pra você que utiliza repositórios subversion para seus projetos e vez ou outra precisa incluir bastante coisa neste repositório.</p>
+<p style="text-align: justify;">O problema é o seguinte, você está desenvolvendo o seu projeto e no final das contas vai fazer um commit, mas você adicionou coisas novas e precisa adiciona-las ao repositório. Ok como fazemos isso?</p>
+<p style="text-align: justify;">Bem, com a opção <strong>status</strong> do svn nós podemos saber o que mudou desde o último update:</p>
+
+<p style="text-align: justify;">$ svn status
+?      arquivo_novo.txt
+M     arquivo_modificado.txt
+<p style="text-align: justify;">Certo, aqui só tem um arquivo novo, então bastaria um "svn add arquivo_novo.txt" para adiciona-lo ao repositório. O problema está quando temos muitos arquivos novos, bem o svn exibe um "?" para os arquivos novos, então vamos filtrar isso:</p>
+
+<p style="text-align: justify;">$ svn status | grep ^\?
+?      arquivo_novo.txt
+<p style="text-align: justify;">Hum, legal, agora ele já exibiu somente o arquivo novo, mas a interrogação ainda está atrapalhando, afinal queremos somente o nome dos arquivos novos, então:</p>
+
+<p style="text-align: justify;">$ svn status | grep ^\? | tr -d \?
+arquivo_novo.txt
+<p style="text-align: justify;">Olha só que legal! Agora temos apenas o nome dos arquivos novos =) Então vamos adiciona-lo:</p>
+
+<p style="text-align: justify;">$ svn add `svn status | grep ^\? | tr -d \?`
+A         arquivo_novo.txt
+<p style="text-align: justify;">Prontinho! Com isso adicionamos todos os arquivos novos ao repositório subversion.</p>
+
+<h3 style="text-align: justify;">Dica 2 - PHP &amp; MySQL</h3>
+<p style="text-align: justify;">Essa é legal para desenvolvedores em PHP que utilizam o banco de dados MySQL. Lá está você inserindo um registro no banco quando de repente você precisa pegar o número que foi registrado (para campos autonum). O que você faz? Simples, use a função do php mysql_insert_id(), exemplo, com uma tabela assim:</p>
+
+<p style="text-align: justify;">
+<table border="0">
+<tbody>
+<tr>
+<th colspan="2">Cliente</th>
+</tr>
+<tr>
+<td>codigo_cliente</td>
+<td>integer autonum</td>
+</tr>
+<tr>
+<td>nome_cliente</td>
+<td>varchar(30)</td>
+</tr>
+</tbody></table>
+<p style="text-align: justify;">O código seria mais ou menos assim:</p>
+<p style="text-align: justify;">&lt;?</p>
+<p style="text-align: justify; padding-left: 30px;"><span style="color: #339966;">mysql_query</span>(<span style="color: #ff0000;">"INSERTO INTO Clientes (nm_cliente) VALUES ('<span style="color: #0000ff;">{$nm_cliente}</span>')"</span>);</p>
+<p style="text-align: justify; padding-left: 30px;">$codigo = <span style="color: #339966;">mysql_insert_id</span>();</p>
+<p style="text-align: justify;">?&gt;</p>
+<p style="text-align: justify;">E essas foram as dicas de hoje. Gostaram? Se alguém quiser pedir uma dica basta se pronunciar nos comentários de enviar um envelope com R$ 50,00 para a minha casa que eu faço a dica com todo o prazer auheoiahe.</p>
+<p style="text-align: justify;">Abraços</p>
+<p style="text-align: justify;">InFog</p>

@@ -1,0 +1,37 @@
+---
+layout: post
+title: ! 'Firefox: Removendo Extensões na Marra'
+categories:
+- Administração
+- Firefox
+- WEB
+tags:
+- Firefox
+status: publish
+type: post
+published: true
+meta:
+  _sexybookmarks_shortUrl: http://tinyurl.com/385gg7v
+  _sexybookmarks_permaHash: 4b1e0f9ccaa059cb739d69c175d79760
+---
+Hoje ao abrir o <a href="http://www.firefox.com" target="_blank">Firefox</a> ele pediu para atualizar um extensão chamada <a href="https://addons.mozilla.org/en-US/firefox/addon/5791" target="_blank">flagfox</a>, ela serve para mostrar a bandeira do país onde o site que você está visitando está hospedado. Após a atualização o browser iniciou "normalmente" mas a parte da extensão ficou muito grande e parou de funcionar, então fiz o que muitos fariam: Reiniciei o Firefox... E passou a exibir o sisteminha de relatório de erros e o browser passou a não iniciar mais.
+<p align="justify">Para resolver o problema fiz o seguinte: Removi os arquivos referentes à esta extensão, e então o browser voltou a funcionar.</p>
+<!--adsense#propaganda-->
+<p align="justify">Para fazer isso você deve navegar até o diretório <font color="#008000">~/.mozilla/firefox/*/extensions/</font>, o * significa um diretório do seu usuário, esse diretório muda de máquina para máquina. Bem estando nele se você der um <font color="#008000">ls</font> vai encontrar algo assim:</p>
+
+<pre><font color="#800000"><strong>{1018e4d6-728f-4b20-ad56-37578a4de76b}  {a7c6cf7f-112c-4500-a7ea-39801a327e5f}</strong></font><font color="#800000"><strong>
+
+</strong></font><font color="#800000"><strong>{2fa4ed95-0317-4c6a-a74c-5f3e3912c1f9}  {a81bafeb-b6ed-4501-aa17-15a2b3857e56}</strong></font>
+
+<font color="#800000"><strong>{3d7eb24f-2740-49df-8937-200b1cc08f8a}  {DDC359D1-844A-42a7-9AA1-88A850A938A8}</strong></font>
+
+<font color="#800000"><strong>{899DF1F8-2F43-4394-8315-37F6744E6319}  {e4a8a97b-f2ed-450b-b12d-ee082ba24781}</strong></font></pre>
+<p align="justify">Cada um destes diretórios contém os arquivos de uma extensão, tudo bem, agora complicou um pouco para encontrar a extensão certa, mas se você fizer, por exemplo, um:</p>
+
+<pre><font color="#993300"><strong>$ find | grep flagfox</strong></font></pre>
+<p align="justify">Ele vai te mostrar o caminho completo para a extensão, egora basta remover o diretório "raíz" desta extensão:</p>
+
+<pre><strong><font color="#993300">$ rm -rf </font><font color="#993300">{1018e4d6-728f-4b20-ad56-37578a4de76b}</font></strong></pre>
+<p align="justify">Agora basta iniciar oFirefox novamente.</p>
+<p align="justify">Lembrando que esta não é a maneira correta de remover as extensões do navegador, utilize apenas em casos de emergência.</p>
+<p align="justify">InFog</p>

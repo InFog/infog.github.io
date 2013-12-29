@@ -1,0 +1,44 @@
+---
+layout: post
+title: Impedindo o Acesso de Outros Usuários do PC à sua Home
+categories:
+- Linux
+- segurança
+tags:
+- Linux
+- segurança
+status: publish
+type: post
+published: true
+meta:
+  _sexybookmarks_shortUrl: http://tinyurl.com/3x37rsz
+  _sexybookmarks_permaHash: 39d8e7ed873bee054c791c686ea82396
+---
+
+<p align="justify">Uma característica bem interessante das distribuições Linux (e de outros sistemas operacionais) é a possibilidade de se ter, facilmente, vários usuários no mesmo computador.</p>
+<p align="justify">Esse é um modo bem legal de utilização do pc, dessa forma cada usuário pode customizar o desktop à sua maneira, ter suas configurações, ter seu próprio histórico no navegador, etc.</p>
+<p align="justify">Mas os problemas começam a surgir quando, por exemplo, você não quer que os outros usuários do micro vejam seus arquivos, pode ser toda a sua "home", pode ser apenas um diretório específico, apenas um arquivo...</p>
+<p align="justify">No Linux podemos resolver este problema recorrendo ao sistema de permissões utilizado. Esse sistema permite dizer quem terá acesso aos diretórios e arquivos do sistema e o que pode fazer.</p>
+<p align="justify">Não vou me prolongar muito nesse assunto pois já existe muito material ótimo sobre isso, um dos  melhores é o <a href="http://focalinux.cipsga.org.br/guia/iniciante/ch-perm.html" target="_blank">Guia Foca Linux</a>.</p>
+<!--adsense#propaganda-->
+<p align="justify">Uma rápida explicação sobre o sistema de permissões: No Linux existem os usuários e os grupos e cada arquivo tem seu dono e pertence a um grupo. Vamos à um exemplo prático: Abra o terminal e use o comando:</p>
+<p align="justify"><font color="#008000">$ touch teste.txt</font></p>
+<p align="justify">Agora veja as propriedades desse arquivo</p>
+<p align="justify"><font color="#008000">$ ls -l teste.txt</font></p>
+<p align="justify">No meu caso retornou isso:</p>
+<p align="justify"><font color="#999999">-rw-r--r-- 1 infog infog 0 2008-02-19 09:20 teste.txt</font></p>
+<p align="justify">Devemos prestar atenção à primeira parte (-rw-r--r--), o que nos importa aqui são os nove últimos dígitos (ignore o primeiro). O que eles querem dizer?</p>
+<p align="justify"><img src="http://evaldojunior.com.br/blog/wp-includes/images/permissoes.png" /></p>
+<p align="justify">Nesse caso o dono do arquivo, infog, tem permissão de leitura (r) e escrita (w) sobre o arquivo, os usuários pertencentes ao grupo infog podem apenas ler o arquivo e os outros usuários podem ler o arquivo também. Com isso já dá para fazer uma idéia do que precisamos mudar para impedir o acesso?</p>
+<p align="justify">Vamos ver agora o diretório home, para isso dê os comandos:</p>
+<p align="justify"><font color="#008000">$ cd /home</font></p>
+<p align="justify"><font color="#008000">$ ls -l infog</font></p>
+<p align="justify">Troque o "infog" pelo nome do seu usuário. O resultado deve parecer com esse:</p>
+<p align="justify"><font color="#999999">drwxr-xr-x 97 infog    infog     4096 2008-02-19 19:57 infog</font></p>
+<p align="justify">Trocando em miúdos: O dono do diretório tem permissão de leitura(r), escrita(w) e execução(x) do diretório, os usuários do grupo podem apenas ler e executar e o restante dos usuários também pode ler e executar.</p>
+<p align="justify">Nesse caso especial (de diretórios) a permissão de execução (x) serve para que o usuário possa visualizar o diretório e seu conteúdo.</p>
+<p align="justify">Então, para impedir que os outros usuários possam acessar sua home basta retirar-lhes esta permissão usando o comando chmod:</p>
+<p align="justify"><font color="#008000">$ cd /home</font></p>
+<p align="justify"><font color="#008000">$ chmod 0-rx infog</font></p>
+<p align="justify">Pronto, com isso os usuários não poderão mais acessar a sua home. É bom lembrar que isso não tem serventia alguma se os outros usuários tiverem acesso de root, o root tudo pode e tudo vê.</p>
+<p align="justify">Assine o <a href="http://feeds.feedburner.com/casoft/RhIq">Feed</a> do InFog e saiba de todos os novos textos.</p>

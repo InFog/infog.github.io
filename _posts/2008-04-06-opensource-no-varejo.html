@@ -1,0 +1,32 @@
+---
+layout: post
+title: OpenSource no Varejo
+categories:
+- Blog
+- BrOffice
+- Linux
+- Open Source
+tags:
+- BrOffice.org
+- KDE
+- Kurumin
+- Linux
+- Open Source
+- Varejo
+status: publish
+type: post
+published: true
+meta:
+  _sexybookmarks_shortUrl: http://tinyurl.com/2egu529
+  _sexybookmarks_permaHash: e1d6bf5ee63f2df32c1e0dec5570434e
+---
+
+<p align="justify">Nessa última semana vi dois casos relacionados ao software livre no varejo. No primeiro caso um amigo comprou um computador que veio com o Windows Vista Starter Edition (OEM), até aí é comum, mas o que me chamou a atenção é que a suíte de escritório que veio por padrão foi o <a href="http://broffice.org">BrOffice.org</a>! Achei isso muito bom, uma vez que eu já tinha colocado o BrOffice.org no computador antigo dele. A versão do BrOffice.org era a 2.0, creio que por preguiça do pessoal da loja, pois já saíram várias versões  desde a 2.0, mesmo assim é um pacote muito bom é realmente um concorrente do MS Office.</p>
+<p align="justify">O BrOffice.org está ganhando cada vez mais espaço nas empresas e residências brasileiras, em um primeiro momento o que chama a atenção é o fato de ser gratuito, depois alguns detalhes como a exportação para PDF acabam conquistando o usuário.</p>
+<!--adsense#propaganda-->
+<p align="justify">A outra situação por que passei já não foi tão interessante, eu estava em uma loja vendo os notebooks e encontrei um Acer rodando o <a href="http://www.kde.org/">KDE</a>, então me aproximei dele e vi que era um <a href="http://www.guiadohardware.net/gdhpress/kurumin/">Kurumin</a> com um visual bem chamativo, daqueles que as pessoas passam e falam "Nossa, que sistema bonito!". Pois bem, até aí ótimo, então eu resolvi dar uma fuçadinha no note, e quando usei o comando "df" vi que o note tinha 40GB de HB, mas o anúncio dele dizia 160GB! Aí eu pensei "Caramba, uma diferença de 2GB ou 3GB é até aceitável, mas essa de 120GB está absurda! Então chequei o resto do hardware para ver se não tinha mais nada de enganoso, mas não tinha, estava tudo correto. Daí eu usei o terminal de root do Kurumin e usei o "cfdisk" e pude ver que o HD era, realmente, de 160GB, porém ele estava particionado assim:</p>
+<p align="justify">40GB ext3 montado no /</p>
+<p align="justify">40GB ext3 sem ponto de montagem</p>
+<p align="justify">80GB fat32 sem ponto de montagem</p>
+<p align="justify">Mas por que diabos alguém faria um particionamento esquisito desse? Fiquei imaginando o feliz comprador do note que nunca usou Linux na vida, o que ele vai pensar? Que por culpa do Linux ele não consegue usar os 120GB restantes no HD? Para mim aquilo é sabotagem ou pura falta de perícia do profissional que instalou o sistema, realmente revoltante.</p>
+<p align="justify">InFog</p>

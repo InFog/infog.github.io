@@ -1,0 +1,52 @@
+---
+layout: post
+title: SSH Sem Senha e Suas Facilidades Administrativas
+categories:
+- Administração
+- Linux
+- Redes
+tags:
+- Administração
+- Linux
+- Redes
+status: publish
+type: post
+published: true
+meta:
+  _sexybookmarks_shortUrl: http://tinyurl.com/38o3aeo
+  _sexybookmarks_permaHash: 4636cc0cbf7e1c44a62e6b3942c25fab
+---
+<p align="justify">Olá pessoal, um recurso muito interessante do <a href="http://pt.wikipedia.org/wiki/SSH" target="_blank">SSH</a> é a possibilidade de usarmos chaves no lugar de senhas para acessar outras máquinas. Dããã isso todo mundo já sabe e há toneladas de informações sobre isso na internet. Mas vou demonstrar aqui que esse recurso pode ser muito mais útil do que simplesmente acessar o servidor da sua rede sem o incoveniente de ficar digitando senhas.
+Bem, vamos então ao básico, como configurar esse acesso. Logado na máquina que fará o acesso e com a conta do usuário que fará o acesso (isso ficou repetitivo não?) use o comando ssh-keygen:
+<p align="justify">$ ssh-keygen</p>
+<p align="justify">Ele fará umas perguntas e mostrará os arquivos onde guardará as chaves, que são:</p>
+
+<p align="justify">~/.ssh/id_rsa
+~/.ssh/id_rsa.pub
+<!--adsense#propaganda-->
+
+<p align="justify">Essa id_rsa.pub é a sua chave pública, é como se fosse a impressão digital da sua máquina, e é ela que usaremos para acessar a outra máquina. Agora você deve copiar o conteúdo desse arquivo para o arquivo ~/.ssh/authorized_keys do usuário na máquina que será acessada.
+Como a coisa funciona? Na hora em que você usa o comando ssh para logar em uma máquina o que acontece é mais ou menos isso:
+<p align="justify">$ ssh infog@debian</p>
+
+<p align="justify"><font color="#008000">Sua Máquina: Tenta conectar à porta 22 da máquina remota.</font>
+<font color="#0000ff"> Máquina Remota: Aceita a conexão.</font>
+SM: Verifica se a máquina remota é conhecida, checando o arquivo ~./ssh/known_hosts, se não for ela pergunta se você quer adicioná-la à lista. Se for conhecida ela checa a identidade da máquina remota. Isso é muito útil, imagine que alguém trocou a máquina que você acessava ou está usando o mesmo IP dessa máquina para capturar senhas, o ssh consegue saber se é a mesma máquina ou não e se não for ele te avisa, assim você pode, por exemplo, ligar para o local onde a máquina fica e perguntar o que houve. Continuando... Então rola um papo entre as máquinas:
+<font color="#008000"> SM: - Opa, e aí debian tudo bem, eu sou o infog e venho da máquina gnu.</font>
+<font color="#0000ff"> MR: - Olá infog, tudo certo aqui. Ok, deixe-me ver sua impressão digital?</font>
+<font color="#008000"> SM: - Ah, claro que sim, aqui está (~/.ssh/id_rsa.pub).</font>
+<font color="#0000ff"> MR: - Obrigado, vou conferir, aguarde por favor. (Compara o id_rsa.pub com o ~/.ssh/authorized_keys, se a impressão estiver no authorized_keys o acesso é permitido):</font>
+<font color="#0000ff"> MR: - Oi, desculpe pela demora, sua impressão confere com minha lista, seja bem vindo!</font>
+<font color="#008000"> SM: - Obrigado!</font>
+<p align="justify">Caso a impressão não esteja na lista o seguinte aconteceria:</p>
+
+<p align="justify"><font color="#0000ff">MR: Poxa cara você não está na lista, podemos tentar com outra impressão? (Se você tiver outro tipo de chave ela será enviada).</font>
+<font color="#008000"> SM: Eu não tenho outra impressão, o que faremos?</font>
+<font color="#0000ff"> MR: Hum, você pode me mandar uma senha e eu comparo com a do usuário aqui. Pode ser? Digite aqui:
+password:</font>
+<p align="justify">Bem daí pra você sabe o que acontece.</p>
+<p align="justify">Mas quais são as facilidades disso além de nãao digitar a senha? Imagine que você está com um problema em sua máquina e não esteja conseguindo resolver, então aquele cara que você conheceu no irc se oferece para ajudar, mas você não quer dar sua senha para ele e nem quer mudar a senha da máquina para algo como 123 para que ele acesse. Aqui você poderia pedir para ele enviar a chave pública dele, você coloca no seu authorized_keys, ele acessa e te ajuda, e depois disso você remove a chave do authorized_keys. Pronto ele te ajudou e nem sabe do tipo de senha que você usa e você pode autorizá-lo ou desautorizá-lo sempre que precisar.</p>
+<p align="justify">Lembrem-se crianças, não vão sair adicionando qualquer um no seu authorized_keys e quando o fizer faça com um usuário que tenha permissões apenas para ajudar na solução do seu problema.</p>
+<p align="justify">Bem, é isso. Boa sorte à todos e lembrem-se de ler o manual para obter mais recursos e aprender sempre mais sobre as ferramentas que você usa no dia-a-dia.</p>
+<p align="justify">InFog</p>
+<p align="justify">Este texto foi escrito originalmente por mim para o <a href="http://tuxmasters.blogspot.com" target="_blank">TuxMasters</a>.</p>

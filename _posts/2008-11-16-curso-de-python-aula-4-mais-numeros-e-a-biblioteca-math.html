@@ -1,0 +1,79 @@
+---
+layout: post
+title: Curso de Python - Aula 4 - Mais Números e a Biblioteca Math
+categories:
+- Aulas
+- python
+tags:
+- Aulas
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/32l42pt
+  _sexybookmarks_permaHash: 8e3babdb94dc19a3959d32c2c8ee4246
+  Hide SexyBookmarks: '0'
+  Hide OgTags: '0'
+---
+<p style="text-align: justify;">Olá pessoal! E vamos à mais uma aula de Python.</p>
+<p style="text-align: justify;">Nesta aula vou falar um pouco mais sobre números e operações e para isso vou usar alguns recursos da biblioteca <strong>math</strong>.</p>
+<p style="text-align: justify;">Vamos começar pela:</p>
+
+<h3 style="text-align: justify;">Exponenciação</h3>
+<p style="text-align: justify;">Eita palavrinha feia... Bom, mas acho que aqui todos sabem que exponenciação é isso: 2³ = 8.</p>
+<p style="text-align: justify;">Ok, mas como fazer o Python fazer isso para nós?</p>
+<p style="text-align: justify;">Uma primeira forma seria esta, que é bem parecida com outras linguagens:</p>
+<p style="text-align: justify;"><strong>a = 2 * 2 * 2</strong></p>
+<p style="text-align: justify;">Tudo bem, mas se eu quero fazer 2²³? Vou fazer isso:</p>
+<p style="text-align: justify;"><strong>a = 2 * 2 * 2 * 2 * 2 ... em quanto estava mesmo?...</strong></p>
+<p style="text-align: justify;">Bem chatinho né? Por isso é bem melhor utilizarmos os recursos que a linguagem nos oferece para isso (em qualquer linguagem!). No Python a exponenciação é feita usando duas vezes o asterisco, assim:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+a = 2 ** 23</code>
+<p style="text-align: justify;">Interessante não? Agora que você já conhece a exponenciação, vamos à:</p>
+
+<h3 style="text-align: justify;">Radiciação</h3>
+<p style="text-align: justify;">Nossa! Outra palavrinha feia... A radiciação é o contrário da exponenciação e também é conhecida nos círculos sociais como "raíz". A raíz pode ser quadrada, cúbica ou de índice <em>n</em>. Aqui vamos usar uma função da biblioteca <strong>math</strong> do Python que nos retorna a raiz quadrada de um número. Aqui também é o nosso ponto de partida para as bibliotecas do Python. Por enquanto apenas veja e teste o código abaixo, sem perguntas, em breve você vai saber bem o que cada linha faz:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+import math
+a = 9
+b = math.sqrt(a)
+print(b) # Imprime 3.0</code>
+<p style="text-align: justify;">Resumindo, a função <strong>sqrt()</strong> da biblioteca <strong>math</strong> nos diz a raiz quadrada do número 9. Por enquanto apenas aceite isso, no assunto abaixo você vai saber o que são as bibliotecas e o que elas podem nos oferecer.</p>
+
+<h3 style="text-align: justify;">Bibliotecas</h3>
+<p style="text-align: justify;">De forma simplificada as bibliotecas são componentes que oferecem funções e classes para nossos programas. "Hum, o que são funções e classes?" você deve estar se perguntando, e eu vou explicar.</p>
+<p style="text-align: justify;">As <strong>Funções</strong> são rotinas pré estabelecidas que fazem alguma coisa específica e podem ou não retornar algum resultado. Um exemplo que já estamos usando faz um tempinho é a função <strong>print()</strong>, que pega uma informação e exibe na tela. Outra função que acabamos de usar é a <strong>sqrt()</strong> (SQuared RooT, Raíz Quadrada) que nos retorna a raíz quadrada de um número.</p>
+<p style="text-align: justify;">As funções podem ou não receber parâmetros. Os parâmetros são informações que passamos para as funções, mais um vez o exemplo da <strong>sqrt()</strong> que recebe um valor numérico. Os parâmetros são passados dentro dos parenteses que seguem o nome da função. Quando há mais de um parâmetro nós usamos vírgulas para separá-los. Veja um exemplo:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+# Chamando função sem parâmetros
+funcao1()
+# Chamando função com um parâmetro
+funcao2(param)
+# Chamando função com N parâmentros
+funcao3(param1, ..., paramN)</code>
+<p style="text-align: justify;">Bem, por enquanto aceitem essas informações sobre funções como verdade absoluta do universo, quando chegar a hora de desenvolvermos as nossas funções esses conceitos ficarão muito mais claros.</p>
+<p style="text-align: justify;">Por enquanto não vou falar sobre as classes, isso fica para uma <a title="Aula sobre orientação à objetos" href="http://evaldojunior.com.br/blog/?p=511">próxima aula</a>.</p>
+<p style="text-align: justify;">Bem vamos voltar à biblioteca <strong>math</strong>. Essa biblioteca nos oferece algumas funções além da <strong>sqrt()</strong>, vou mostrar uma listinha abaixo:</p>
+<p style="text-align: justify;"><strong>math.sqrt(numero)</strong>: Retorna a raíz quadrada do número.</p>
+<p style="text-align: justify;"><strong>math.cos(numero)</strong>: Retorna o cosseno do número em radiano.</p>
+<p style="text-align: justify;"><strong>math.sin(numero)</strong>: Retorna o seno do número em radiano.</p>
+<p style="text-align: justify;"><strong>math.tan(numero)</strong>: Retorna a tangente do número em radiano.</p>
+<p style="text-align: justify;"><strong>math.radians(numero)</strong>: Converte o angulo 'numero' de graus para radiano.</p>
+<p style="text-align: justify;"><strong>math.pi</strong>: Não é bem uma função, está mais para uma constante com o número pi (3.1415926535897931).</p>
+<p style="text-align: justify;"><strong>math.hypot(x, y)</strong>: Retorna a hipotenusa dos números (catetos) fornecidos.</p>
+<p style="text-align: justify;">A biblioteca <strong>math</strong> é muito mais do que apenas essas funções, mas isso foi apenas para lhes mostrar alguma coisa dela.</p>
+<p style="text-align: justify;">Bom acho que com isso já conseguimos ir para uns exercícios, certo?</p>
+
+<h3 style="text-align: justify;">Lista de exercícios</h3>
+<p style="text-align: justify;">Hoje a lista de exercícios será um pouquinho mais complexa do que as outras que já fizemos, mas não desanime, refaça quantas vezes for necessário para assimilar bem o conteúdo.</p>
+<p style="text-align: justify;">1) Calcule e exiba na tela a área do círculo de raio 4cm.</p>
+<p style="text-align: justify;">2) Calcule e exiba na tela as raízes de 9, 16, 20, 25 e 42.</p>
+<p style="text-align: justify;">3) Calcule a hipotenusa de um triangulo cujos catetos são 9cm e 4cm. (sem usar a função <strong>math.hypot()</strong> heim!)</p>
+<p style="text-align: justify;">4) Calcule <span style="text-decoration: line-through;">a área</span> o volume do cilindro de raio 6cm e altura 5cm.</p>
+<p style="text-align: justify;">Treine bastante e se tiver alguma dúvida pode perguntar aqui nos comentários.</p>
+<p style="text-align: justify;">InFog.</p>

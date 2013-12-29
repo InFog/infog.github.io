@@ -1,0 +1,50 @@
+---
+layout: post
+title: Utilizando o tcpdump e o wireshark
+categories:
+- Administração
+- Redes
+tags:
+- Administração
+- Redes
+status: publish
+type: post
+published: true
+meta:
+  _sexybookmarks_shortUrl: http://tinyurl.com/34dzrj2
+  _sexybookmarks_permaHash: c1d0bb5ead4cca4e9817f53e24f356e3
+---
+
+<p align="justify">Monitorar o tráfego de rede é algo fundamental para a solução de problemas. Um programa muito bom para fazer isso é o <a href="http://www.tcpdump.org/">tcpdump</a>. O tcpdump é um conhecido sniffer do mundo GNU/Linux, um sniffer é um programa que faz com que a placa de rede entre em <q>modo promíscuo</q> e capture todos os pacotes (da rede) que chegem até a máquina, independentes de serem para ela ou não, sejam <q>aceitos</q>, com isso ele gera uma saída, no terminal ou em um arquivo de texto, que pode ser analisada.</p>
+<p align="justify">O tcpdump também permite o uso de filtros como <q>de tal ip</q>, <q>para porta x</q>, <q>protocolo x</q>. Lembrando que o tcpdump deve ser executado como root.</p>
+<p align="justify">Bom deixe-me mostrar a sintaxe básica, depois algo mais refinado. Com um comando tipo esse:</p>
+<p align="justify"><strong># tcpdump -i eth0</strong></p>
+<p align="justify">Você terá a lista de pacotes passando por sua interface eth0. Entender  a saída do programa não é muito confortável no começo, exige uma boa leitura do manual do tcpdump e também conhecimento do tcp. Mas basicamente é algo como:</p>
+<p align="justify">origem.porta &gt; destino.porta: flags (nº sequência de dados)  ...</p>
+<p align="justify">Eu realmente recomendo uma boa lida no manual do tcpdump se você quiser endenter cada detalhe da saída.</p>
+<p align="justify">O parâmetro <strong>-i </strong>pode receber também a opção <strong>any</strong> que faz o tcpdump capturar pacotes em todas as suas interfaces de rede.</p>
+<p align="justify">As principais opções de filtro no tcpdump são:</p>
+<p align="justify"><strong>-n</strong> : Não faz a resolução dos nomes, mantendo <strong>origem</strong>, <strong>destino</strong> e <strong>porta</strong> como números.</p>
+<p align="justify"><strong>host</strong> : Define um host específico, pode ser um ip ou um nome.</p>
+<p align="justify"><strong>src</strong> :  Define o host origem, pode ser ip ou nome.</p>
+<p align="justify"><strong>dst</strong> :  Define o host destino, pode ser ip ou nome.</p>
+<p align="justify"><strong>-w</strong> :  Escreve a saída em um arquivo, o nome do arquivo deve ser fornecido.</p>
+<p align="justify"><strong>-r</strong> :  Lê o tráfego que foi armazenado em um arquivo, nesse caso não é necessário ser root.</p>
+<p align="justify"><strong>-s</strong> :  Define, em bytes, o tamanho máximo dos pacotes que serão capturados. O padrão são 68 bytes que são suficientes para alguns protocolo, mas pode truncar (não capturar completamente) um pacote. Um bom número para ser definido é 1000.</p>
+<p align="justify">Com essas opções já dá para fazer muita coisa. Volto a dizer que uma lida no manual do tcpdump pode enriquecer muito o seu conhecimento.</p>
+<p align="justify">Vamos a mais exemplos:</p>
+<p align="justify"># tcpdump -i eth0 -n host 192.168.1.1</p>
+<p align="justify">Captura todos os pacotes destinados ou com origem em 192.168.1.1 sem resolver nomes.</p>
+<p align="justify"># tcpdump -i eth0 -s 1000 src 192.168.1.1</p>
+<p align="justify">Captura todos os pacotes com origem em 192.168.1.1 resolvendo nomes e gravando até 1000 bytes de cada pacote.</p>
+<p align="justify">#  tcpdump -i eth0 -w trafego.cap</p>
+<p align="justify">Captura todo o tráfego na eth0 e escreve a saída no arquivo trafego.cap</p>
+<p align="justify">$ tcpdump -r trafego.cap</p>
+<p align="justify">Lê o tráfego gravado em trafego.cap</p>
+<p align="justify">Como mostrado nesse último exemplo o tcpdump também lê os arquivos gerados, isso é muito útil quando você precisa analisar os dados com mais cuidado, ou guardá-los para uma análise posterior.</p>
+<p align="justify">Uma outra maneira de <q>ler</q> esse tráfego é com o <a href="http://www.wireshark.org/">Wireshark</a>, esse é um outro sniffer (multiplataforma) bastante utilizado. O Wireshark é capaz de ler os arquivos gerados pelo tcpdump, mas com algumas vantagens como um filtro e cores para os tipos de pacotes.</p>
+<p align="justify">Aqui está o wireshark em ação:</p>
+<p style="text-align: justify"><a href="http://infog.wordpress.com/files/2007/08/wireshark1.png" title="Wireshark"></a></p>
+<p style="text-align: center"><a href="http://infog.wordpress.com/files/2007/08/wireshark1.png" title="Wireshark"><img src="http://infog.wordpress.com/files/2007/08/wireshark1.thumbnail.png" alt="Wireshark" height="169" width="202" /></a></p>
+<p align="justify">Com essas ferramentas em mãos você pode resolver problemas de conexão (ou falta dela)  e outros mais.  Para maiores informações leia os manuais de cada aplicação.</p>
+InFog

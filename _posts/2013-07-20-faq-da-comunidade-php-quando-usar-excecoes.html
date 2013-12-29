@@ -1,0 +1,64 @@
+---
+layout: post
+title: ! 'FAQ da Comunidade PHP: Quando usar exceções?'
+categories:
+- comunidade
+- Desenvolvimento
+- FaqPHP
+- PHP
+tags:
+- comunidade
+- Desenvolvimento
+- FaqPHP
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  Hide SexyBookmarks: '0'
+  Hide OgTags: '0'
+---
+Olá, pessoal! Já faz um bom tempo que eu acompanho diversas listas de comunidades PHP do Brasil todo. Alguns já podem até ter me visto respondendo em algum tópico por aí =) Bem, após acompanhar as listas por um bom tempo, eu acabei percebendo um certo padrão de dúvidas que sempre surgem aqui ou ali. Por este motivo resolvi criar uma seção nova aqui no blog, para focar nestas questões que sempre aparecem. A questão de hoje é: <strong>Quando, como e por que usar exceções?</strong>
+
+<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2013/07/exclamation_sign.png"><img class="aligncenter size-full wp-image-1330" alt="exclamation_sign" src="http://evaldojunior.com.br/blog/wp-content/uploads/2013/07/exclamation_sign.png" width="295" height="259" /></a>
+
+Fala a verdade: Você já usou exceções no PHP? Não vale mentir heim! Infelizmente muitos desenvolvedores PHP passam longe das exceções durante toda a sua carreira. Engraçado é que este é um recurso muito bom e bastante utilizado em outras linguagens. Mas deixa eu explicar melhor o que é uma exceção.
+<h3>Exceções, ou Exceptions</h3>
+Uma exceção é uma espécie de interrupção do fluxo do programa que dispara um sinal dizendo que aconteceu algo que não deveria acontecer. Por exemplo, um script que lê um arquivo com uma lista de itens e realiza alguma tarefa com estes itens poderia subir uma exceção caso o arquivo esperado não exista, ou caso algum item não esteja no formato correto.
+
+O legal das exceptions é nos forçar a pensar se maneira diferente para a solução dos problemas, o que também pode nos levar a usar melhor a orientação a objetos. Quantas vezes já não nos pegamos fazendo funções retornar valores como <strong>FALSE</strong> para indicar que algo deu errado, quando na verdade deveríamos estar usando exceções? O quê? Não está convencido de que exceções podem ser interessantes? Vamos então a um exemplo. Sabe aqueles problemas clássicos de quando estamos aprendendo a programar que pedem, por exemplo, para o usuário informar a idade? Então, vou mostrar aqui um exemplo usando programação procedural, um com orientação a objetos, mas sem exception e outro usando exception.
+
+Vamos à primeira solução, considerando que já existe um formulário HTML (ou outra entrada de dados, como Ajax) onde a idade do usuário é informada e chega para o PHP via POST:
+
+<iframe style="border: none; width: 100%;" src="http://pastebin.com/embed_iframe.php?i=zqyVVmHT" height="240" width="320"></iframe>
+
+Olhando para este código podemos pensar: Ele é inofensivo, coitado. Sim ele parece inofensivo, mas existem armadilhas nele. A primeira armadilha é que ele não é facilmente reutilizável. Ou seja, se precisarmos validar a idade do usuário em outros locais, não poderemos simplesmente chamar este trecho, teremos que fazer a reutilização através do modo mais antigo e tosco: copiar e colar.
+
+A segunda armadilha é que as regras estão definidas no fluxo do código. Ou seja, para utilizar as regras é necessário mesmo fazer o lance de copiar e colar. E quando alguma regra mudar, por exemplo, permitir o cadastro de maiores de 16, será necessário procurar "onde raios está aquela regra que permite apenas maiores de 18 anos?".
+
+Mais uma armadilha é o teste automatizado. Para praticantes do TDD, este código é praticamente impossível de testar.
+
+Vamos para a próxima versão, usando orientação a objetos, mas sem exceções:
+
+<iframe style="border: none; width: 100%;" src="http://pastebin.com/embed_iframe.php?i=6cA0m2vJ" height="240" width="320"></iframe>
+
+Este código já está um pouco melhor. Agora conseguimos centralizar a regra de negócio dentro da classe <strong>Cliente</strong> e a reutilização está garantida, pois podemos criar um objeto desta classe e usar o método <strong>definirIdade()</strong>, aí basta pegar o retorno do método e tratar a exibição de erros, quando necessário. O problema, desta vez é que devemos conhecer as saídas da classe para saber quais caminhos tomar. Neste caso eu deixei retornando um texto, mas poderia ter feito algo como retornar true para sucesso e false para falhas, mas como temos diversas possibilidades de falhas, resolvi deixar assim.
+
+O desenvolvedor que for utilizar nossa classe deverá ler alguma documentação, ou mesmo ler o código da classe para saber o que esperar. Este é o problema principal desta solução.
+
+Então, vamos à terceira solução, agora usando as exceções:
+
+<iframe style="border: none; width: 100%;" src="http://pastebin.com/embed_iframe.php?i=Ta5bELgJ" height="240" width="320"></iframe>
+
+Perceba que o código da classe não mudou muito, mas agora o método <strong>definirIdade()</strong> não tem mais retornos, ele apenas sobe exceções quando encontra problemas com a definição da idade do cliente.
+
+Mas perceba que o uso da classe está bem diferente, pois agora simplesmente chamamos o método para definir a idade e já mandamos exibir a página. Mas agora fazemos isso dentro de um bloco <strong>try</strong>. Caso alguma exceção seja lançada, o bloco <strong>catch</strong> será executado, passando a exceção usando o objeto <strong>$e</strong>. O objeto <strong>$e</strong> possui um método <strong>getMessage()</strong> que nos diz a mensagem de erro, por isso passei o retorno dele para a exibição dos erros.
+
+Agora sim ficou interessante, pois colocamos a regra de negócios dentro da classe <strong>Cliente</strong> e quem for usar a classe não precisará ler documentações ou mesmo o código da classe para saber que retornos esperar, basta usar o bloco <strong>try/catch</strong>. Além disso o código está testável, pois uma ferramenta como o PHPUnit poderia ser usada para verificar se exceções foram lançadas em caso de erros na definição da idade. Outra coisa legal é que o código que usa a classe está bem mais enxuto do que a versão sem exceções, pois não há o uso do <strong>if</strong>.
+
+Resumindo a coisa toda: Use exceções sempre que você puder e de preferência opte por frameworks ou outras ferramentas que te ajudem a capturar e tratar estas exceções.
+
+Avante, comunidade PHP!
+
+InFog

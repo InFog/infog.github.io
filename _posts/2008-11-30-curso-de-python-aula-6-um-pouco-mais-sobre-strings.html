@@ -1,0 +1,123 @@
+---
+layout: post
+title: Curso de Python - Aula 6 - Um pouco mais sobre strings
+categories:
+- Aulas
+- python
+tags:
+- Aulas
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/26mlt9t
+  _sexybookmarks_permaHash: cab104149dacbe5637b8af5303349960
+---
+<!--adsense#propaganda-->
+<p style="text-align: justify;">E aqui vamos nós para mais uma aula de Python!</p>
+<p style="text-align: justify;">Mas antes da aula vamos aos recados e comentários...</p>
+<p style="text-align: justify;">Eu achei bem interessante o último exercício da <a title="Aula 5" href="http://evaldojunior.com.br/blog/?p=308" target="_blank">aula 5</a>, aquele em que vocês deveriam transformar a frase "o menino é legal" em "a menina é legal". O que eu achei interessante é que somente alguns perceberam que bastava trocar as letras "o" pela letra "a". Mas percebam que não existe "certo" ou "errado", o que eu pedi foi para transformar uma frase em outra, então tivemos resultados assim:</p>
+<p style="text-align: justify;"><strong>frase.replace("o menino", "a menina")</strong></p>
+<p style="text-align: justify;">Que faz o que eu pedi, mas, como eu disse, dava para fazer assim:</p>
+<p style="text-align: justify;"><strong>frase.replace("o","a")</strong></p>
+<p style="text-align: justify;">Bem mais simples, não?</p>
+<p style="text-align: justify;">O nosso <a title="Fórum Python" href="http://python.forums-free.com/" target="_blank">fórum</a> teve uns probleminhas de Administrador... Pois é, eu não conheço a plataforma phpBB muito bem ainda, por isso acabei deixando os fóruns sem permissão de escrita para que vocês mandassem suas sugestões de soluções da aula 5, mas agora parece que está tudo certo =)</p>
+<p style="text-align: justify;">Então vamos à aula de hoje!</p>
+<p style="text-align: justify;">Hoje vamos falar um pouco mais sobre as strings... Sim, eu sei que já vimos bastante coisa sobre elas, mas hoje vamos ver um pouco mais :)</p>
+
+<h3 style="text-align: justify;">Substrings</h3>
+<p style="text-align: justify;">Uma coisa interessante sobre as strings é que você pode acessar pedaços delas de forma muito simples, vejam o exemplo:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+titulo = 'aulas de python'
+# Pegando caractere por caractere
+print(titulo[0])
+print(titulo[4])
+# Agora pegando intervalos de caracteres
+print(titulo[0:5])
+print(titulo[9:15])
+# Outros modos:
+# Do começo até X
+print(titulo[:5])
+# De X até o fim
+print(titulo[9:])</code>
+<p style="text-align: justify;">O resultado:</p>
+
+<p style="text-align: justify;"><strong>$ ./substr.py
+a
+s
+aulas
+python
+aulas
+python
+$</strong>
+<p style="text-align: justify;">Agora as explicações:</p>
+<p style="text-align: justify;"><strong>Linha 3</strong>: Defini uma variável chamada <strong>titulo</strong> e à ela dei o valor "<strong>aulas de python</strong>".</p>
+<p style="text-align: justify;"><strong>Linha 5</strong>: Exibi o caractere <strong>0</strong> (zero) desda string, ou seja, a letra "<strong>a</strong>".</p>
+<p style="text-align: justify;"><strong>Linha 6</strong>: Mesmo esquema da linha 5, só que desta vez exibindo o caractere número <strong>4</strong>, ou seja, a letra "<strong>s</strong>".</p>
+<p style="text-align: justify;">Agora vem a parte legal:</p>
+<p style="text-align: justify;"><strong>Linhas 8 e 9</strong>: Exibi uma lista de caracteres, primeiro a lista de 0 até 5 para mostrar a palavra "aulas"...</p>
+
+<h3 style="text-align: justify;">Pausa para compreender melhor</h3>
+<p style="text-align: justify;">O Python faz a numeração dos caracteres de uma string desse jeito:</p>
+<p style="text-align: justify;"><img class="alignnone size-full wp-image-341" title="Sequência de caracteres" src="http://evaldojunior.com.br/blog/wp-content/uploads/2008/11/seqcar.png" alt="" width="500" height="34" /></p>
+<p style="text-align: justify;">Certo, simples né? Para pegar a letra "v" eu faria isso:</p>
+<p style="text-align: justify;"><strong>texto[5]</strong></p>
+<p style="text-align: justify;">E para pegar a palavra "<strong>Como</strong>" eu faria isso:</p>
+<p style="text-align: justify;"><strong>texto[0:3]</strong></p>
+<p style="text-align: justify;">Nãããoooo!!! Isso retornaria apenas a string "<strong>Com</strong>". Mas... Por que isso?</p>
+<p style="text-align: justify;">Ora, é bem simples, a lista [A:B] vai de A (inclusive) até B (exclusive). Muito complexo? Bem, ela vai de A até um antes de B, o nome disso é <em>Slice</em> (cortar em inglês).</p>
+
+<h3 style="text-align: justify;">Fim da pausa!</h3>
+<p style="text-align: justify;">Continuando... Então se eu pegar dos caracteres de 0 até 5 (na linha 8), então eu consigo pegar a palavra "aulas". O mesmo vale para a linha 9, onde eu pego a palavra "python".</p>
+<p style="text-align: justify;"><strong>Linhas 12 e 14</strong>: Nestas linhas eu usei um outro recurso interessante, quando você não fornece o primeiro elemento da lista de caracteres o Python entende que você quer o primeiro caractere da string, o caractere <strong>0</strong> (zero). Da mesma forma quando você não fornece o segundo elemento da lista o Python entende que você quer que seja o último caractere.</p>
+<p style="text-align: justify;">Sabendo disso tudo você se pergunta se é possível fazer algo como substituir uma letra dentro de uma string:</p>
+<p style="text-align: justify;"><strong>texto[6] = "b"</strong></p>
+<p style="text-align: justify;">Não! Não é possível alterar strings desta forma. Para isso utilize a função <strong>str.replace()</strong> que já vimos <a title="Strings" href="http://evaldojunior.com.br/blog/?p=308" target="_blank">aqui</a>.</p>
+<p style="text-align: justify;">Uma outra forma de pegar substrings é usando a função <strong>str.__getslice__()</strong>, desta forma:</p>
+
+<p style="text-align: justify;"><strong>titulo = "aulas de python"
+print(titulo.__getslice__(0,5))</strong>
+<p style="text-align: justify;">É claro que é bem mais simples usar a primeira forma ( texto[0:5]), mas é bom saber que existem outros meios :)</p>
+
+<h3 style="text-align: justify;">Strip</h3>
+<p style="text-align: justify;">Calma... não é o que alguns pensaram... Agora veremos mais uma função da biblioteca <strong>str</strong>, a função <strong>str.strip()</strong>. Os que já programam em alguma linguagem podem conhecer essa função pelo nome <strong>trim</strong>.</p>
+<p style="text-align: justify;">Vamos aos exemplos:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+titulo = '     aulas de python     '
+print(titulo.strip())
+print(titulo.lstrip())
+print(titulo.rstrip())</code>
+<p style="text-align: justify;">Desta vez a string tem o valor de "<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aulas de python </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", sim, com cinco espaços em branco antes e depois do texto. Aqui foi proposital, mas você pode se deparar com um texto assim por ai.</p>
+<p style="text-align: justify;">Na linha 4 eu removi os espaços no começo e no fim da string com a função <strong>str.strip()</strong>.</p>
+<p style="text-align: justify;">Na linha 5 eu removi apenas os espaços no começo da string usando a função <strong>str.lstrip()</strong> (Left Strip).</p>
+<p style="text-align: justify;">E na linha 6 eu removi apenas os espaços no fim da string usando a função <strong>str.rstrip()</strong> (Right Strip).</p>
+
+<h3 style="text-align: justify;">Find</h3>
+<p style="text-align: justify;">Agora um função legal para pesquisar textos:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+titulo = 'aulas de python'
+print(titulo.find('de'))
+print(titulo.find('we'))</code>
+<p style="text-align: justify;">O resultado:</p>
+
+<p style="text-align: justify;"><strong>$ ./find.py
+6
+-1
+$</strong>
+<p style="text-align: justify;">Na linha 4 eu pesquisei pelo texto "<strong>de</strong>" e fui informado que ele está começa no caractere 6. Isso é legal para não ficar contando "de olho" onde uma substring começa.</p>
+<p style="text-align: justify;">Já na linha 5 eu pesquisei pelo texto "<strong>we</strong>", mas como ele não existe na string eu recebi o resultado <strong>-1</strong>. Isso é interessante para fazer pesquisas em textos.</p>
+
+<h3 style="text-align: justify;">Lição de casa!</h3>
+<p style="text-align: justify;">Com isso vamos para a lição de casa de hoje, que ainda é bem leve e desta vez não requer código. Mandem as respostas no corpo do e-mail mesmo:</p>
+<p style="text-align: justify;">1) Se eu tenho o texto "Oi me chamo João! Como é o seu nome?", como eu faria para saber em que posição a palavra "nome" começa? E como eu retornaria essa palavra?</p>
+<p style="text-align: justify;">2) Ainda na mesma string da 1, como eu trocaria o nome João por José?</p>
+<p style="text-align: justify;">3) Como eu faço para remover os espaços no início de um texto? E no fim? E no início e no fim?</p>
+<p style="text-align: justify;">(A aula desse semana não deixa espaços para exercícios mais elaborados...)</p>
+<p style="text-align: justify;"><strong>E agora um desafio! Não é obrigatório fazer!</strong></p>
+<p style="text-align: justify;">Calcule a área sob o gráfico da função <strong>f = x + 3</strong>, sendo que x vai de 2 à 4. Apenas com o que já aprendemos aqui já é possível fazer isso.</p>
+<p style="text-align: justify;">InFog.</p>

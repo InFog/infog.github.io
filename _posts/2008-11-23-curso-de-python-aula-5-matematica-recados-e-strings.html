@@ -1,0 +1,123 @@
+---
+layout: post
+title: Curso de Python - Aula 5 - Matemática, Recados e Strings
+categories:
+- Aulas
+- python
+tags:
+- Aulas
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/3yshd5j
+  _sexybookmarks_permaHash: 8955d7125328db1282df7229235d4a40
+  Hide SexyBookmarks: '0'
+  Hide OgTags: '0'
+---
+<p style="text-align: justify;">Olá pessoal, aqui estou para mais uma aula de Python!</p>
+<p style="text-align: justify;">Na <a title="Aula de Python - Números e biblioteca Math" href="http://evaldojunior.com.br/blog/2008/11/curso-de-python-aula-4-mais-numeros-e-a-biblioteca-math/">última aula</a> eu deixei uns exercícios um pouco mais complexos do que os das primeiras aulas. Eu esqueci que nem todos que estão fazendo o curso já tiveram esse tipo de disciplina na escola/curso/faculdade, então acabou que apareceram coisas bem "diferentes" para o cálculo da área do círculo e do volume do cilindro.</p>
+<p style="text-align: justify;">Bem para aqueles que não sabiam as fórmulas, aqui estão:</p>
+<p style="text-align: justify;">Área do círculo: <strong>PI * Raio²</strong></p>
+<p style="text-align: justify;">Volume do cilindro: <strong>PI * Raio² * Altura</strong></p>
+<p style="text-align: justify;">Nas próximas vezes em que eu pedir algum tipo de cálculo eu passo as formulas e também os resultados, assim vocês mesmos já se corrigem.</p>
+
+<h3 style="text-align: justify;">Um pouco mais sobre strings</h3>
+<p style="text-align: justify;">Na <a title="Aula 2" href="http://evaldojunior.com.br/blog/?p=240" target="_blank">aula dois</a>, para mostrar as variáveis eu usei sempre textos que são chamados na maioria das linguagens de programação de "<strong>strings</strong>". Lembra que nesta aula aprendemos como "concatenar" variáveis de texto? Também vimos as aspas tríplices e o caractere especial <strong>\n</strong>.</p>
+<p style="text-align: justify;">Pois bem, hoje vamos ver mais algumas operações interessantes com as strings.</p>
+<p style="text-align: justify;"><strong>Multiplicação</strong>: Sim, no Python podemos multiplicar algum texto, o que faz bastante sentido, vejam um exemplo:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+linha = '-' * 50
+print(linha)</code>
+<p style="text-align: justify;">A saída deste exemplo é esta:</p>
+<p style="text-align: justify;"><strong>$ ./linha.py
+--------------------------------------------------
+$</strong></p>
+<p style="text-align: justify;">Neste exemplo eu multipliquei a string "<strong>-</strong>" (um traço) por <strong>50</strong> e obtive uma linha. Esse recurso é bem interessante, principalmente para formatação da saída de texto - talvez vocês não vejam os 50 traços por que o wordpress faz alguma coisa que os corta =(</p>
+<p style="text-align: justify;"><strong>Um pequeno aviso</strong>: Atenção, lembra que usamos algumas funções da <a title="Biblioteca Math" href="http://evaldojunior.com.br/blog/?p=289" target="_blank">biblioteca math</a>? Pois bem, agora vamos usar algumas funções da biblioteca <strong>str</strong>, mas, ao contrário da math, nós não precisamos de um "<strong>import str</strong>" no início do código, pois essa já vem por padrão =)</p>
+<p style="text-align: justify;"><strong>Posicionamento</strong>: Legal, agora eu sei exibir uma linha com 50 traços, então seria bom se desse para colocar algo como um título centralizado nela. Sim, faremos isso! E não apenas centralizado, vou mostrar <strong>três</strong> alinhamentos diferentes para vocês:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+linha = '-' * 50
+titulo = 'Aulas de Python'
+print(titulo.ljust(50))
+print(linha)
+print(titulo.center(50))
+print(linha)
+print(titulo.rjust(50))
+print(linha)</code>
+<p style="text-align: justify;">E a saída disso (dessa vez mostrei o meu terminal já que no browser isso não fica bem alinhado):</p>
+<p style="text-align: justify;"><img class="alignnone size-full wp-image-315" title="Resultado Alinhamento" alt="" src="http://evaldojunior.com.br/blog/wp-content/uploads/2008/11/alin.png" width="500" height="142" /></p>
+<p style="text-align: justify;">neste exemplo usei três funções da biblioteca str: <strong>str.ljust()</strong>, <strong>str.center()</strong> e <strong>str.rjust()</strong>. A função <strong>str.ljust()</strong> alinha um texto à esquerda, de acordo com o tamanho passado para ela, que neste caso foi <strong>50</strong>. As funções <strong>str.center()</strong> e <strong>str.rjust()</strong> trabalham da mesma forma, mas uma centraliza o texto e a outra faz o alinhamento à direita.</p>
+<p style="text-align: justify;">Legal, mas a função <strong>str.ljust()</strong> é inútil já que um texto já "alinhado à esquerda", certo? Errado! E se eu disser que podemos preencher o espaços em branco com algo além de "espaços em branco"? Vejam só:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+linha = '-' * 50
+titulo = 'Aulas de Python'
+print(titulo.ljust(50, '-'))
+print(titulo.center(50, '*'))
+print(titulo.rjust(50, '+'))</code>
+<p style="text-align: justify;">E a saída:</p>
+<p style="text-align: justify;"><img class="alignnone size-full wp-image-317" title="Saída alinhamento preenchido" alt="" src="http://evaldojunior.com.br/blog/wp-content/uploads/2008/11/alin_pre.png" width="500" height="93" /></p>
+<p style="text-align: justify;">Como segundo parâmetro para as funções eu passei os valores "-", "*" e "+", com isso o Python preencheu os espaços em branco. Usando isso dá para fazer um relatório bem bonito para o seu chefe heim?</p>
+<p style="text-align: justify;"><strong><span style="text-decoration: line-through;">Caso</span> Caixa:</strong> (<span style="text-decoration: line-through;">desculpem, não achei uma palavra melhor para o título deste tema, então vai "<strong>caso</strong>" mesmo, se alguém achar uma melhor me avise que eu mudo aqui</span> Valeu pela sugestão <a title="Meira da Rocha" href="http://meiradarocha.jor.br/" target="_blank">José Meira</a>!) A biblioteca <strong>str</strong> também nos oferece algumas funções para trabalharmos com as caixas alta e baixa (Maiúsculas e minúsculas) das strings. Com algumas funções simples podemos deixar um texto todo em maiúsculas, minúsculas ou algumas outras formas, vejam:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+titulo = 'aulas de python'
+print('Resultado com str.upper()')
+print(titulo.upper())
+print('Resultado com str.lower()')
+print(titulo.lower())
+print('Resultado com str.title()')
+print(titulo.title())
+print('Resultado com str.capitalize()')
+print(titulo.capitalize())
+print('Resultado com str.title() e str.swapcase()')
+print(str.swapcase(titulo.title()))
+</code>
+<p style="text-align: justify;">O resultado:</p>
+<p style="text-align: justify;"><img class="alignnone size-full wp-image-321" title="Cases resultado" alt="" src="http://evaldojunior.com.br/blog/wp-content/uploads/2008/11/cases1.png" width="500" height="254" /></p>
+<p style="text-align: justify;">ATUALIZAÇÃO: A última linha também poderia ter sido escrita assim:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+titulo = 'aulas de python'
+print('Resultado com str.title() e str.swapcase()')
+print(titulo.title().swapcase()) # Um jeito mais curto para o mesmo resultado
+# Isso funciona pois no Python há funções que retornam um objeto
+# neste caso um objeto do tipo string que pode ter seus
+# métodos (funções) utilizados.
+</code>
+<p style="text-align: justify;">Agora as explicações...</p>
+<p style="text-align: justify;">Na terceira linha eu defini a variável <strong>titulo</strong> com o valor "<strong>aulas python</strong>".</p>
+<p style="text-align: justify;">Na quinta linha eu usei a função <strong>str.upper()</strong> que deixa toda a string maiúscula.</p>
+<p style="text-align: justify;">Na sétima linha eu usei a função <strong>str.lower()</strong> que faz o contrário, deixando toda a string minúscula (tudo bem que ela já era minúscula).</p>
+<p style="text-align: justify;">Na nona linha usei a função <strong>str.title()</strong> que deixa maiúscula apenas as primeiras letras de cada palavra.</p>
+<p style="text-align: justify;">Na décima primeira linha foi utilizada a função <strong>str.capitalize()</strong> que deixa maiúscula apenas o primeiro caractere da string.</p>
+<p style="text-align: justify;">Já na décima terceira linha eu usei duas funções, a <strong>str.title()</strong>, que agora vocês já conhecem e a <strong>str.swapcase()</strong>. Aqui é feito o seguinte, a função <strong>str.title()</strong> deixa a string assim: "Aulas De Python", aí vem a função <strong>str.swapcase()</strong> e <strong>inverte</strong> a caixa da string, o que é maiúscula vira minúscula e vice-versa, deixando a string assim: "aULAS dE pYTHON".</p>
+<p style="text-align: justify;"><strong>Substituição</strong>: Agora vamos substituir um pedaço de uma string:</p>
+<code lang="python">#!/usr/bin/env python
+# *-* coding: utf-8 *-*
+titulo = 'aulas de python'
+print(titulo.replace('python', 'linux')</code>
+<p style="text-align: justify;">O resultado disso? Tá ai:</p>
+<p style="text-align: justify;"><strong>$ ./subs.py
+aulas de linux
+$</strong></p>
+<p style="text-align: justify;">Neste exemplo eu substituí a palavra "python" pela palavra "linux".</p>
+
+<h3 style="text-align: justify;">Exercícios:</h3>
+<p style="text-align: justify;">Ah, mas já? Estava tão legal...</p>
+<p style="text-align: justify;">Nesta aula aprenderemos mais sobre strings depois de aprendermos alguns conceitos como as instruções para controle do fluxo do programa.</p>
+<p style="text-align: justify;">Agora a lição de hoje:</p>
+<p style="text-align: justify;">Todas as linhas devem ter a largura de 60 caracteres.
+linha preenchida com "-".
+seu nome alinhado à direita em minúsculo.
+seu nome centralizado com as primeiras letras em maiúsculo.
+seu nome à esquerda, a linha preenchida com _ (underline).
+troque o seu sobre nome por "python" e exiba centralizado.
+transforme a frase "o menino é legal" em "a menina é legal" e exiba.</p>
+<p style="text-align: justify;">Bom treino</p>
+<p style="text-align: justify;">InFog.</p>

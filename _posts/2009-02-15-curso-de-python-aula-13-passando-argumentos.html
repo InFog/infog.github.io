@@ -1,0 +1,69 @@
+---
+layout: post
+title: Curso de Python - Aula 13 - Passando Argumentos Via Terminal
+categories:
+- Aulas
+- python
+tags:
+- Aulas
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/byf6cv
+  _sexybookmarks_permaHash: 44c64e165a74f91ad6a96ac7df2ed678
+---
+<p style="text-align: justify;">Olá queridos alunos!</p>
+<p style="text-align: justify;">Espero que todos estejam gostando tanto destas aulas quanto eu! Graças à vocês eu também estou aprendendo bastante sobre a linguagem, muitos comentários que vocês fazem me ajudam a perceber novos horizontes pythonescos. Então relaxem, peguem um café e curtam as aulas!</p>
+<p style="text-align: justify;">Ahh, uma dica que foi dada pelo Jamilson no <a title="Fórum Python" href="http://python.forums-free.com/lista-de-exercicios-t26.html" target="_blank">fórum </a>é a <a title="Lista de Exercícos Python Brasil" href="http://www.pythonbrasil.com.br/moin.cgi/ListaDeExercicios" target="_blank">Lista de Exercícios</a> do Python Brasil. Eu ainda não fiz os exercícios, mas assim que der um tempinho farei!</p>
+<p style="text-align: justify;">Outra coisinha... Nesta semana eu resolvi meu primeiro problema real com Python! Fiquei muito feliz por ter usado um pouco mais de 40 linhas, incluindo comentários, para fazer um script de conversão de arquivos de logs para arquivos html! Ficou supimpa! hehe. Bem chega de recados e vamos à aula de hoje!</p>
+<p style="text-align: justify;">Nós já falamos sobre como receber dados do usuário usando a função <strong>raw_input()</strong> e também já sabemos ler arquivos texto, mas agora vamos aprender a passar parâmetros para nossos programas via linha de comando! Para isso vamos usar o módulo "<strong>sys</strong>" do Python. Este módulo nos permite usar algumas informações do sistema, recomendo que vocês o estudem mais a fundo, vale a pena :-)</p>
+<p style="text-align: justify;">Bem o que eu quero fazer é o seguinte, eu quero, por exemplo, chamar um programa dessa forma, no terminal:</p>
+<p style="text-align: justify;">$ programa.py arquivo_entrada.txt arquivo_saida.txt</p>
+<p style="text-align: justify;">Neste exemplo estariamos passando dois parâmetros para o programa, um arquivo de entrada e um arquivo de saída, ambos arquivos de texto.</p>
+<p style="text-align: justify;">Para fazer nossos programas entenderem esses parâmetros vamos utilizar a lista <strong>argv</strong>, do módulo <strong>sys</strong>, assim:</p>
+
+<code lang="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import sys
+for param in sys.argv :
+    print(param)</code>
+
+<p style="text-align: justify;">Ou seja, cada item da lista <strong>sys.argv</strong> é um parâmetro passado para o programa, vejam este exemplo:</p>
+
+<p style="text-align: justify;">$ ./param.py oi este é um teste
+./param.py
+oi
+este
+é
+um
+teste
+<p style="text-align: justify;">Como vocês podem ver o primeiro parâmetro é sempre o nome do programa que foi chamado na linha de comando, neste caso o programa <strong>param.py</strong>, para pegarmos apenas os parâmetros poderiamos fazer algo assim:</p>
+
+<code lang="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import sys
+param = sys.argv[1:]</code>
+<p style="text-align: justify;">Neste caso a lista de parâmetros seria armazenada na variável <strong>param</strong>, ou seja, tudo coisa bem simples =)</p>
+<p style="text-align: justify;">Bem, por hoje é só. Como vocês podem reparar as aulas estão ficando mais curtas, mas vou exigir um pouco mais de vocês nos exercícios.</p>
+
+<h3 style="text-align: justify;">Lição de Casa!</h3>
+<p style="text-align: justify;">Hoje vou querer o seguinte, vocês precisam baixar <a href="http://evaldojunior.com.br/blog/wp-content/uploads/2009/02/ls_etc.txt">este arquivo</a>, que é apenas um ls do meu /etc, vocês vão fazer um programa que receba o nome de um arquivo via parâmetro na linha de comando, no caso este arquivo, e o transforme em html. Na verdade eu quero uma tabela com três colunas mostrando todos os nomes de arquivos e diretórios que estão neste arquivo, algo assim:</p>
+
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td>arquivo1</td>
+<td>arquivo2</td>
+<td>arquivo3</td>
+</tr>
+<tr>
+<td>arquivo4</td>
+<td>arquivo5</td>
+<td>arquivo6</td>
+</tr>
+</tbody></table>
+<p style="text-align: justify;">Só isso, o arquivo de saída deve ser ls_etc.html</p>
+<p style="text-align: justify;">Boa sorte!</p>

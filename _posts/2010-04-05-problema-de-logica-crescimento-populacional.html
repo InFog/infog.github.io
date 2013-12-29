@@ -1,0 +1,47 @@
+---
+layout: post
+title: ! 'Problema de lógica: Crescimento populacional'
+categories:
+- Desenvolvimento
+- python
+tags:
+- Desenvolvimento
+- exercício
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/39en2t6
+  _sexybookmarks_permaHash: 4c24b3843a17468c12f6788c8c4d8c34
+---
+[ad#propaganda]
+<p style="text-align: justify;">Olá pessoal!</p>
+<p style="text-align: justify;">Esses dias recebi um e-mail, do Diego Rodrigues, pedindo uma ajuda em Python. Ele mandou alguns probleminhas bem interessantes, mas a maioria relacionada à lógica e não a alguma sintaxe específica do Python.</p>
+<p style="text-align: justify;">Pois bem, dentre os problemas que ele enviou tinha um bem legal, veja o enunciado:</p>
+
+<blockquote>
+<p style="text-align: justify;">Supondo que a população de um país A seja da ordem de 80000 habitantes com uma  taxa anual de crescimento de 3% e que a população de B seja 200000 habitantes  com uma taxa de crescimento de 1.5%. Faça um programa que calcule e escreva o número de anos necessários para que a população do país A ultrapasse ou  iguale a população do país B, mantidas as taxas de crescimento.</p>
+</blockquote>
+<p style="text-align: justify;">Agora a solução em Python que eu mandei para ele:</p>
+<code lang="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Problema de crescimento populacional
+# Desenvolvido por Evaldo Junior (InFog)
+# http://evaldojunior.com.br/blog
+popA, popB, anos = 80000, 200000, 0
+cresA, cresB = 0.03, 0.015 # Crescimentos de 3% e 1,5% ao ano
+while (popA < popB):
+    anos += 1
+    popA = popA + (popA * cresA)
+    popB = popB + (popB * cresB)
+print("Após %i anos o país A ultrapassou o país B em número de habitantes." % anos)
+print("País A: %.0f" % popA)
+print("País B: %.0f" % popB)</code>
+<p style="text-align: justify;">Aqui o resultado foi:</p>
+<p style="text-align: justify;">Após 63 anos o país A ultrapassou o país B em número de habitantes.<br />País A: 515033<br />
+País B: 510964</p>
+<p style="text-align: justify;">O legal é que dá para fazer o programa mostrar o crescimento ano a ano e, quem sabe, gerar até um gráfico para ilustrar melhor.</p>
+<p style="text-align: justify;">E então, quem propõe uma solução diferente em Python ou mesmo em outras linguagens? Basta comentar.</p>
+<p style="text-align: justify;">InFog</p>

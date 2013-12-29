@@ -1,0 +1,45 @@
+---
+layout: post
+title: Frase do Dia no Terminal
+categories:
+- Debian
+- Linux
+- Tutoriais
+tags:
+- Bash
+- Debian
+- Linux
+- Terminal
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/yahket6
+  _sexybookmarks_permaHash: 02a1db68b0110cbcfbcad73527586ca1
+---
+<p style="text-align: justify;">Eu não sei se todos sabem, mas eu fui um usuário de <a title="Slackware" href="http://www.slackware.org/" target="_self">Slackware</a> por mais de um ano, usei as versões 10 e 11, se não me engano. Esse foi um tempo de enorme aprendizado e usava (ainda uso) bastante a linha de comando, e sempre que eu logava em um terminal ou abria um Konsole (Emulador de terminal do KDE) era exibida alguma frase, desde piadinhas até frases e ditados populares.</p>
+<p style="text-align: justify;">Pois bem, um belo dia eu passei a utilizar o <a title="Debian" href="http://www.debian.org" target="_blank">Debian</a> e... cadê as mensagens??? Tudo bem, me acostumei sem elas, e assim fiquei por mais de 1 ano.</p>
+<!--adsense#propaganda-->
+<p style="text-align: justify;">E não é neste feriado durante uma reunião com o pessoal Linuxista eu descubro que o nome do programa exibe as mensagens é "fortune"!</p>
+<p style="text-align: justify;">Mas não deu outra, no mesmo instante (Ambientes wireless são legais!) eu pesquisei pelo pacote:</p>
+<p style="text-align: justify;"><span style="color: #008000;"># aptitude search fortune</span></p>
+<p style="text-align: justify;">E vejo que existe o pacote dele no Debian! Ótimo! Vou matar as saudades das frases que tanto me animaram um dia!</p>
+<p style="text-align: justify;">Bom, o nome do pacote no Debian é fortunes-br, com ele as frases são exibidas em português.</p>
+<p style="text-align: justify;">Deixa eu abrir um terminal e ver a frase que ele me mostra:</p>
+<p style="text-align: justify;">" Nada tao cansativo quanto a indecisao, e nada tao futil.
+-- George Bernard Shaw "</p>
+<p style="text-align: justify;">Ele só não está acentuado, creio que para evitar problemas com charsets...</p>
+<p style="text-align: justify;">Bem, continuando, após instalar o pacote:</p>
+<p style="text-align: justify;"><span style="color: #008000;"># aptitude install fortunes-br</span></p>
+<p style="text-align: justify;">Basta utilizar o comando "fortune".</p>
+<p style="text-align: justify;">Agora para ter essas frases a cada login em um terminal basta editar o bom e velho arquivo .bashrc (que está na sua home, lembra dele? Nunca viu?), acrescentando, por exemplo, essas linhas:</p>
+<p style="text-align: justify;"><span style="color: #0000ff;"># Exibindo a frase do dia</span></p>
+<p style="text-align: justify;"><span style="color: #0000ff;">echo ""</span></p>
+<p style="text-align: justify;"><span style="color: #0000ff;">echo "`fortune`"</span></p>
+<p style="text-align: justify;"><span style="color: #0000ff;">echo ""</span></p>
+<p style="text-align: justify;">Obs: você não precisa utilizar o segundo echo, ele pode ser substituído apenas por "fortune".</p>
+<p style="text-align: justify;">Depois disso salve o seu .bashrc e abra um terminal.</p>
+<p style="text-align: justify;">Não é algo tão fantástico assim, mas quem usa, ou já usou, o Slackware, sabe do que estou falando, você acaba gostando das (frases|piadas|ditados).</p>
+<p style="text-align: justify;">Gostou do blog? Visite outros textos e assine o <a title="Feed RSS" href="http://feeds.feedburner.com/casoft/RhIq" target="_blank">feed rss</a>.</p>
+<p style="text-align: justify;">InFog</p>

@@ -1,0 +1,51 @@
+---
+layout: post
+title: Lista Python Brasil – Resumo de Fevereiro de 2010
+categories:
+- Blog
+- comunidade
+- python
+tags:
+- ! '#resumo'
+- comunidade
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/35e4xuu
+  _sexybookmarks_permaHash: 7a4e2e3d8df2c10a1599892632e4e912
+---
+[ad#propaganda]
+<p style="text-align: justify;">Olá, pessoal!</p>
+<p style="text-align: justify;">E aqui vamos nós para o resumo do que aconteceu na <a title="Lista Python Brasil" href="http://br.groups.yahoo.com/group/python-brasil/" target="_blank">lista Python Brasil</a> em Fevereiro.</p>
+
+<h2 style="text-align: justify;">Locale e Símbolo da Moeda</h2>
+<p style="text-align: justify;">O <a title="Problemas com Locale" href="http://br.groups.yahoo.com/group/python-brasil/message/43645" target="_blank">Daniel estava com problemas para definir o locale</a> e, com isso, usar o símbolo da moeda local. Dentre as respostas a que eu achei melhor foi a do <a title="Resposta pára problemas com Locale" href="http://br.groups.yahoo.com/group/python-brasil/message/43650" target="_blank">Junior Polegato</a>, o modo como ele resolveu foi interessante por não passar o nome do locale e sim deixar o Python decidir de acordo com o sistema:</p>
+<code lang="python">import locale
+locale.getlocale() # (None, None)
+locale.localeconv()['currency_symbol'] # ''
+locale.setlocale(locale.LC_ALL,'') # Definindo o locale
+locale.getlocale() # ('pt_BR', 'UTF8')
+locale.localeconv()['currency_symbol'] # 'R$'</code>
+<p style="text-align: justify;">Bem interessante, não?</p>
+
+<h2 style="text-align: justify;">Lançada a Versão 0.3 do GladePy</h2>
+<p style="text-align: justify;">O Junior Polegato <a title="Lançado o GladePy 0.3" href="http://br.groups.yahoo.com/group/python-brasil/message/43655;_ylc=X3oDMTM3dTIzaDE5BF9TAzk3NDkwNDM3BGdycElkAzEwNDUyNDM4BGdycHNwSWQDMjEzNzExMTI1OQRtc2dJZAM0MzY1NQRzZWMDZnRyBHNsawN2dHBjBHN0aW1lAzEyNjU5MTg1OTcEdHBjSWQDNDM2NTU-" target="_blank">lançou a versão 0.3</a> do <a title="Página do GladePy" href="http://www.juniorpolegato.com.br/?gladepy" target="_blank">GladePy</a>, uma ferramenta que converte os arquivos gerados pelo Glade em código Python pronto para usar. Vale a pena conhecer o projeto.</p>
+
+<h2 style="text-align: justify;">Lançado o InVesalius 3.0 beta 1</h2>
+<p style="text-align: justify;">Foi <a title="InVesalius 3.0 beta 1" href="http://br.groups.yahoo.com/group/python-brasil/message/43664" target="_blank">lançado o InVesalius 3.0 beta 1</a>. O <a title="InVesalius" href="http://svn.softwarepublico.gov.br/trac/invesalius/" target="_blank">InVesaluis</a> é um software para reconstrução 3d de imagens médicas. Olha o Software Livre chegando a novas áreas.</p>
+
+<h2 style="text-align: justify;">Vídeos da PyCon 2010</h2>
+<p style="text-align: justify;">O Christian S. Perone enviou um <a title="Vídeos PyCon 2010" href="http://pycon.blip.tv/" target="_blank">link com os vídeos</a> da <a title="PyCon" href="http://us.pycon.org/" target="_blank">PyCon 2010</a>, em Atlanta, se você, assim como eu, não teve a oportunidade de ir, então assista no conforto da sua casa.</p>
+
+<h2 style="text-align: justify;">Introdução à Python/C API</h2>
+<p style="text-align: justify;">O Hugo Lopes escreveu uma <a title="Python/C API" href="http://hltbra.blogspot.com/2010/02/introducao-pythonc-api.html" target="_blank">introdução à Python/C API</a>, para desenvolver módulos para Python em C, e compartilhou com a lista. Ótima iniciativa, Hugo.</p>
+
+<h2 style="text-align: justify;">Leitor de RSS em Python</h2>
+<p style="text-align: justify;">O <a title="Leitor de RSS | Lista Python Brasil" href="http://br.groups.yahoo.com/group/python-brasil/message/43722" target="_blank">Luchyanus perguntou</a> sobre a complexidade de fazer um leitor de RSS em Python, ele é deficiente visual e encontrou problemas com algumas opções já existes no mercado. A galera da lista respondeu com ótimas opções de módulos Python para esse fim. O Rafael Sachetto indicou o <a title="RSS For Python" href="http://www.ibm.com/developerworks/webservices/library/ws-pyth11.html" target="_blank">RSS for Python</a> e a página das <a title="RSS Libraries | Wiki Python" href="http://wiki.python.org/moin/RssLibraries" target="_blank">libs de RSS</a> na wiki do Python. Além destas libs houve indicações de ferramentas, confere lá na lista.</p>
+<p style="text-align: justify;">A lista teve muito mais tópicos e discussões em fevereiro, inclusive assuntos mais relativos ao desenvolvimento para soluções mais específicas. Se você gosta de Python, <a title="Lista Python Brasil" href="http://br.groups.yahoo.com/group/python-brasil" target="_blank">assine a lista</a> e fique por dentro das comunidade brasileira de Python.</p>
+<p style="text-align: justify;">InFog</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;"></p>

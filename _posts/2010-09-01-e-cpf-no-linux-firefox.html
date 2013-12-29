@@ -1,0 +1,59 @@
+---
+layout: post
+title: e-CPF no Linux + Firefox
+categories:
+- Blog
+- Debian
+- Linux
+- Tutoriais
+tags:
+- Debian
+- e-cpf
+- Linux
+- tutorial
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/2un2wxt
+  _sexybookmarks_permaHash: a906cb8ac00e297e25e86e950407f26f
+---
+[ad#propaganda]
+<p style="text-align: justify;">Olá!</p>
+<p style="text-align: justify;">Aqui está uma receita de bolo para fazer o seu e-CPF funcionar corretamente no <strong>GNU/Linux</strong> em conjunto com o <strong>Firefox</strong>.</p>
+<p style="text-align: center;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2010/09/e-cpf_b.gif"><img class="aligncenter size-full wp-image-938" title="e-cpf_b" src="http://evaldojunior.com.br/blog/wp-content/uploads/2010/09/e-cpf_b.gif" alt="" width="300" height="300" /></a></p>
+<p style="text-align: justify;">O certificado que eu estou usando é da <strong>Serasa Experian</strong> e é um <strong>e-CPF</strong> modelo cartão com leitora modelo <strong>Perto CCID</strong>. A instalação não é tão complicada, e eu vou usar o Debian como base.</p>
+<p style="text-align: justify;">Você vai precisar deste pacote:</p>
+
+<ul style="text-align: justify;">
+	<li><a title="pacote com o módulo da leitora" href="http://loja.certificadodigital.com.br/Serasa/UPLOAD/Downloads/391.zip" target="_blank">http://loja.certificadodigital.com.br/Serasa/UPLOAD/Downloads/391.zip</a></li>
+</ul>
+<p style="text-align: justify;">E também terá que instalar estes pacotes (fiz via <strong>aptitude</strong>):</p>
+
+<ul style="text-align: justify;">
+	<li>openct</li>
+	<li>pcsc-tools</li>
+	<li>pcscd</li>
+	<li>libpcsclite1</li>
+	<li>libccid</li>
+	<li>﻿﻿﻿﻿﻿libwxbase2.6-0</li>
+	<li>libwxgtk2.6-0</li>
+</ul>
+<p style="text-align: justify;">Aqui está o comando para facilitar a sua vida:</p>
+<code># aptitude install openct pcscd libwxgtk2.6-0 libwxbase2.6-0 libccid libpcsclite1 pcsc-tools</code>
+<p style="text-align: justify;">Feito isso é bom reiniciar os serviços da leitora com os comandos</p>
+<code># /etc/init.d/pcscd stop
+# /etc/init.d/pcscd start
+# /etc/init.d/openct stop
+# /etc/init.d/openct start</code>
+<p style="text-align: justify;">Agora você pode conectar a leitora na porta USB e colocar o cartão nela, a luz dela vai acender.</p>
+<p style="text-align: justify;">Instale o pacote <strong>﻿﻿safesign_3.0.deb</strong> que veio naquele arquivo que você baixou:</p>
+<p style="text-align: justify;"># dpkg -i safesign_3.0.deb</p>
+<p style="text-align: justify;">Agora abra o Firefox e acesse o menu <strong>Editar &gt; Preferências<span style="font-weight: normal;">.</span></strong></p>
+<p style="text-align: justify;"><strong><span style="font-weight: normal;">Nele use a aba </span>Avançado<span style="font-weight: normal;"> e a aba </span>Criptografia<span style="font-weight: normal;">, nesta janela existem algumas opções, use a opção </span>Dispositivos de Segurança<span style="font-weight: normal;">. Nesta nova janela use a opção </span>Carregar<span style="font-weight: normal;">, ele vai mostrar uma nova janela perguntando o </span>nome do módulo<span style="font-weight: normal;"> e o </span>nome do arquivo do módulo<span style="font-weight: normal;">. O nome do módulo você pode escolher, eu usei Serasa Experian e o nome do arquivo será </span>/usr/lib/libaetpkss.so<span style="font-weight: normal;">. A janela deve ficar assim:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-weight: normal;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2010/09/Captura_de_tela-Carregar-dispositivo-PKCS11.png"><img class="aligncenter size-full wp-image-937" title="Captura_de_tela-Carregar dispositivo PKCS#11" src="http://evaldojunior.com.br/blog/wp-content/uploads/2010/09/Captura_de_tela-Carregar-dispositivo-PKCS11.png" alt="" width="458" height="159" /></a></span></strong></p>
+<p style="text-align: justify;"><strong><span style="font-weight: normal;">Finalize us</span></strong><strong><span style="font-weight: normal;">ando o botão </span>OK<span style="font-weight: normal;">. Agora voltando à janela de criptografia use a opção </span>Certificados<span style="font-weight: normal;">, ele vai te pedir uma senha mestra, eu usei a mesma do PIN do e-CPF. Coloque a senha e lá estará o seu certificado digital!</span></strong></p>
+<p style="text-align: justify;"><strong><span style="font-weight: normal;">Agora você poderá acessar sites como o da Receita Federal e usar o seu e-CPF para se idenficar.</span></strong></p>
+<p style="text-align: justify;">Só fica a dica de usarem sempre senhas seguras.</p>
+<p style="text-align: justify;"><strong><span style="font-weight: normal;">InFog</span></strong></p>

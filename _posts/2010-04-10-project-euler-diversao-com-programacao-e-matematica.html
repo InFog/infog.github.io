@@ -1,0 +1,143 @@
+---
+layout: post
+title: ! 'Project Euler: Diversão com programação e matemática, calculando números
+  primos'
+categories:
+- algoritmo
+- Blog
+- lógica
+- python
+tags:
+- algoritmo
+- lógica
+- python
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://tinyurl.com/2cn2483
+  _sexybookmarks_permaHash: a311540327f7d70729a512f05cb68df7
+---
+[ad#propaganda]
+<p style="text-align: justify;">Olá pessoal!</p>
+<p style="text-align: justify;">Quem me acompanha pelo Twitter (<a title="InFog no Twitter" href="http://twitter.com/InFog9" target="_blank">InFog9</a>) viu que eu comecei a brincar com os problemas matemático/computacionais do <a title="Project Euler" href="http://projecteuler.net/" target="_blank">Project Euler</a>. Pois bem, o primeiro problema que eu resolvi foi o 7º, a ideia dele é encontrar o 10001º número ímpar, o que não é exatamente muito complexo, mas dependendo do algoritmo empregado pode exigir mais tempo de processamento.</p>
+<p style="text-align: justify;">A primeira solução que eu fiz foi essa:</p>
+<code lang="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Problem 7
+# http://projecteuler.net/index.php?section=problems&id=7
+#
+# Solved by Evaldo Junior <junior@casoft.info>
+# April, 8th - 2010
+#
+def isPrime(number):
+    if (number < 2):
+        return False
+    elif (number == 2):
+        return True
+    else:
+        for i in range(2, number):
+            if (number % i == 0):
+                return False
+        return True
+
+def main():
+    totalCount, totalPrime = 0, 0
+    while (totalPrime < 10001):
+        totalCount += 1
+        if (isPrime(totalCount)):
+            totalPrime += 1
+    print('The 10001st prime number is: %i' % (totalCount))
+
+if __name__ == "__main__":
+    main()</code>
+<p style="text-align: justify;">Rodando isso em um Intel Dual Core 4400@2.00GHz com 1GB de ram o tempo de processamento foi esse:</p>
+<code>2m49.673s</code>
+<p style="text-align: justify;">Caramba! Quase três minutos!</p>
+<p style="text-align: justify;">Aí durante a reunião do <a title="Grupo de Compartilhamento do Conhecimento Santos Dumont" href="http://gccsd.com.br/" target="_blank">GCCSD</a>, conversando com o <a title="Kretcheu Vídeo Blog" href="http://kretcheu.com.br/" target="_blank">Kretcheu</a> sobre os problemas do Project Euler ele disse que a maneira que eu usei a mais confiável, pois a tentativa e erro é o método mais confiável para determinar se um número é primo ou não. Então eu tive umas ideias, e até comentei com ele, para reduzir esse tempo. A primeira ideia é: se o número for par, nem chama o algoritmo, a segunda ideia é parar o algoritmo ao chegar na metade das tentativas do número sendo testado (se o número for 301, então parar em 151).</p>
+<p style="text-align: justify;">Vamos ver como fica o tempo de execução com o algoritmo melhorado:</p>
+<code lang="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Problem 7
+# http://projecteuler.net/index.php?section=problems&id=7
+#
+# Solved by Evaldo Junior <junior@casoft.info>
+# April, 8th - 2010
+#
+# Updated April, 10th - 2010
+#
+def isPrime(number):
+    if (number < 2):
+        return False
+    elif (number == 2):
+        return True
+    elif (number %2 == 0):
+        return False # If number is even
+    else:
+        for i in range(2, number / 2):
+            if (number % i == 0):
+                return False
+        return True
+
+def main():
+    totalCount, totalPrime = 0, 0
+    while (totalPrime < 10001):
+        totalCount += 1
+        if (isPrime(totalCount)):
+            totalPrime += 1
+    print('The 10001st prime number is: %i' % (totalCount))
+
+if __name__ == "__main__":
+    main()</code>
+<p style="text-align: justify;">E o resultado:</p>
+<code>0m58.333s</code>
+<p style="text-align: justify;">Agora sim, só com pequenas mudanças o algoritmo rodou quase DOIS minutos mais rápido, ou seja, o segundo algoritmo levou apenas 34% do tempo que o primeiro algoritmo levou. Estou começando a gostar deste algoritmo =). mas vamos em frente!</p>
+<p style="text-align: justify;">Agora vou considerar o seguinte: Se o número não é par, então ele não pode ser dividido por 2, então não vou tentar a divisão por outros pares, ou seja, agora o algoritmo incrementa a variável i de dois em dois e é iniciada em 3 e não mais em 2:</p>
+<code lang="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Problem 7
+# http://projecteuler.net/index.php?section=problems&id=7
+#
+# Solved by Evaldo Junior <junior@casoft.info>
+# April, 8th - 2010
+#
+# Updated April, 10th - 2010
+#
+def isPrime(number):
+    if (number < 2):
+        return False
+    elif (number == 2):
+        return True
+    elif (number %2 == 0):
+        return False # If number is even
+    else:
+        for i in range(3, number / 2, 2):
+            if (number % i == 0):
+                return False
+        return True
+
+def main():
+    totalCount, totalPrime = 0, 0
+    while (totalPrime < 10001):
+        totalCount += 1
+        if (isPrime(totalCount)):
+            totalPrime += 1
+    print('The 10001st prime number is: %i' % (totalCount))
+
+if __name__ == "__main__":
+    main()
+</code>
+<p style="text-align: justify;">O resultado? Olha só:</p>
+<code>0m27.380s</code>
+<p style="text-align: justify;">Menos da metade do tempo que o algoritmo anterior!</p>
+<p style="text-align: justify;">Bem, agora chega. Quem sabe depois eu melhoro o esse algoritmo de calcular os primos e consigo chegar em na casa dos 10 segundos?</p>
+<p style="text-align: justify;">Quer tentar também? Acesse o site do <a title="Project Euler" href="http://projecteuler.net/" target="_blank">Project Euler</a>, veja os problemas e boa sorte!</p>
+<p style="text-align: justify;"><strong>UPDATE</strong></p>
+<p style="text-align: justify;">Eu esqueci de falar como eu faço para medir o tempo de execução dos scripts... Para fazer essa medição eu uso o comando <strong>time</strong>, veja um exemplo:</p>
+<code>$ time ./script.py</code>
+<p style="text-align: justify;">Valeu por perguntar, <a href="http://www.w3css.blogspot.com/" title="W3CSS" target="_blank">Guido</a>.</p>
+<p style="text-align: justify;">InFog</p>
