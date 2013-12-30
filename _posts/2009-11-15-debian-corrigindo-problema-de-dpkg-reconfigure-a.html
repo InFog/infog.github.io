@@ -18,18 +18,18 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/2v98rbu
   _sexybookmarks_permaHash: c864c076e5676daee2c4904097e43f1d
 ---
-<p style="text-align: justify;">Olá pessoal!</p>
-<p style="text-align: justify;">Hoje vai dar uma dica para quem usa Debian e seus derivados, como o Ubuntu.</p>
-<p style="text-align: justify;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2009/11/debian-grolsch-vector.png"><img class="aligncenter size-full wp-image-730" title="debian premium distro" src="http://evaldojunior.com.br/blog/wp-content/uploads/2009/11/debian-grolsch-vector.png" alt="debian premium distro" width="418" height="364" /></a></p>
-<p style="text-align: justify;">Imagine-se realizando qualquer operação que envolva o sistema de pacotes do Debian, o dpkg, e de repente a energia acaba, o kernel trava, você fecha o terminal, ou qualquer coisa aconteça que interrompa o dpkg. Quando você voltar a usar o dpkg, com apt-get, aptitude, synaptics, etc, ele vai perceber que o dpkg foi interrompido e vai lhe dizer que para voltar a usar o dpkg você precisa executar o "dpkg --reconfigure -a" ou "dpkg-reconfigure -a".</p>
-<p style="text-align: justify;">O problema com o reconfigurar todos os pacotes é que é um processo demorado e, acima de tudo, não necessário. Então como corrigir o sistema de pacotes sem executar esse reconfigurador?</p>
-<p style="text-align: justify;">O dpkg utiliza o arquivo "/var/log/dpkg.log" para fazer o log de suas ações. E o legal é que o dpkg diz o que vai fazer através deste arquivo. Aí que começa a solução do problema pois basta ver o que o dpkg estava fazendo quando foi interrompido.</p>
-<p style="text-align: justify;">Agora é necessário verificar o arquivo "/var/log/dpkg.log". Isso pode ser feito usando um cat:</p>
-
-<pre style="text-align: justify;">cat /var/log/dpkg.log</pre>
-<p style="text-align: justify;">A última linha deste arquivo vai conter o nome do pacote que ficou sem configuração. Vamos dizer que a última linha desse arquivo de log diz que o pacote "menu 2.1.42" não foi completamente instalado. Ele diz isso com uma linha que diz "half-configured menu 2.1.42". Então agora é necessário terminar de instalar este pacote. Para fazer isso vá ao diretório "/var/cache/apt/archives", procure o pacote que não foi instalado e então faça a instalação dele com um dpkg:</p>
-
-<pre style="text-align: justify;">dpkg -i pacote.deb</pre>
-<p style="text-align: justify;">Depois disso já será possível voltar às operações normais com sua interface preferida do dpkg, eu recomendo o <a title="Drops Aptitude" href="http://evaldojunior.com.br/blog/?p=17" target="_blank">aptitude</a>.</p>
-<p style="text-align: justify;">Por hoje é só!</p>
+<p style="text-align: justify;">Olá pessoal!</p><br />
+<p style="text-align: justify;">Hoje vai dar uma dica para quem usa Debian e seus derivados, como o Ubuntu.</p><br />
+<p style="text-align: justify;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2009/11/debian-grolsch-vector.png"><img class="aligncenter size-full wp-image-730" title="debian premium distro" src="http://evaldojunior.com.br/blog/wp-content/uploads/2009/11/debian-grolsch-vector.png" alt="debian premium distro" width="418" height="364" /></a></p><br />
+<p style="text-align: justify;">Imagine-se realizando qualquer operação que envolva o sistema de pacotes do Debian, o dpkg, e de repente a energia acaba, o kernel trava, você fecha o terminal, ou qualquer coisa aconteça que interrompa o dpkg. Quando você voltar a usar o dpkg, com apt-get, aptitude, synaptics, etc, ele vai perceber que o dpkg foi interrompido e vai lhe dizer que para voltar a usar o dpkg você precisa executar o "dpkg --reconfigure -a" ou "dpkg-reconfigure -a".</p><br />
+<p style="text-align: justify;">O problema com o reconfigurar todos os pacotes é que é um processo demorado e, acima de tudo, não necessário. Então como corrigir o sistema de pacotes sem executar esse reconfigurador?</p><br />
+<p style="text-align: justify;">O dpkg utiliza o arquivo "/var/log/dpkg.log" para fazer o log de suas ações. E o legal é que o dpkg diz o que vai fazer através deste arquivo. Aí que começa a solução do problema pois basta ver o que o dpkg estava fazendo quando foi interrompido.</p><br />
+<p style="text-align: justify;">Agora é necessário verificar o arquivo "/var/log/dpkg.log". Isso pode ser feito usando um cat:</p><br />
+<br />
+<pre style="text-align: justify;">cat /var/log/dpkg.log</pre><br />
+<p style="text-align: justify;">A última linha deste arquivo vai conter o nome do pacote que ficou sem configuração. Vamos dizer que a última linha desse arquivo de log diz que o pacote "menu 2.1.42" não foi completamente instalado. Ele diz isso com uma linha que diz "half-configured menu 2.1.42". Então agora é necessário terminar de instalar este pacote. Para fazer isso vá ao diretório "/var/cache/apt/archives", procure o pacote que não foi instalado e então faça a instalação dele com um dpkg:</p><br />
+<br />
+<pre style="text-align: justify;">dpkg -i pacote.deb</pre><br />
+<p style="text-align: justify;">Depois disso já será possível voltar às operações normais com sua interface preferida do dpkg, eu recomendo o <a title="Drops Aptitude" href="http://evaldojunior.com.br/blog/?p=17" target="_blank">aptitude</a>.</p><br />
+<p style="text-align: justify;">Por hoje é só!</p><br />
 <p style="text-align: justify;">InFog</p>

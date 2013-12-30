@@ -15,33 +15,33 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/28yf4ow
   _sexybookmarks_permaHash: abb81249a88920da5559cea5ed031325
 ---
-
-<p align="justify">Olá, bem vindo ao Drops Aptitude 0.1, nesta versão vou responder algumas dúvidas quanto ao Aptitude.</p>
-<p align="justify">Bom, primeiro eu devo dizer o que Aptitude não é um gerenciador de pacotes do Debian, e sim mais uma interface para o APT (Advanced Packaging Tool), que é o sistema em si. Assim como o Aptitude, existe o apt-get, Synaptic, etc, todos eles manipulam os pacotes do Debian utilizando o APT.</p>
-<p align="justify">Mas vamos lá, porque utilizar o Aptitude e não o famoso apt-get?</p>
-<!--adsense#propaganda-->
-<p align="justify">Bem, podemos dizer que o Aptitude é mais limpo, ele não gosta de deixar a sujeira para trás... como assim? Vou utilizar um exemplo:</p>
-<p align="justify">Vamos supor que o sistema não tem pacote nenhum instalado (isso não existe, é claro), e eu quero instalar o Gnome para gerenciar meu desktop, então faço o seguinte:</p>
-<p align="justify"><font color="#008000"># apt-get install gnome</font></p>
-<p align="justify">Então o apt-get me dirá:</p>
-<p align="justify"><font color="#0000ff">"Oi, eu sei que você quer o Gnome, mas ele não roda sem um cara chamado GTK, posso instalar os dois para você?".</font></p>
-<p align="justify">Então você diz "tudo bem" e ele manda bala. Com isso seu sistema vai ficar assim:</p>
-<p align="justify">Pacotes: Gnome, Gtk.</p>
-<p align="justify">Ok, passa um tempo e eu quero mudar para o KDE, então digo ao atp-get:</p>
-<p align="justify"><font color="#008000"># apt-get install KDE</font></p>
-<p align="justify">E ele retorna: <font color="#0000ff">"Tudo bem, mas esse KDE exige um tal de QT, certo?".</font></p>
-<p align="justify">Você diz para ele instalar o KDE e o QT, e tudo vai bem, e seu sistema fica assim:</p>
-<p align="justify">Pacotes: Gnome, Gtk, Kde, Qt.</p>
-<p align="justify">Eu não preciso mais do Gnome, então vou removê-lo para não ocupar espaço em meu disco:</p>
-<p align="justify"><font color="#008000"># apt-get remove gnome</font></p>
-<p align="justify">Com isso o apt-get irá remover o pacote gnome, mas a "sujeira", o gtk, continuará lá, inútil, e o sistema ficaria assim:</p>
-<p align="justify">Pacotes, Gtk, Kde, Qt.</p>
-<p align="justify">Aqui pode parecer pouco, mas pense nos megas de pacotes adicionais para satisfazer dependências inúteis, fora que você ficaria com um pacote extra, que dependeria de atualizações de segurança e etc.</p>
-<p align="justify">Já o Aptitude faria algo assim:</p>
-<p align="justify">Pacotes: Gtk-&gt;Gnome, Qt-&gt;Kde.</p>
-<p align="justify">Então ele "pensa" da seguinte forma: <font color="#0000ff">"Se eu remover o Gnome o Gtk não será mais dependencia para outros pacotes, hum, poderei removê-lo também"</font>. Ou seja, um:</p>
-<p align="justify"><font color="#008000"># aptitude remove gnome</font></p>
-<p align="justify">Removeria também as dependências do Gnome que não são dependências para mais ninguém, com isso o sistema se mantém mais limpo, sem pacotes desnecessários. Mas é importante dizer que o Aptitude apenas remove as dependências dos pacotes que ele instalou, ou seja, não adianta instalar com o apt-get e depois querer que o Aptitude limpe a bagunça =)</p>
-<p align="justify">Por enquanto é só pessoal!</p>
-<p align="justify">Assine o <a href="http://feeds.feedburner.com/casoft/RhIq">Feed</a> para ficar por dentro dos Drops Aptitude.</p>
+<br />
+<p align="justify">Olá, bem vindo ao Drops Aptitude 0.1, nesta versão vou responder algumas dúvidas quanto ao Aptitude.</p><br />
+<p align="justify">Bom, primeiro eu devo dizer o que Aptitude não é um gerenciador de pacotes do Debian, e sim mais uma interface para o APT (Advanced Packaging Tool), que é o sistema em si. Assim como o Aptitude, existe o apt-get, Synaptic, etc, todos eles manipulam os pacotes do Debian utilizando o APT.</p><br />
+<p align="justify">Mas vamos lá, porque utilizar o Aptitude e não o famoso apt-get?</p><br />
+<!--adsense#propaganda--><br />
+<p align="justify">Bem, podemos dizer que o Aptitude é mais limpo, ele não gosta de deixar a sujeira para trás... como assim? Vou utilizar um exemplo:</p><br />
+<p align="justify">Vamos supor que o sistema não tem pacote nenhum instalado (isso não existe, é claro), e eu quero instalar o Gnome para gerenciar meu desktop, então faço o seguinte:</p><br />
+<p align="justify"><font color="#008000"># apt-get install gnome</font></p><br />
+<p align="justify">Então o apt-get me dirá:</p><br />
+<p align="justify"><font color="#0000ff">"Oi, eu sei que você quer o Gnome, mas ele não roda sem um cara chamado GTK, posso instalar os dois para você?".</font></p><br />
+<p align="justify">Então você diz "tudo bem" e ele manda bala. Com isso seu sistema vai ficar assim:</p><br />
+<p align="justify">Pacotes: Gnome, Gtk.</p><br />
+<p align="justify">Ok, passa um tempo e eu quero mudar para o KDE, então digo ao atp-get:</p><br />
+<p align="justify"><font color="#008000"># apt-get install KDE</font></p><br />
+<p align="justify">E ele retorna: <font color="#0000ff">"Tudo bem, mas esse KDE exige um tal de QT, certo?".</font></p><br />
+<p align="justify">Você diz para ele instalar o KDE e o QT, e tudo vai bem, e seu sistema fica assim:</p><br />
+<p align="justify">Pacotes: Gnome, Gtk, Kde, Qt.</p><br />
+<p align="justify">Eu não preciso mais do Gnome, então vou removê-lo para não ocupar espaço em meu disco:</p><br />
+<p align="justify"><font color="#008000"># apt-get remove gnome</font></p><br />
+<p align="justify">Com isso o apt-get irá remover o pacote gnome, mas a "sujeira", o gtk, continuará lá, inútil, e o sistema ficaria assim:</p><br />
+<p align="justify">Pacotes, Gtk, Kde, Qt.</p><br />
+<p align="justify">Aqui pode parecer pouco, mas pense nos megas de pacotes adicionais para satisfazer dependências inúteis, fora que você ficaria com um pacote extra, que dependeria de atualizações de segurança e etc.</p><br />
+<p align="justify">Já o Aptitude faria algo assim:</p><br />
+<p align="justify">Pacotes: Gtk-&gt;Gnome, Qt-&gt;Kde.</p><br />
+<p align="justify">Então ele "pensa" da seguinte forma: <font color="#0000ff">"Se eu remover o Gnome o Gtk não será mais dependencia para outros pacotes, hum, poderei removê-lo também"</font>. Ou seja, um:</p><br />
+<p align="justify"><font color="#008000"># aptitude remove gnome</font></p><br />
+<p align="justify">Removeria também as dependências do Gnome que não são dependências para mais ninguém, com isso o sistema se mantém mais limpo, sem pacotes desnecessários. Mas é importante dizer que o Aptitude apenas remove as dependências dos pacotes que ele instalou, ou seja, não adianta instalar com o apt-get e depois querer que o Aptitude limpe a bagunça =)</p><br />
+<p align="justify">Por enquanto é só pessoal!</p><br />
+<p align="justify">Assine o <a href="http://feeds.feedburner.com/casoft/RhIq">Feed</a> para ficar por dentro dos Drops Aptitude.</p><br />
 <p align="justify">InFog</p>

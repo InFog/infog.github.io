@@ -18,73 +18,73 @@ published: true
 meta:
   _edit_last: '1'
 ---
-Olá, pessoal!
-
-O pessoal que me acompanha pelo Twitter e que segue o blog já deve saber que sou um feliz usuário do CodeIgniter há mais de um ano. Este é um excelente framework para desenvolvimento WEB com PHP e me orgulho bastante de alguns resultados que temos alcançado com ele na CaSoft.
-
-<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2011/07/pyphp.png"><img class="aligncenter size-full wp-image-1055" title="pyphp" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/07/pyphp.png" alt="" width="369" height="150" /></a>
-
-Mas nem tudo são flores no mundo PHP e quanto mais estudo outros linguagens, mais me vejo insatisfeito com alguns detalhes do PHP...
-
-Alguns coisas tão bobas, alguns detalhes tão pequenos... Mas que me fazem ver com bons olhos as soluções que o pessoal do Python criou.
-
-Um exemplo? Ok, vamos lá... Olhe as formas de ler um arquivo:
-
-Em PHP:
-
-<code lang="php">
-<?php
-// lê o conteúdo do arquivo para uma string
-$filename = "/usr/local/qualquer.txt";
-$handle = fopen ($filename, "r");
-$conteudo = fread ($handle, filesize ($filename));
-fclose ($handle);
-?>
-</code>
-
-Em Python:
-
-<code lang="python">
-# lê o conteúdo do arquivo para uma lista:
-arquivo = open("/usr/local/qualquer.txt", "r")
-conteudo = arquivo.readlines()
-arquivo.close()
-</code>
-
-Viu a diferença? É bem melhor usar o handler para manipular o arquivo usando métodos do objeto e não funções que recebem o handler como parâmetro. Agora um exemplo com strings:
-
-Em PHP:
-
-<code lang="php">
-<?php
-$texto = "Dinamite Pangalática";
-echo str_replace("Pangalática", "Pangaláctica", $texto);
-?>
-</code>
-
-Em Python:
-
-<code lang="python">
-texto = "Dinamite Pangalática"
-print texto.replace("Pangalática", "Pangaláctica")
-</code>
-
-Com Python as strings são objetos, e estes objetos possuem métodos. Nada de usar várias funções e passar as strings como parâmetro.
-
-Isso pode até parecer pouco, mas experimenta brincar com o curl... É um tal de passar handler para lá e para cá que é brincadeira...
-
-<del>Nem vou falar de Namespaces com barras invertidas...</del>
-
-Bem, antes de continuar eu quero deixar bem claro que eu gosto muito do PHP e vou continuar trabalhando com esta linguagem e também com o CodeIgniter. O que estou fazendo atualmente é a migração de um projeto apenas e, se der certo, farei mais alguns, mas é importante ressaltar que eu não estou desmerecendo o PHP nem querendo me livrar dele, apenas quero mais opções =)
-
-Então vamos à migração!
-<h2>Dia 1</h2>
-O primeiro passo foi remover o core do CodeIgniter e iniciar o projeto Django. Aproveitei para mover arquivos de JavaScript, CSS e imagens para um diretório "media".
-
-O segundo passo foi mapear o banco para o ORM do Django. Esse até que foi fácil, o projeto ainda é pequeno e os relacionamentos entre <del>as tabelas</del> os objetos é simples.
-
-Ufa.. Este foi o primeiro dia... Noite... Pouco mais de uma hora de trabalho e ainda não migrei todos os modelos de dados...
-
-Depois volto com mais atualizações sobre esta saga!
-
+Olá, pessoal!<br />
+<br />
+O pessoal que me acompanha pelo Twitter e que segue o blog já deve saber que sou um feliz usuário do CodeIgniter há mais de um ano. Este é um excelente framework para desenvolvimento WEB com PHP e me orgulho bastante de alguns resultados que temos alcançado com ele na CaSoft.<br />
+<br />
+<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2011/07/pyphp.png"><img class="aligncenter size-full wp-image-1055" title="pyphp" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/07/pyphp.png" alt="" width="369" height="150" /></a><br />
+<br />
+Mas nem tudo são flores no mundo PHP e quanto mais estudo outros linguagens, mais me vejo insatisfeito com alguns detalhes do PHP...<br />
+<br />
+Alguns coisas tão bobas, alguns detalhes tão pequenos... Mas que me fazem ver com bons olhos as soluções que o pessoal do Python criou.<br />
+<br />
+Um exemplo? Ok, vamos lá... Olhe as formas de ler um arquivo:<br />
+<br />
+Em PHP:<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+// lê o conteúdo do arquivo para uma string<br />
+$filename = "/usr/local/qualquer.txt";<br />
+$handle = fopen ($filename, "r");<br />
+$conteudo = fread ($handle, filesize ($filename));<br />
+fclose ($handle);<br />
+?><br />
+</code><br />
+<br />
+Em Python:<br />
+<br />
+<code lang="python"><br />
+# lê o conteúdo do arquivo para uma lista:<br />
+arquivo = open("/usr/local/qualquer.txt", "r")<br />
+conteudo = arquivo.readlines()<br />
+arquivo.close()<br />
+</code><br />
+<br />
+Viu a diferença? É bem melhor usar o handler para manipular o arquivo usando métodos do objeto e não funções que recebem o handler como parâmetro. Agora um exemplo com strings:<br />
+<br />
+Em PHP:<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+$texto = "Dinamite Pangalática";<br />
+echo str_replace("Pangalática", "Pangaláctica", $texto);<br />
+?><br />
+</code><br />
+<br />
+Em Python:<br />
+<br />
+<code lang="python"><br />
+texto = "Dinamite Pangalática"<br />
+print texto.replace("Pangalática", "Pangaláctica")<br />
+</code><br />
+<br />
+Com Python as strings são objetos, e estes objetos possuem métodos. Nada de usar várias funções e passar as strings como parâmetro.<br />
+<br />
+Isso pode até parecer pouco, mas experimenta brincar com o curl... É um tal de passar handler para lá e para cá que é brincadeira...<br />
+<br />
+<del>Nem vou falar de Namespaces com barras invertidas...</del><br />
+<br />
+Bem, antes de continuar eu quero deixar bem claro que eu gosto muito do PHP e vou continuar trabalhando com esta linguagem e também com o CodeIgniter. O que estou fazendo atualmente é a migração de um projeto apenas e, se der certo, farei mais alguns, mas é importante ressaltar que eu não estou desmerecendo o PHP nem querendo me livrar dele, apenas quero mais opções =)<br />
+<br />
+Então vamos à migração!<br />
+<h2>Dia 1</h2><br />
+O primeiro passo foi remover o core do CodeIgniter e iniciar o projeto Django. Aproveitei para mover arquivos de JavaScript, CSS e imagens para um diretório "media".<br />
+<br />
+O segundo passo foi mapear o banco para o ORM do Django. Esse até que foi fácil, o projeto ainda é pequeno e os relacionamentos entre <del>as tabelas</del> os objetos é simples.<br />
+<br />
+Ufa.. Este foi o primeiro dia... Noite... Pouco mais de uma hora de trabalho e ainda não migrei todos os modelos de dados...<br />
+<br />
+Depois volto com mais atualizações sobre esta saga!<br />
+<br />
 InFog

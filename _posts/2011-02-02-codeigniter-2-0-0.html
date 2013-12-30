@@ -20,48 +20,48 @@ meta:
   _wp_old_slug: ''
   _sexybookmarks_permaHash: d6222ea6f6f287e930d10a8346ca2acc
 ---
-<p style="text-align: justify;">Olá, pessoal!</p>
-<p style="text-align: justify;">No dia 28 de janeiro de 2011 foi <a title="Lançado CodeIgniter 2.0.0" href="http://codeigniter.com/news/codeigniter_2.0.0_released/" target="_blank">lançada a tão esperada versão 2.0.0</a> do <a title="Site do CodeIgniter" href="http://codeigniter.com/" target="_blank">CodeIgniter</a>, um ótimo framework MVC para PHP.</p>
-<p style="text-align: justify;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2011/02/code_igniter1.png"><img class="aligncenter size-full wp-image-984" title="code_igniter" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/02/code_igniter1.png" alt="" width="193" height="157" /></a>Eu já venho usando este Framework a quase um ano e sempre encontro algo novo nele para melhorar o desenvolvimento dos projetos aqui na <a title="Site da CaSoft" href="http://casoft.info/" target="_blank">CaSoft</a>.</p>
-<p style="text-align: justify;">Então, vamos às principais novidades:</p>
-
-<ul>
-	<li>O CodeIgniter foi separado em dois, Core e Reactor. O Core é a versão mantida pela EllisLab, com base no Reactor, que é tocado por uma comunidade.</li>
-	<li>Tchau, tchau PHP4... A partir de agora o CodeIgniter tem como requisito o PHP 5.1.</li>
-	<li>O Scaffolding se foi, eu não usava mesmo =)</li>
-	<li>O diretório '<strong>application</strong>' está na raíz e não no diretório '<strong>system</strong>'.</li>
-	<li>Agora todas as classes do CodeIgniter são precedidas por '<strong>CI_</strong>', ou seja:</li>
-</ul>
-<code lang="php">
-# Isso não vale mais:
-class Meu_controller extends Controller {
-    public function Meu_controller() {
-        parent::Controller();
-    }
-}
-# Agora é assim:
-class Meu_controller extends CI_Controller {
-    public function __construct() {
-        parent::__construct();
-    }
-}
-# O mesmo para models
-class Clientes_model extends CI_Model {
-    public function __construct() {
-        parent::__construct();
-    }
-}
-</code>
-<ul>
-	<li>Agora ele exibe a linha do código PHP que executou algum código SQL com erro, antes ele mostrava apenas o erro de SQL.</li>
-	<li>Os Plugins foram jogados para escanteio, agora são usados apenas os Helpers.</li>
-	<li>Existe uma nova estrura chamada <a title="Drivers do CodeIgniter" href="http://codeigniter.com/user_guide/general/drivers.html" target="_blank">Drivers</a>, onde você pode criar classes e várias subclasses e ao instanciar a classe principal você já tem as classes filhas instanciadas como atributos. Ainda não vi uma utilidade prática para isso, mas achei interessante.</li>
-	<li>O text_helper agora tem uma fnção bem legal: convert_accented_characters() para remover a acentuação.</li>
-</ul>
-Bem tem muito mais no <a title="Changelog" href="http://codeigniter.com/user_guide/changelog.html" target="_blank">Changelog da versão 2.0.0</a> do CodeIgniter, vale a pena dar uma boa lida.
-
-Eu acabei de começar um novo projeto usando esta versão do Framework e já me sinto em casa, tirando algumas manias como a de extender da classe Controller, que não existe mais.
-
-O CodeIgniter é um ótimo framework para PHP, recomendo muito essa nova versão.
-
+<p style="text-align: justify;">Olá, pessoal!</p><br />
+<p style="text-align: justify;">No dia 28 de janeiro de 2011 foi <a title="Lançado CodeIgniter 2.0.0" href="http://codeigniter.com/news/codeigniter_2.0.0_released/" target="_blank">lançada a tão esperada versão 2.0.0</a> do <a title="Site do CodeIgniter" href="http://codeigniter.com/" target="_blank">CodeIgniter</a>, um ótimo framework MVC para PHP.</p><br />
+<p style="text-align: justify;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2011/02/code_igniter1.png"><img class="aligncenter size-full wp-image-984" title="code_igniter" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/02/code_igniter1.png" alt="" width="193" height="157" /></a>Eu já venho usando este Framework a quase um ano e sempre encontro algo novo nele para melhorar o desenvolvimento dos projetos aqui na <a title="Site da CaSoft" href="http://casoft.info/" target="_blank">CaSoft</a>.</p><br />
+<p style="text-align: justify;">Então, vamos às principais novidades:</p><br />
+<br />
+<ul><br />
+	<li>O CodeIgniter foi separado em dois, Core e Reactor. O Core é a versão mantida pela EllisLab, com base no Reactor, que é tocado por uma comunidade.</li><br />
+	<li>Tchau, tchau PHP4... A partir de agora o CodeIgniter tem como requisito o PHP 5.1.</li><br />
+	<li>O Scaffolding se foi, eu não usava mesmo =)</li><br />
+	<li>O diretório '<strong>application</strong>' está na raíz e não no diretório '<strong>system</strong>'.</li><br />
+	<li>Agora todas as classes do CodeIgniter são precedidas por '<strong>CI_</strong>', ou seja:</li><br />
+</ul><br />
+<code lang="php"><br />
+# Isso não vale mais:<br />
+class Meu_controller extends Controller {<br />
+    public function Meu_controller() {<br />
+        parent::Controller();<br />
+    }<br />
+}<br />
+# Agora é assim:<br />
+class Meu_controller extends CI_Controller {<br />
+    public function __construct() {<br />
+        parent::__construct();<br />
+    }<br />
+}<br />
+# O mesmo para models<br />
+class Clientes_model extends CI_Model {<br />
+    public function __construct() {<br />
+        parent::__construct();<br />
+    }<br />
+}<br />
+</code><br />
+<ul><br />
+	<li>Agora ele exibe a linha do código PHP que executou algum código SQL com erro, antes ele mostrava apenas o erro de SQL.</li><br />
+	<li>Os Plugins foram jogados para escanteio, agora são usados apenas os Helpers.</li><br />
+	<li>Existe uma nova estrura chamada <a title="Drivers do CodeIgniter" href="http://codeigniter.com/user_guide/general/drivers.html" target="_blank">Drivers</a>, onde você pode criar classes e várias subclasses e ao instanciar a classe principal você já tem as classes filhas instanciadas como atributos. Ainda não vi uma utilidade prática para isso, mas achei interessante.</li><br />
+	<li>O text_helper agora tem uma fnção bem legal: convert_accented_characters() para remover a acentuação.</li><br />
+</ul><br />
+Bem tem muito mais no <a title="Changelog" href="http://codeigniter.com/user_guide/changelog.html" target="_blank">Changelog da versão 2.0.0</a> do CodeIgniter, vale a pena dar uma boa lida.<br />
+<br />
+Eu acabei de começar um novo projeto usando esta versão do Framework e já me sinto em casa, tirando algumas manias como a de extender da classe Controller, que não existe mais.<br />
+<br />
+O CodeIgniter é um ótimo framework para PHP, recomendo muito essa nova versão.<br />
+<br />
 InFog

@@ -17,50 +17,50 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/2752ukk
   _sexybookmarks_permaHash: 5e80d565ff998e812cabac5e3a2815bb
 ---
-<p align="justify">(Esse post é do ano passado, mas se aplica à instalação do novo Firefox 3)</p>
-<p align="justify">Muitos usuários do <a href="http://www.debian.org" target="_blank">Debian</a> ficaram descontentes quando o <a href="http://www.firefox.com" target="_blank">Firefox</a> foi retirado da distribuição dando lugar ao <a href="http://www.geticeweasel.org/" target="_blank">Iceweasel</a>. O Iceweasel nada mais é que o Firefox recompilado pelo projeto GNU, sem as marcas e logos comerciais da Mozilla.</p>
-<p align="justify">Qual é o problema do Iceweasel? Nenhum a meu ver, e teoricamente os plugins do Firefox deveriam funcionar bem nele. Mas na prática não é bem assim, existem extensões que funcionam apenas no Firefox, e existem alguns sites que reconhecem bem o Firefox, o IE e em alguns casos o Opera, mas poucos também checam se o visitante está usando o Iceweasel, o que daria um bonus para o desenvolvedor WEB já que ele teria dois browser "idênticos" apenas com nomes diferentes. Outra coisa que é possível fazer é dar ao Iceweasel uma espécie e identidade falsa para que ele se passe pelo Firefox (veja <a href="http://www.geticeweasel.org/useragent/" target="_blank">aqui</a>).</p>
-<!--adsense#propaganda-->
-<p align="justify">Eu ainda prefiro o Firefox mesmo, mas é apenas por costume, pois o Iceweasel com o user agent alterado faz um ótimo trabalho.</p>
-<p align="justify">Existem modos bem simples para usar o Firefox no lugar do Iceweasel. E em primeiro lugar é necessário remover o Iceweasel, ou não, até é possível usar os dois ao mesmo tempo, mas eles usam alguns arquivos de configuração em comum, e isso pode gerar dores de cabeça.</p>
-<p align="justify">Instalar o Firefox nas distribuições que adotaram o Iceweasel, como o Debian, é relativamente fácil. Basta baixar a versão mais atual do Firefox, descompactar o pacote e começar a usar e no máximo criar um ícone para ele no menu. Mas aí podem começar os problemas... Fazer um novo ícone para cada novo usuário, ou para todos os usuários da máquina, ou as atualizações do Firefox que podem não ser realizadas se a o diretório do Firefox não tiver permissões suficientes para isso.</p>
-<p align="justify">Mas tudo isso é muito fácil de ser resolvido. Basta que, como root, você descompacte o Firefox (se for um tar.bz use o comando 'tar -xvjf arquivo.tar.bz2) em um diretório que todos terão acesso depois. No meu caso esse diretório é a /usr/local/firefox, nesse lugar fica fácil de lembrar onde ele está já que esse diretório (/usr/local) é feito para instalar softwares extras e em geral sem pacotes para a distribuição. Agora você pode fazer a coisa de dois modos: O primeiro é criar um grupo que pode atualizar o Firefox, já o segundo é permitir que todos o atualizem. A primeira opção é mais segura, mas dependendo do seu número de usuários e da confiança neles (pode ser o micro da família) a segunda opção se torna mais prática.</p>
-<p align="justify">&lt;update&gt;</p>
-<p align="justify">Após algumas discussões com uns <a title="Fazzio" href="http://thiagofazzio.wordpress.com/" target="_blank">amigos</a>, que insistiam em dizer que o modo de instalar o Firefox deixando um grupo (ou todos os usuários) com permissão de escrita no diretório /usr/local/firefox é muito parecido com o estilo Windows(r) de trazer facilidades e atrapalhar a segurança, eu resolvi fazer esse update.</p>
-<p align="justify">Essa parte de criação do grupo ou de dar permissão de escrita para todos os usuários não precisa ser feita, aliás, nem deve ser feita, para atualizar as versões do Firefox utilize o root ou peça para o administrador da máquina fazê-lo. Um bug ou falha do Firefox que permita regravar o binário com alterações e possíveis malwares pode ser explorado de forma muito mais simples se todos os usuários têm permissão de escrita nos arquivos e binários do Firefox.</p>
-<p align="justify">Pronto, dica de segurança dada, se você quiser deixar seus usuários atualizarem o Firefox faça por sua conta e risco, o InFog já avisou e o Guariní e o Kretcheu devem estar mais contentes agora.</p>
-<p align="justify">&lt;/update&gt;</p>
-<p align="justify">Bem se você escolheu a primeira opção você precisa criar o grupo de usuários com permissão de atualização do Firefox:</p>
-<p align="justify"># addgroup  atualizafirefox</p>
-<p align="justify">Agora fazer com que a pasta seja do grupo e que tenha permissão de escrita:</p>
-<p align="justify"># chgrp atualizafirefox /usr/local/firefox -R</p>
-<p align="justify"># chmod g+w /usr/local/firefox -R</p>
-<p align="justify">Isso dará permissão não somente na pasta /usr/local/firefox, mas em todas as pastas e arquivos dentro dela. Agora basta adicionar os usuários ao grupo:</p>
-<p align="justify"># adduser usuario1 atualizafirefox</p>
-<p align="justify"># adduser usuario2 atualizafirefox</p>
-<p align="justify">Caso você opte por todos poderem atualizar basta dar uma permissão mais ampla à pasta:</p>
-<p align="justify"># chmod o+w /usr/local/firefox -R</p>
-<p align="justify">Vamos agora adicioná-lo ao menu do Gnome, para isso você vai precisar criar esse arquivo:</p>
-<p align="justify">/usr/share/applications/firefox.desktop</p>
-<p align="justify">Com esse conteúdo:</p>
-
-<p align="justify">[Desktop Entry]
-Encoding=UTF-8
-Name=Navegador Web Firefox
-Comment=Navegue pela Web
-GenericName=Navegador Web
-Exec=/usr/local/firefox/firefox %u
-Terminal=false
-X-MultipleArgs=false
-Type=Application
-Icon=/usr/share/icons/ff.png
-Categories=Application;Network;
-MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vn
-d.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;i
-mage/png
-StartupWMClass=Firefox-bin
-StartupNotify=true</p>
-<p align="justify">Caso necessário modifique a codificação de UTF-8 para ISO-8859-1 que é padrão no Brasil. Em Exec vai o executável do Firefox e em Icon o ícone que será mostrado.</p>
-<p align="justify">Com isso os usuários já cadastrados e também os novos usuários já terão o Firefox no menu Internet (Definido na opção Categories).</p>
-<p align="justify">Então é isso, agora é só curtir seu Firefox.</p>
+<p align="justify">(Esse post é do ano passado, mas se aplica à instalação do novo Firefox 3)</p><br />
+<p align="justify">Muitos usuários do <a href="http://www.debian.org" target="_blank">Debian</a> ficaram descontentes quando o <a href="http://www.firefox.com" target="_blank">Firefox</a> foi retirado da distribuição dando lugar ao <a href="http://www.geticeweasel.org/" target="_blank">Iceweasel</a>. O Iceweasel nada mais é que o Firefox recompilado pelo projeto GNU, sem as marcas e logos comerciais da Mozilla.</p><br />
+<p align="justify">Qual é o problema do Iceweasel? Nenhum a meu ver, e teoricamente os plugins do Firefox deveriam funcionar bem nele. Mas na prática não é bem assim, existem extensões que funcionam apenas no Firefox, e existem alguns sites que reconhecem bem o Firefox, o IE e em alguns casos o Opera, mas poucos também checam se o visitante está usando o Iceweasel, o que daria um bonus para o desenvolvedor WEB já que ele teria dois browser "idênticos" apenas com nomes diferentes. Outra coisa que é possível fazer é dar ao Iceweasel uma espécie e identidade falsa para que ele se passe pelo Firefox (veja <a href="http://www.geticeweasel.org/useragent/" target="_blank">aqui</a>).</p><br />
+<!--adsense#propaganda--><br />
+<p align="justify">Eu ainda prefiro o Firefox mesmo, mas é apenas por costume, pois o Iceweasel com o user agent alterado faz um ótimo trabalho.</p><br />
+<p align="justify">Existem modos bem simples para usar o Firefox no lugar do Iceweasel. E em primeiro lugar é necessário remover o Iceweasel, ou não, até é possível usar os dois ao mesmo tempo, mas eles usam alguns arquivos de configuração em comum, e isso pode gerar dores de cabeça.</p><br />
+<p align="justify">Instalar o Firefox nas distribuições que adotaram o Iceweasel, como o Debian, é relativamente fácil. Basta baixar a versão mais atual do Firefox, descompactar o pacote e começar a usar e no máximo criar um ícone para ele no menu. Mas aí podem começar os problemas... Fazer um novo ícone para cada novo usuário, ou para todos os usuários da máquina, ou as atualizações do Firefox que podem não ser realizadas se a o diretório do Firefox não tiver permissões suficientes para isso.</p><br />
+<p align="justify">Mas tudo isso é muito fácil de ser resolvido. Basta que, como root, você descompacte o Firefox (se for um tar.bz use o comando 'tar -xvjf arquivo.tar.bz2) em um diretório que todos terão acesso depois. No meu caso esse diretório é a /usr/local/firefox, nesse lugar fica fácil de lembrar onde ele está já que esse diretório (/usr/local) é feito para instalar softwares extras e em geral sem pacotes para a distribuição. Agora você pode fazer a coisa de dois modos: O primeiro é criar um grupo que pode atualizar o Firefox, já o segundo é permitir que todos o atualizem. A primeira opção é mais segura, mas dependendo do seu número de usuários e da confiança neles (pode ser o micro da família) a segunda opção se torna mais prática.</p><br />
+<p align="justify">&lt;update&gt;</p><br />
+<p align="justify">Após algumas discussões com uns <a title="Fazzio" href="http://thiagofazzio.wordpress.com/" target="_blank">amigos</a>, que insistiam em dizer que o modo de instalar o Firefox deixando um grupo (ou todos os usuários) com permissão de escrita no diretório /usr/local/firefox é muito parecido com o estilo Windows(r) de trazer facilidades e atrapalhar a segurança, eu resolvi fazer esse update.</p><br />
+<p align="justify">Essa parte de criação do grupo ou de dar permissão de escrita para todos os usuários não precisa ser feita, aliás, nem deve ser feita, para atualizar as versões do Firefox utilize o root ou peça para o administrador da máquina fazê-lo. Um bug ou falha do Firefox que permita regravar o binário com alterações e possíveis malwares pode ser explorado de forma muito mais simples se todos os usuários têm permissão de escrita nos arquivos e binários do Firefox.</p><br />
+<p align="justify">Pronto, dica de segurança dada, se você quiser deixar seus usuários atualizarem o Firefox faça por sua conta e risco, o InFog já avisou e o Guariní e o Kretcheu devem estar mais contentes agora.</p><br />
+<p align="justify">&lt;/update&gt;</p><br />
+<p align="justify">Bem se você escolheu a primeira opção você precisa criar o grupo de usuários com permissão de atualização do Firefox:</p><br />
+<p align="justify"># addgroup  atualizafirefox</p><br />
+<p align="justify">Agora fazer com que a pasta seja do grupo e que tenha permissão de escrita:</p><br />
+<p align="justify"># chgrp atualizafirefox /usr/local/firefox -R</p><br />
+<p align="justify"># chmod g+w /usr/local/firefox -R</p><br />
+<p align="justify">Isso dará permissão não somente na pasta /usr/local/firefox, mas em todas as pastas e arquivos dentro dela. Agora basta adicionar os usuários ao grupo:</p><br />
+<p align="justify"># adduser usuario1 atualizafirefox</p><br />
+<p align="justify"># adduser usuario2 atualizafirefox</p><br />
+<p align="justify">Caso você opte por todos poderem atualizar basta dar uma permissão mais ampla à pasta:</p><br />
+<p align="justify"># chmod o+w /usr/local/firefox -R</p><br />
+<p align="justify">Vamos agora adicioná-lo ao menu do Gnome, para isso você vai precisar criar esse arquivo:</p><br />
+<p align="justify">/usr/share/applications/firefox.desktop</p><br />
+<p align="justify">Com esse conteúdo:</p><br />
+<br />
+<p align="justify">[Desktop Entry]<br />
+Encoding=UTF-8<br />
+Name=Navegador Web Firefox<br />
+Comment=Navegue pela Web<br />
+GenericName=Navegador Web<br />
+Exec=/usr/local/firefox/firefox %u<br />
+Terminal=false<br />
+X-MultipleArgs=false<br />
+Type=Application<br />
+Icon=/usr/share/icons/ff.png<br />
+Categories=Application;Network;<br />
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vn<br />
+d.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;i<br />
+mage/png<br />
+StartupWMClass=Firefox-bin<br />
+StartupNotify=true</p><br />
+<p align="justify">Caso necessário modifique a codificação de UTF-8 para ISO-8859-1 que é padrão no Brasil. Em Exec vai o executável do Firefox e em Icon o ícone que será mostrado.</p><br />
+<p align="justify">Com isso os usuários já cadastrados e também os novos usuários já terão o Firefox no menu Internet (Definido na opção Categories).</p><br />
+<p align="justify">Então é isso, agora é só curtir seu Firefox.</p><br />
 <p align="justify">InFog</p>

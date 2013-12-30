@@ -16,48 +16,48 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/ce2bgj
   _sexybookmarks_permaHash: d3de60baeaecfe2e48989870087ac7cc
 ---
-<p style="text-align: justify;">Olá alunos!</p>
-<p style="text-align: justify;">Como vocês podem ver o blog está de visual novo! Uhul! Ainda tenho que arrumar uns detalhes, mas no geral acho que está muito legal =)</p>
-<p style="text-align: justify;">Bem o exercício da última aula foi bem pesadinho, o pessoal teve que suar para resolver hehe, então acredito que aprenderam bastante sobre Python, teve até gente dizendo que passou a noite fazendo os exercícios e com isso aprendeu bestante. Eu fico muito feliz de ver esse tipo de coisa acontecendo, acredito que estou estimulando vocês, alunos e leitores, a aprender e crescer mais. Então vamos em frente!</p>
-<p style="text-align: justify;">Como alguns devem ter visto eu <a title="Lançamento do GeSpeak 0.3" href="http://evaldojunior.com.br/blog/?p=534" target="_blank">lancei o GeSpeak 0.3</a> nesta semana, ele é um bom exemplo do que veremos hoje, as aplicações em <a title="PyGTK" href="http://www.pygtk.org/" target="_blank">PyGTK</a>. O PyGTK usa o GTK+ para oferecer um conjunto de elementos gráficos para desenvolvimento de interfaces com o usuário. O PyGTK é multiplataforma (*nix e Windows) o que significa que seu código pode rodar sem alterações praticamente em qualquer canto. O que não é o caso do GeSpeak, já que ele utiliza comandos do Linux para algumas tarefas.</p>
-<p style="text-align: justify;">Então vamos começar com o básico, janelas e botões.</p>
-<p style="text-align: justify;">O código abaixo cria uma janela com um botão, não há, ainda qualquer tipo de ação para o botão:</p>
-
-<code lang="python">#!/usr/bin/env python
-import pygtk
-pygtk.require('2.0')
-import gtk
-janela = gtk.Window(gtk.WINDOW_TOPLEVEL)
-botao = gtk.Button("Clique aqui...")
-janela.add(botao)
-janela.show_all()
-gtk.main()</code>
-<p style="text-align: justify;">Pronto, um programinha bem simples. Ele só exibe o botão, mas vamos entender como isso funciona...</p>
-<p style="text-align: justify;">Na segunda linha estamos importando o módulo PyGTK.</p>
-<p style="text-align: justify;">Na terceira linha nós usamos a função require do PyGTK para ter certeza que estamos com um versão da família 2.x.</p>
-<p style="text-align: justify;">A quarta linha é responsável por importar o módulo GTK.</p>
-<p style="text-align: justify;">Na quinta linha é criado um objeto da classe <strong>Window</strong> do módulo <strong>gtk</strong>.</p>
-<p style="text-align: justify;">Na sexta linha é criado um botão usando a classe <strong>Button</strong>.</p>
-<p style="text-align: justify;">Na sétima linha adicionamos o botão à janela usando a função <strong>add()</strong> da classe <strong>Window</strong>.</p>
-<p style="text-align: justify;">A oitava linha serve para exibir a janela e tudo o que está dentro dela, com a função <strong>show_all()</strong>.</p>
-<p style="text-align: justify;">E na nona linha chamamos o looping principal do GTK com a função <strong>main()</strong>.</p>
-<p style="text-align: justify;">Agora vou mostrar um exemplo em que o clique do botão dispara uma função que exibirá "Hello World" no terminal:</p>
-
-<code lang="python">#!/usr/bin/env python
-import pygtk
-#pygtk.require('2.0')
-import gtk
-def ola_mundo(widget):
-    print "Hello World"
-janela = gtk.Window(gtk.WINDOW_TOPLEVEL)
-botao = gtk.Button("Clique aqui...")
-botao.connect('clicked', ola_mundo)
-janela.add(botao)
-janela.show_all()
-gtk.main()</code>
-
-<p style="text-align: justify;">Vejam que agora a função <strong>connect()</strong> é usada para "conectar" o sinal "<strong>clicked</strong>" do botão à função <strong>ola_mundo()</strong>.</p>
-<p style="text-align: justify;">Bem por enquanto é isso. Na semana que vem teremos mais, recomendo que todos leia o artigo "<a title="Mantendo a Sanidade com o Glade" href="http://www.cin.ufpe.br/~cinlug/wiki/index.php/Mantendo_A_Sanidade_Com_O_Glade" target="_blank">Mantendo a Sanidade com o Glade</a>", pois no começo dele é explicado como o GTK trabalha, leiam sobre os sinais e também a parte "Explodindo Coisas".</p>
-
-<h3 style="text-align: justify;">Lição de Casa</h3>
+<p style="text-align: justify;">Olá alunos!</p><br />
+<p style="text-align: justify;">Como vocês podem ver o blog está de visual novo! Uhul! Ainda tenho que arrumar uns detalhes, mas no geral acho que está muito legal =)</p><br />
+<p style="text-align: justify;">Bem o exercício da última aula foi bem pesadinho, o pessoal teve que suar para resolver hehe, então acredito que aprenderam bastante sobre Python, teve até gente dizendo que passou a noite fazendo os exercícios e com isso aprendeu bestante. Eu fico muito feliz de ver esse tipo de coisa acontecendo, acredito que estou estimulando vocês, alunos e leitores, a aprender e crescer mais. Então vamos em frente!</p><br />
+<p style="text-align: justify;">Como alguns devem ter visto eu <a title="Lançamento do GeSpeak 0.3" href="http://evaldojunior.com.br/blog/?p=534" target="_blank">lancei o GeSpeak 0.3</a> nesta semana, ele é um bom exemplo do que veremos hoje, as aplicações em <a title="PyGTK" href="http://www.pygtk.org/" target="_blank">PyGTK</a>. O PyGTK usa o GTK+ para oferecer um conjunto de elementos gráficos para desenvolvimento de interfaces com o usuário. O PyGTK é multiplataforma (*nix e Windows) o que significa que seu código pode rodar sem alterações praticamente em qualquer canto. O que não é o caso do GeSpeak, já que ele utiliza comandos do Linux para algumas tarefas.</p><br />
+<p style="text-align: justify;">Então vamos começar com o básico, janelas e botões.</p><br />
+<p style="text-align: justify;">O código abaixo cria uma janela com um botão, não há, ainda qualquer tipo de ação para o botão:</p><br />
+<br />
+<code lang="python">#!/usr/bin/env python<br />
+import pygtk<br />
+pygtk.require('2.0')<br />
+import gtk<br />
+janela = gtk.Window(gtk.WINDOW_TOPLEVEL)<br />
+botao = gtk.Button("Clique aqui...")<br />
+janela.add(botao)<br />
+janela.show_all()<br />
+gtk.main()</code><br />
+<p style="text-align: justify;">Pronto, um programinha bem simples. Ele só exibe o botão, mas vamos entender como isso funciona...</p><br />
+<p style="text-align: justify;">Na segunda linha estamos importando o módulo PyGTK.</p><br />
+<p style="text-align: justify;">Na terceira linha nós usamos a função require do PyGTK para ter certeza que estamos com um versão da família 2.x.</p><br />
+<p style="text-align: justify;">A quarta linha é responsável por importar o módulo GTK.</p><br />
+<p style="text-align: justify;">Na quinta linha é criado um objeto da classe <strong>Window</strong> do módulo <strong>gtk</strong>.</p><br />
+<p style="text-align: justify;">Na sexta linha é criado um botão usando a classe <strong>Button</strong>.</p><br />
+<p style="text-align: justify;">Na sétima linha adicionamos o botão à janela usando a função <strong>add()</strong> da classe <strong>Window</strong>.</p><br />
+<p style="text-align: justify;">A oitava linha serve para exibir a janela e tudo o que está dentro dela, com a função <strong>show_all()</strong>.</p><br />
+<p style="text-align: justify;">E na nona linha chamamos o looping principal do GTK com a função <strong>main()</strong>.</p><br />
+<p style="text-align: justify;">Agora vou mostrar um exemplo em que o clique do botão dispara uma função que exibirá "Hello World" no terminal:</p><br />
+<br />
+<code lang="python">#!/usr/bin/env python<br />
+import pygtk<br />
+#pygtk.require('2.0')<br />
+import gtk<br />
+def ola_mundo(widget):<br />
+    print "Hello World"<br />
+janela = gtk.Window(gtk.WINDOW_TOPLEVEL)<br />
+botao = gtk.Button("Clique aqui...")<br />
+botao.connect('clicked', ola_mundo)<br />
+janela.add(botao)<br />
+janela.show_all()<br />
+gtk.main()</code><br />
+<br />
+<p style="text-align: justify;">Vejam que agora a função <strong>connect()</strong> é usada para "conectar" o sinal "<strong>clicked</strong>" do botão à função <strong>ola_mundo()</strong>.</p><br />
+<p style="text-align: justify;">Bem por enquanto é isso. Na semana que vem teremos mais, recomendo que todos leia o artigo "<a title="Mantendo a Sanidade com o Glade" href="http://www.cin.ufpe.br/~cinlug/wiki/index.php/Mantendo_A_Sanidade_Com_O_Glade" target="_blank">Mantendo a Sanidade com o Glade</a>", pois no começo dele é explicado como o GTK trabalha, leiam sobre os sinais e também a parte "Explodindo Coisas".</p><br />
+<br />
+<h3 style="text-align: justify;">Lição de Casa</h3><br />
 <p style="text-align: justify;">A lição de casa de hoje é muito simples, mas vocês vão precisar usar a <a title="Referência do PyGTK" href="http://www.pygtk.org/docs/pygtk/index.html" target="_blank">referência do PyGTK</a> para fazer. Eu só quero uma janela com um botão escrito "Clique aqui", e quando a pessoa clicar o texto do botão deve mudar para "Clicado". Boa sorte =)</p>

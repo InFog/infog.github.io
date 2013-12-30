@@ -16,41 +16,41 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/2dblx25
   _sexybookmarks_permaHash: 6d1cf29f7a327c40dd7eb79539e46fe8
 ---
-
-<p align="justify">Bem vindos à segunda parte do desenvolvimento do sistema de autenticação em PHP, a primeira parte você encontra <a href="http://infog.wordpress.com/2007/10/13/sistema-de-autenticacao-em-php-parte1/" title="Parte 1">aqui</a>.</p>
-<p align="justify">Bem, nessa parte falarei sobre sessões e cookies em PHP, quando utilizar um e quando utilizar o outro.</p>
-<p align="justify">Por que sessões e cookies? É bem nessa parte que o desenvolvimento de aplicativos para web se diferencia do desenvolvimento de aplicações desktop, pois em uma aplicação para desktop você pode manter dados em memória de forma muito simples, basta criar variáveis e armazenar os dados nelas, e para valores que o programa todo mais usar basta criar as variáveis globais.</p>
-<p align="justify">Já no desenvolvimento web a coisa complica um pouco, pois, por exemplo, um script PHP não consegue "enxergar" as variáveis definidas em outro script, e isso pode complicar muito as coisas...</p>
-<!--adsense#propaganda-->
-<p align="justify">Pensemos assim, em um aplicativo desktop bastaria eu criar uma variável global chamada usuario_logado e atribuir um valor booleano para ela e assim fazer o controle para saber se o usuário está logado ou não, e posso criar também uma variável tempo_sessao para definir quanto tempo dura a sessão do usuário antes que ele precise se identificar novamente.</p>
-<p align="justify">Agora vamos pensar no mesmo problema, mas com uma visão para a web. Eu posso ter um script PHP que faz a autenticação do usuário e dá os valores corretos às variáveis que indicam que ele está logado e quanto tempo dura a sessão, mas no próximo script esse valor se perderia... Então, como fazer para ter acesso à estes dados? A resposta está nas sessões e nos cookies.</p>
-<p align="justify">Então vou explicar o que são essas sessões e os cookies, vou começar pelas sessões.</p>
-<p align="justify">No PHP existe a variável global chamada $_SESSION, e ela é definida (ou resgatada) quando você utiliza a função session_start(). Esta variável é global e ela passa de página para página, ou de script para script, até que a sessão tenha sido finalizada, expirada ou o browser seja fechado. Lembrando que cada script que for utilizar as variáveis globais devechamar a função session_start().</p>
-<p align="justify">Tá, mas como eu posso manter dados na variável de sessão? Hum, vamos pensar um pouquinho... $_SESSION é uma variável, logo eu posso fazer algo tipo:</p>
-
-<blockquote><font color="#993300"><strong>$_SESSION = "InFog";</strong></font></blockquote>
-<p align="justify">Certo? Bem, talvez, não sei se isso funcionaria, nunca testei, mas assim você armazenaria apenas um valor, e não é bem isso o que queremos certo? Mas dá para fazer algo que tornará essa variável algo muito legal, transformá-la em uma array! Isso mesmo assim ela vira quantas variáveis desejarmos! Faça assim:</p>
-
-<blockquote><strong><font color="#993300">$_SESSION = array();</font></strong></blockquote>
-OK, assim podemos fazer algo assim:
-<blockquote><font color="#993300"><strong>$_SESSION['usuario'] = "InFog";</strong></font>
-
-<font color="#993300"><strong>$_SESSION['logado'] = true;</strong></font></blockquote>
-<p align="justify">Legal né? Muito mais fácil, prático e rápido!</p>
-<p align="justify">O problema com as sessões é que elas terminam quando o navegador é fechado, ou seja não podemos utilizar a famosa opção "Lembrar de mim". Mas para isso existem os COOKIES, aqueles deliciosos biscoitos com pedacinhos de chocolate... Não não, os cookies não são isso, os cookies são dados armazenados no lado cliente (browser) que podem guardam informações e têm uma coisa legal chamada validade, você pode definir a validade de um cookie para, por exemplo, dez minutos, o que seria interessante em páginas que exigem uma segurança maior e que o usuário não pode abandonar o browser aberto.</p>
-<p align="justify">A utilização dos cookies é bem parecida com as sessões, mas os cookiessão definidos de um em um com a função setcookie(), assim:</p>
-
-<blockquote><font color="#993300"><strong>setcookie('nome_do_cookie', "Valor", validade_do_cookie);</strong></font></blockquote>
-Um exemplo:
-<blockquote><font color="#993300"><strong>setcookie('usuario', "InFog", time() + 3600 * 5);</strong></font></blockquote>
-<p align="justify">A função time tráz o timestamp atual (hora do servidor), e nesse caso eu estou somando mais 3600 segundos (1 hora) multiplicado por 5, ou seja a hora atual mais 5 horas, essa é a validade do cookie, em 5 horas ele expira.</p>
-<p align="justify">Para recuperar o valor do cookie fazemos assim:</p>
-
-<blockquote><font color="#993300"><strong>$usuario = $_COOKIE['usuario'];</strong></font></blockquote>
-<p align="justify">A variável global $_COOKIE guarda os valores em forma de array também, sendo o nome do cookie o índice no array.Você pode recuperaros valores dos cookies em qualquer página (script) aberta após o cookie ser 'setado' desde que ele não tenha expirado é claro.</p>
-<!--adsense#propaganda-->
-<p align="justify">Ok, conhecendo esses tópicos podemos pensar como será nosso sistema de autenticação:</p>
-<p align="justify">Faremos algo assim: O usuário acessa a página e lhe é exibida uma página de login, ele digita usuário e senha, clica ou não em 'lembrar de mim' e clica em 'logar', com isso os dados são enviados ao nosso script de login que pega usuário e senha e confere se batem com o que está armazenado no banco de dados, se conferir iniciamos a sessão dele e o mandamos para a página inicial do site, caso ele tenha escolhido a opção 'lembrar de mim' nós criamos os cookies que serão os responsáveis por "lembrar" da nossa página e lembrar que o usuário já está logado. Se a senha não bater a página de login é exibida novamente com uma mensagem de erro.</p>
-<p align="justify">Então tudo certo! Já temos o conhecimento sobre as sessões e os cookies, o que falta agora é o banco de dados... que será discutido no próximo capítulo.</p>
-<p align="justify">Vejo (???) vocês na terceira parte.</p>
+<br />
+<p align="justify">Bem vindos à segunda parte do desenvolvimento do sistema de autenticação em PHP, a primeira parte você encontra <a href="http://infog.wordpress.com/2007/10/13/sistema-de-autenticacao-em-php-parte1/" title="Parte 1">aqui</a>.</p><br />
+<p align="justify">Bem, nessa parte falarei sobre sessões e cookies em PHP, quando utilizar um e quando utilizar o outro.</p><br />
+<p align="justify">Por que sessões e cookies? É bem nessa parte que o desenvolvimento de aplicativos para web se diferencia do desenvolvimento de aplicações desktop, pois em uma aplicação para desktop você pode manter dados em memória de forma muito simples, basta criar variáveis e armazenar os dados nelas, e para valores que o programa todo mais usar basta criar as variáveis globais.</p><br />
+<p align="justify">Já no desenvolvimento web a coisa complica um pouco, pois, por exemplo, um script PHP não consegue "enxergar" as variáveis definidas em outro script, e isso pode complicar muito as coisas...</p><br />
+<!--adsense#propaganda--><br />
+<p align="justify">Pensemos assim, em um aplicativo desktop bastaria eu criar uma variável global chamada usuario_logado e atribuir um valor booleano para ela e assim fazer o controle para saber se o usuário está logado ou não, e posso criar também uma variável tempo_sessao para definir quanto tempo dura a sessão do usuário antes que ele precise se identificar novamente.</p><br />
+<p align="justify">Agora vamos pensar no mesmo problema, mas com uma visão para a web. Eu posso ter um script PHP que faz a autenticação do usuário e dá os valores corretos às variáveis que indicam que ele está logado e quanto tempo dura a sessão, mas no próximo script esse valor se perderia... Então, como fazer para ter acesso à estes dados? A resposta está nas sessões e nos cookies.</p><br />
+<p align="justify">Então vou explicar o que são essas sessões e os cookies, vou começar pelas sessões.</p><br />
+<p align="justify">No PHP existe a variável global chamada $_SESSION, e ela é definida (ou resgatada) quando você utiliza a função session_start(). Esta variável é global e ela passa de página para página, ou de script para script, até que a sessão tenha sido finalizada, expirada ou o browser seja fechado. Lembrando que cada script que for utilizar as variáveis globais devechamar a função session_start().</p><br />
+<p align="justify">Tá, mas como eu posso manter dados na variável de sessão? Hum, vamos pensar um pouquinho... $_SESSION é uma variável, logo eu posso fazer algo tipo:</p><br />
+<br />
+<blockquote><font color="#993300"><strong>$_SESSION = "InFog";</strong></font></blockquote><br />
+<p align="justify">Certo? Bem, talvez, não sei se isso funcionaria, nunca testei, mas assim você armazenaria apenas um valor, e não é bem isso o que queremos certo? Mas dá para fazer algo que tornará essa variável algo muito legal, transformá-la em uma array! Isso mesmo assim ela vira quantas variáveis desejarmos! Faça assim:</p><br />
+<br />
+<blockquote><strong><font color="#993300">$_SESSION = array();</font></strong></blockquote><br />
+OK, assim podemos fazer algo assim:<br />
+<blockquote><font color="#993300"><strong>$_SESSION['usuario'] = "InFog";</strong></font><br />
+<br />
+<font color="#993300"><strong>$_SESSION['logado'] = true;</strong></font></blockquote><br />
+<p align="justify">Legal né? Muito mais fácil, prático e rápido!</p><br />
+<p align="justify">O problema com as sessões é que elas terminam quando o navegador é fechado, ou seja não podemos utilizar a famosa opção "Lembrar de mim". Mas para isso existem os COOKIES, aqueles deliciosos biscoitos com pedacinhos de chocolate... Não não, os cookies não são isso, os cookies são dados armazenados no lado cliente (browser) que podem guardam informações e têm uma coisa legal chamada validade, você pode definir a validade de um cookie para, por exemplo, dez minutos, o que seria interessante em páginas que exigem uma segurança maior e que o usuário não pode abandonar o browser aberto.</p><br />
+<p align="justify">A utilização dos cookies é bem parecida com as sessões, mas os cookiessão definidos de um em um com a função setcookie(), assim:</p><br />
+<br />
+<blockquote><font color="#993300"><strong>setcookie('nome_do_cookie', "Valor", validade_do_cookie);</strong></font></blockquote><br />
+Um exemplo:<br />
+<blockquote><font color="#993300"><strong>setcookie('usuario', "InFog", time() + 3600 * 5);</strong></font></blockquote><br />
+<p align="justify">A função time tráz o timestamp atual (hora do servidor), e nesse caso eu estou somando mais 3600 segundos (1 hora) multiplicado por 5, ou seja a hora atual mais 5 horas, essa é a validade do cookie, em 5 horas ele expira.</p><br />
+<p align="justify">Para recuperar o valor do cookie fazemos assim:</p><br />
+<br />
+<blockquote><font color="#993300"><strong>$usuario = $_COOKIE['usuario'];</strong></font></blockquote><br />
+<p align="justify">A variável global $_COOKIE guarda os valores em forma de array também, sendo o nome do cookie o índice no array.Você pode recuperaros valores dos cookies em qualquer página (script) aberta após o cookie ser 'setado' desde que ele não tenha expirado é claro.</p><br />
+<!--adsense#propaganda--><br />
+<p align="justify">Ok, conhecendo esses tópicos podemos pensar como será nosso sistema de autenticação:</p><br />
+<p align="justify">Faremos algo assim: O usuário acessa a página e lhe é exibida uma página de login, ele digita usuário e senha, clica ou não em 'lembrar de mim' e clica em 'logar', com isso os dados são enviados ao nosso script de login que pega usuário e senha e confere se batem com o que está armazenado no banco de dados, se conferir iniciamos a sessão dele e o mandamos para a página inicial do site, caso ele tenha escolhido a opção 'lembrar de mim' nós criamos os cookies que serão os responsáveis por "lembrar" da nossa página e lembrar que o usuário já está logado. Se a senha não bater a página de login é exibida novamente com uma mensagem de erro.</p><br />
+<p align="justify">Então tudo certo! Já temos o conhecimento sobre as sessões e os cookies, o que falta agora é o banco de dados... que será discutido no próximo capítulo.</p><br />
+<p align="justify">Vejo (???) vocês na terceira parte.</p><br />
 InFog

@@ -16,37 +16,37 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/2u4qhjc
   _sexybookmarks_permaHash: a419fff42923cb1b3347b269dc27502d
 ---
-<p style="text-align: justify;">Olá pessoal!</p>
-<p style="text-align: justify;">Aqui vai uma dica rápida para quem está se aventurando no <strong>Django</strong>.</p>
-<p style="text-align: justify;">O problema era exibir uma mensagem após a inclusão de alguns dados no banco. Após a inclusão dos dados foi utilizado o método <strong>HttpResponseRedirect</strong> e o problema dele é não poder passar informações adicionais, como uma mensagem que será exibida para o usuário. Foi aí que eu resolvi usar o recurso do Session.</p>
-<p style="text-align: justify;">Na view que define a mensagem faça algo assim:</p>
-
-<code lang="python">request.session['mensagem'] = 'Dados incluídos!'</code>
-
-<p style="text-align: justify;">Na view que será exibida após a inclusão dos dados (ou qualquer outra página que você queira) será necessário verificar a mensagem:</p>
-
-<code lang="python">
-mensagem = False
-if request.session.has_key('mensagem'):
-	mensagem = request.session['mensagem']
-	del request.session['mensagem']
-return render_to_response('pagina.html', {
-	'mensagem': mensagem,
-    })
-</code>
-
-<p style="text-align: justify;">Primeiro eu defini a variável mensagem com um valor False (No template dá para entender melhor por que eu fiz isso). Se a Session tiver a chave 'mensagem' então ela é atribuída à variável mensagem e depois é removida com usando o 'del'.</p>
-
-<p style="text-align: justify;">E o template fica assim:</p>
-
-<code lang="python">
-{% if mensagem %}
-	{{ mensagem }}
-{% endif %}
-</code>
-
-<p style="text-align: justify;">E a dica foi essa.</p>
-
-<p style="text-align: justify;">Ah, <a href="http://video.google.com/videoplay?docid=-70449010942275062#" title="Django" target="_blank">este vídeo sobre Django</a> é bem legal. É uma palestra um pouco antiga e algumas coisas já mudaram no Django, mesmo assim vale a pena.</p>
-
+<p style="text-align: justify;">Olá pessoal!</p><br />
+<p style="text-align: justify;">Aqui vai uma dica rápida para quem está se aventurando no <strong>Django</strong>.</p><br />
+<p style="text-align: justify;">O problema era exibir uma mensagem após a inclusão de alguns dados no banco. Após a inclusão dos dados foi utilizado o método <strong>HttpResponseRedirect</strong> e o problema dele é não poder passar informações adicionais, como uma mensagem que será exibida para o usuário. Foi aí que eu resolvi usar o recurso do Session.</p><br />
+<p style="text-align: justify;">Na view que define a mensagem faça algo assim:</p><br />
+<br />
+<code lang="python">request.session['mensagem'] = 'Dados incluídos!'</code><br />
+<br />
+<p style="text-align: justify;">Na view que será exibida após a inclusão dos dados (ou qualquer outra página que você queira) será necessário verificar a mensagem:</p><br />
+<br />
+<code lang="python"><br />
+mensagem = False<br />
+if request.session.has_key('mensagem'):<br />
+	mensagem = request.session['mensagem']<br />
+	del request.session['mensagem']<br />
+return render_to_response('pagina.html', {<br />
+	'mensagem': mensagem,<br />
+    })<br />
+</code><br />
+<br />
+<p style="text-align: justify;">Primeiro eu defini a variável mensagem com um valor False (No template dá para entender melhor por que eu fiz isso). Se a Session tiver a chave 'mensagem' então ela é atribuída à variável mensagem e depois é removida com usando o 'del'.</p><br />
+<br />
+<p style="text-align: justify;">E o template fica assim:</p><br />
+<br />
+<code lang="python"><br />
+{% if mensagem %}<br />
+	{{ mensagem }}<br />
+{% endif %}<br />
+</code><br />
+<br />
+<p style="text-align: justify;">E a dica foi essa.</p><br />
+<br />
+<p style="text-align: justify;">Ah, <a href="http://video.google.com/videoplay?docid=-70449010942275062#" title="Django" target="_blank">este vídeo sobre Django</a> é bem legal. É uma palestra um pouco antiga e algumas coisas já mudaram no Django, mesmo assim vale a pena.</p><br />
+<br />
 <p style="text-align: justify;">InFog</p>

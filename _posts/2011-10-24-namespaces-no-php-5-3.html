@@ -19,120 +19,120 @@ meta:
   Hide SexyBookmarks: '0'
   Hide OgTags: '0'
 ---
-[ad#propaganda]
-Olá, pessoal!
-
-Hoje estou aqui para tratar de um assunto relativamente novo: <strong>Namespaces</strong> no <strong>PHP</strong>.
-
-Eu digo relativamente novo pois eu ainda não tinha trabalhado com ele, mas na verdade o recurso foi lançado oficialmente no PHP 5.3.0, em 30 de junho de 2009. Uau, há mais de dois anos!
-
-Infelizmente uma boa parte dos serviços de hospedagem por aí ainda não suporta oficialmente esta versão. O que é uma pena, pois acabamos ficando presos a versões antigas e sem poder usar novos recursos, como o sistema de <strong>Namespace</strong>.
-
-[caption id="attachment_1114" align="aligncenter" width="240" caption="Namespaces no PHP"]<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2011/10/php-namespaces.png"><img class="size-full wp-image-1114" title="php-namespaces" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/10/php-namespaces.png" alt="Namespaces do PHP" width="240" height="240" /></a>[/caption]
-
-Bem, antes de entrarmos na implementação de namespaces no PHP, acho interessante explicar primeiro o conceito de Namespace.
-
-Apenas traduzindo o termo já temos uma ideia do que ele faz, ele é um "espaço de nomes". Mas como assim um espaço de nomes?
-
-Uma das estruturas mais simples que temos no PHP são as funções. Cada função tem o seu próprio espaço de nomes, ou escopo, isso já é assim desde que eu conheço o PHP. O que quero dizer com cada função tem seu espaço de nomes é que você pode ter duas variáveis <strong>$nome</strong> em duas funções diferentes e, mesmo tendo o mesmo nome, elas não são a mesma variável. Isso acontece pois cada uma está em um bloco lógico diferente. Veja um exemplo:
-
-<code lang="php">
-<?php
-
-function funcao1() {
-    $nome = "Jimi";
-}
-
-function funcao2() {
-    $nome = "Hendrix";
-}
-</code>
-
-Legal, isso funciona para variáveis com o mesmo nome. Mas e se eu preciso ter funções com o mesmo nome? Bem, isso também é possível usando classes e métodos estáticos. Mas neste caso, estou usando métodos de uma classe, e não exatamente funções independentes. Veja este exemplo:
-
-<code lang="php">
-<?php
-
-// Definindo as classes
-
-class classe1 {
-    public static function exibeNome($nome) {
-        print("classe1: ".$nome);
-    }
-}
-
-class classe2 {
-    public static function exibeNome($nome) {
-        print("classe2: ".$nome);
-    }
-}
-
-// Usando os métodos estáticos
-
-classe1::exibeNome('Jimi');
-
-classe2::exibeNome('Hendrix');
-</code>
-
-Mas o que acontece quando eu preciso de funções soltas? Sou obrigado a usar uma estrutura de classes classes? Ou quem sabe dar nomes maiores para as funções? Nomes como <strong>minhalib1_funcao()</strong> e <strong>minhalib2_funcao()</strong>? Não prático, né? É aí que entram a o sistema de <strong>Namespaces</strong> do PHP.
-
-Acho melhor mostrar o código do que explicar muito. Vamos lá, vou criar um arquivo 'names.php' com dois namespaces e um arquivo 'programa.php' que usa as funções nos namespaces.
-
-Arquivo '<strong>names.php</strong>':
-
-<code lang="php">
-<?php
-
-namespace form_tabela {
-    // Este namespace exibe um form usando tabelas
-    function imprime_form($form) {
-        // Imprimindo o form em tabela
-        echo "tabela...";
-    }
-}
-
-namespace form_tableless {
-    // Este namespace imprime um form sem usar uma tabela
-    function imprime_form($form) {
-        // Imprimindo o form sem tabela
-        echo "tableless!";
-    }
-}
-</code>
-
-Arquivo '<strong>programa.php</strong>':
-
-<code lang="php">
-<?php
-
-include('names.php');
-
-// Usando as funções
-form_tabela\imprime_form('form1');
-
-form_tableless\imprime_form('form2');
-</code>
-
-Percebam que os dois namespaces têm funções com o mesmo nome "<strong>imprime_form()</strong>", mas não problema em definir uma função que já existe. Aliás, eu poderia até mesmo criar funções com nomes que já existem na biblioteca padrão do PHP:
-
-<code lang="php">
-<?php
-namespace minhaLib {
-    // strtr já existe na biblioteca padrão do PHP
-    function strtr($str) {
-        echo TRUE;
-    }
-}
-</code>
-
-O uso de namespaces pode simplificar bastante o desenvolvimento de sistemas mais complexos e também de bibliotecas para distribuir. Ao utilizar o sistema de namespaces você também evita problemas de colisão de nomes com outras bibliotecas, sem ter que dar nomes grandes para suas funções.
-
-Então essa foi a dica de hoje. Use os namespaces e organize melhor seus projetos.
-
-E para quem quer aprender a utilizar um framework para desenvolver sistemas, eu recomendo o curso "<strong><a title="Turbine-se com CodeIgniter" href="http://turbinesecomcodeigniter.com.br/" target="_blank">Turbine-se com CodeIgniter</a></strong>". Este é um curso que eu leciono, online, você pode fazer no conforto da sua casa, usando o seu computador para acessar a sala de aula virtual. Acesso o site do curso, <a title="Conteúdo do Turbine-se" href="http://turbinesecomcodeigniter.com.br/conteudo" target="_blank">conheça o conteúdo</a> e <a title="Inscrição no Turbine-se" href="http://turbinesecomcodeigniter.com.br/inscricao" target="_blank">se inscreva</a>.
-
-<a href="http://turbinesecomcodeigniter.com.br/inscricao"><img class="aligncenter size-medium wp-image-1117" title="turbinese" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/10/turbinese-300x124.png" alt="" width="300" height="124" /></a>
-
-Let's code!
-
+[ad#propaganda]<br />
+Olá, pessoal!<br />
+<br />
+Hoje estou aqui para tratar de um assunto relativamente novo: <strong>Namespaces</strong> no <strong>PHP</strong>.<br />
+<br />
+Eu digo relativamente novo pois eu ainda não tinha trabalhado com ele, mas na verdade o recurso foi lançado oficialmente no PHP 5.3.0, em 30 de junho de 2009. Uau, há mais de dois anos!<br />
+<br />
+Infelizmente uma boa parte dos serviços de hospedagem por aí ainda não suporta oficialmente esta versão. O que é uma pena, pois acabamos ficando presos a versões antigas e sem poder usar novos recursos, como o sistema de <strong>Namespace</strong>.<br />
+<br />
+[caption id="attachment_1114" align="aligncenter" width="240" caption="Namespaces no PHP"]<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2011/10/php-namespaces.png"><img class="size-full wp-image-1114" title="php-namespaces" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/10/php-namespaces.png" alt="Namespaces do PHP" width="240" height="240" /></a>[/caption]<br />
+<br />
+Bem, antes de entrarmos na implementação de namespaces no PHP, acho interessante explicar primeiro o conceito de Namespace.<br />
+<br />
+Apenas traduzindo o termo já temos uma ideia do que ele faz, ele é um "espaço de nomes". Mas como assim um espaço de nomes?<br />
+<br />
+Uma das estruturas mais simples que temos no PHP são as funções. Cada função tem o seu próprio espaço de nomes, ou escopo, isso já é assim desde que eu conheço o PHP. O que quero dizer com cada função tem seu espaço de nomes é que você pode ter duas variáveis <strong>$nome</strong> em duas funções diferentes e, mesmo tendo o mesmo nome, elas não são a mesma variável. Isso acontece pois cada uma está em um bloco lógico diferente. Veja um exemplo:<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+<br />
+function funcao1() {<br />
+    $nome = "Jimi";<br />
+}<br />
+<br />
+function funcao2() {<br />
+    $nome = "Hendrix";<br />
+}<br />
+</code><br />
+<br />
+Legal, isso funciona para variáveis com o mesmo nome. Mas e se eu preciso ter funções com o mesmo nome? Bem, isso também é possível usando classes e métodos estáticos. Mas neste caso, estou usando métodos de uma classe, e não exatamente funções independentes. Veja este exemplo:<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+<br />
+// Definindo as classes<br />
+<br />
+class classe1 {<br />
+    public static function exibeNome($nome) {<br />
+        print("classe1: ".$nome);<br />
+    }<br />
+}<br />
+<br />
+class classe2 {<br />
+    public static function exibeNome($nome) {<br />
+        print("classe2: ".$nome);<br />
+    }<br />
+}<br />
+<br />
+// Usando os métodos estáticos<br />
+<br />
+classe1::exibeNome('Jimi');<br />
+<br />
+classe2::exibeNome('Hendrix');<br />
+</code><br />
+<br />
+Mas o que acontece quando eu preciso de funções soltas? Sou obrigado a usar uma estrutura de classes classes? Ou quem sabe dar nomes maiores para as funções? Nomes como <strong>minhalib1_funcao()</strong> e <strong>minhalib2_funcao()</strong>? Não prático, né? É aí que entram a o sistema de <strong>Namespaces</strong> do PHP.<br />
+<br />
+Acho melhor mostrar o código do que explicar muito. Vamos lá, vou criar um arquivo 'names.php' com dois namespaces e um arquivo 'programa.php' que usa as funções nos namespaces.<br />
+<br />
+Arquivo '<strong>names.php</strong>':<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+<br />
+namespace form_tabela {<br />
+    // Este namespace exibe um form usando tabelas<br />
+    function imprime_form($form) {<br />
+        // Imprimindo o form em tabela<br />
+        echo "tabela...";<br />
+    }<br />
+}<br />
+<br />
+namespace form_tableless {<br />
+    // Este namespace imprime um form sem usar uma tabela<br />
+    function imprime_form($form) {<br />
+        // Imprimindo o form sem tabela<br />
+        echo "tableless!";<br />
+    }<br />
+}<br />
+</code><br />
+<br />
+Arquivo '<strong>programa.php</strong>':<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+<br />
+include('names.php');<br />
+<br />
+// Usando as funções<br />
+form_tabela\imprime_form('form1');<br />
+<br />
+form_tableless\imprime_form('form2');<br />
+</code><br />
+<br />
+Percebam que os dois namespaces têm funções com o mesmo nome "<strong>imprime_form()</strong>", mas não problema em definir uma função que já existe. Aliás, eu poderia até mesmo criar funções com nomes que já existem na biblioteca padrão do PHP:<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+namespace minhaLib {<br />
+    // strtr já existe na biblioteca padrão do PHP<br />
+    function strtr($str) {<br />
+        echo TRUE;<br />
+    }<br />
+}<br />
+</code><br />
+<br />
+O uso de namespaces pode simplificar bastante o desenvolvimento de sistemas mais complexos e também de bibliotecas para distribuir. Ao utilizar o sistema de namespaces você também evita problemas de colisão de nomes com outras bibliotecas, sem ter que dar nomes grandes para suas funções.<br />
+<br />
+Então essa foi a dica de hoje. Use os namespaces e organize melhor seus projetos.<br />
+<br />
+E para quem quer aprender a utilizar um framework para desenvolver sistemas, eu recomendo o curso "<strong><a title="Turbine-se com CodeIgniter" href="http://turbinesecomcodeigniter.com.br/" target="_blank">Turbine-se com CodeIgniter</a></strong>". Este é um curso que eu leciono, online, você pode fazer no conforto da sua casa, usando o seu computador para acessar a sala de aula virtual. Acesso o site do curso, <a title="Conteúdo do Turbine-se" href="http://turbinesecomcodeigniter.com.br/conteudo" target="_blank">conheça o conteúdo</a> e <a title="Inscrição no Turbine-se" href="http://turbinesecomcodeigniter.com.br/inscricao" target="_blank">se inscreva</a>.<br />
+<br />
+<a href="http://turbinesecomcodeigniter.com.br/inscricao"><img class="aligncenter size-medium wp-image-1117" title="turbinese" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/10/turbinese-300x124.png" alt="" width="300" height="124" /></a><br />
+<br />
+Let's code!<br />
+<br />
 InFog

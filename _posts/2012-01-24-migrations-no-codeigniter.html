@@ -18,126 +18,126 @@ meta:
   Hide SexyBookmarks: '0'
   Hide OgTags: '0'
 ---
-Olá, pessoal! Hoje vou falar sobre o sistema de Migrations do CodeIgniter, uma excelente forma de manter seu banco de dados sempre atualizado entre as suas máquinas de desenvolvimento ou sua equipe.
-
-Imagine o seguinte cenário: Você tem uma aplicação sendo desenvolvida. Você não está desenvolvendo sozinho, mas sim com uma equipe de umas 2 ou mais pessoas. Aí você percebe a necessidade de adicionar um campo em uma tabela no banco. Você vai lá e adiciona o campo. Depois o software começa a presentar problemas para os outros desenvolvedores pois o banco de dados de desenvolvimento deles não tem o novo campo, ou a nova tabela…
-
-É aí que entram as <strong>Migrations</strong> do CodeIgniter. A ideia é simples:
-
-Partindo de um banco inicial, documenta-se as suas alterações na forma de código <acronym title="Hypertext Preprocessor">PHP</acronym>. E à estas mudanças nós temos que dar números de versão. Depois basta acompanhar as <strong>Migrations</strong> e seu banco não mais ficará desatualizado! Perfeito!
-
-Vamos a um exemplo.
-
-<h2>Modelo Inicial</h2>
-
-Para o modelo inicial, temos a seguinte tabela:
-
-<code lang="sql">
-CREATE TABLE `visitantes` (
-  `id`      integer       NOT NULL AUTO_INCREMENT,
-  `nome`    varchar(40)   NOT NULL,
-  `email`   varchar(100)  NOT NULL,
-  PRIMARY KEY (`id`)
-)
-</code>
-
-Legal. E assim o sistema foi desenvolvido. Aí um belo dia alguém percebe a necessidade de também se cadastrar a data e hora da vista do cliente.
-
-Você poderia simplesmente adicionar o campo na tabela, mas aí cairia nos problemas que expliquei acima. Então vamos fazer uma Migration!
-
-<h2>Arquivos de Migrations</h2>
-
-Os arquivos das Migrations devem ficar em <strong>application/migrations/</strong>. Este diretório não existe por padrão, então você pode criá-lo.
-
-Criado o diretório, é só adicionar a primeiro Migration. Os nomes dos arquivos das Migrations segue um padrão de numeração e nome. Neste caso eu nomeei o arquivo assim:
-
-<strong>001_datahora_visitantes.php</strong>
-
-O <strong>001</strong> significa que esta é a primeira Migration. Já o nome eu coloquei para ficar bem claro o que ele faz (Adiciona o campo <strong>datahora</strong> na tabela <strong>visitantes</strong>).
-
-Dentro do arquivo deve existir uma classe com o nome <strong>Migration_</strong> substituindo o <strong>001</strong> do nome do arquivo. Veja o exemplo abaixo:
-<code lang="php">
-<?php
-
-// Perceba os maiúsculos em Migration e na primeira letra do restante
-class Migration_Datahora_visitantes extends CI_Migration {
-
-    public function up() {
-        // Verificando se o campo já existe
-        if (! $this->db->field_exists('datahora', 'visitantes')) {
-            // Criando o campo.
-            $this->load->dbforge(); // DB Forge, para manipular o banco
-
-            $campos = array(
-                'datahora' => array(
-                    'type'      => 'datetime',
-                    'default'   => '2012-01-01 00:00:00'
-                )
-            );
-
-            $this->dbforge->add_column('visitantes', $campos);
-        }
-    }
-}
-</code>
-
-Certo, hora de executar.
-
-<h2>Executando</h2>
-
-Para executar você precisa ativar as <strong>Migrations</strong> na configuração do CodeIgniter. Para isso altere o arquivo<strong>application/config/migration.php</strong>:
-
-<code lang="php">
-<?php
-$config['migration_enabled'] = TRUE;  // Ativar aqui
-$config['migration_version'] = 1;     // Colocar o número da versão aqui
-</code>
-
-E também é necessário criar um <strong>Controller</strong> para ativar tudo:
-
-<code lang="php">
-<?php
-class Migrate extends CI_Controller {
-
-    /**
-     * Método construtor
-     */
-    public function  __construct() {
-        parent::__construct();
-    }
-
-    public function index() {
-        $this->load->library('migration');
-
-        if ($this->migration->current()) {
-            echo "Migração bem sucedida!";
-        }
-        else {
-            echo $this->migration->error_string();
-        }
-    }
-}
-</code>
-Beleza, agora é só acessar o seu controller e voilã! Ele deve exibir o “Migração bem sucedida!”. Se não exibir, leia os erros e tente corrigir qualquer problema.
-
-Veja como ficou a minha tabela depois do Migration:
-
-<pre>
-SELECT * FROM visitantes;
-
-=======
-
-+----+---------------+-----------------+---------------------+
-| id | nome          | email           | datahora            |
-+----+---------------+-----------------+---------------------+
-|  1 | Evaldo Junior | email@email.com | 2012-01-01 00:00:00 |
-+----+---------------+-----------------+---------------------+
-</pre>
-
-Legal né? Agora vai lá e faça seus teste bote em pratica =D
-
-Ah, e se você quiser aprender mais sobre CodeIgniter e como tirar o melhor dele, eu tenho um curso online, o <a href="Turbine-se com CodeIgniter"><strong>Turbine-se com CodeIgniter</strong></a>. As inscrições estão abertas, então corre lá para garantir a sua vaga!
-
-<p><a href="http://turbinesecomcodeigniter.com.br/"><img class="aligncenter size-full wp-image-1081" title="Turbine-se com CodeIgniter" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/09/turbinese.png" alt="" width="414" height="193" /></a></p>
-
+Olá, pessoal! Hoje vou falar sobre o sistema de Migrations do CodeIgniter, uma excelente forma de manter seu banco de dados sempre atualizado entre as suas máquinas de desenvolvimento ou sua equipe.<br />
+<br />
+Imagine o seguinte cenário: Você tem uma aplicação sendo desenvolvida. Você não está desenvolvendo sozinho, mas sim com uma equipe de umas 2 ou mais pessoas. Aí você percebe a necessidade de adicionar um campo em uma tabela no banco. Você vai lá e adiciona o campo. Depois o software começa a presentar problemas para os outros desenvolvedores pois o banco de dados de desenvolvimento deles não tem o novo campo, ou a nova tabela…<br />
+<br />
+É aí que entram as <strong>Migrations</strong> do CodeIgniter. A ideia é simples:<br />
+<br />
+Partindo de um banco inicial, documenta-se as suas alterações na forma de código <acronym title="Hypertext Preprocessor">PHP</acronym>. E à estas mudanças nós temos que dar números de versão. Depois basta acompanhar as <strong>Migrations</strong> e seu banco não mais ficará desatualizado! Perfeito!<br />
+<br />
+Vamos a um exemplo.<br />
+<br />
+<h2>Modelo Inicial</h2><br />
+<br />
+Para o modelo inicial, temos a seguinte tabela:<br />
+<br />
+<code lang="sql"><br />
+CREATE TABLE `visitantes` (<br />
+  `id`      integer       NOT NULL AUTO_INCREMENT,<br />
+  `nome`    varchar(40)   NOT NULL,<br />
+  `email`   varchar(100)  NOT NULL,<br />
+  PRIMARY KEY (`id`)<br />
+)<br />
+</code><br />
+<br />
+Legal. E assim o sistema foi desenvolvido. Aí um belo dia alguém percebe a necessidade de também se cadastrar a data e hora da vista do cliente.<br />
+<br />
+Você poderia simplesmente adicionar o campo na tabela, mas aí cairia nos problemas que expliquei acima. Então vamos fazer uma Migration!<br />
+<br />
+<h2>Arquivos de Migrations</h2><br />
+<br />
+Os arquivos das Migrations devem ficar em <strong>application/migrations/</strong>. Este diretório não existe por padrão, então você pode criá-lo.<br />
+<br />
+Criado o diretório, é só adicionar a primeiro Migration. Os nomes dos arquivos das Migrations segue um padrão de numeração e nome. Neste caso eu nomeei o arquivo assim:<br />
+<br />
+<strong>001_datahora_visitantes.php</strong><br />
+<br />
+O <strong>001</strong> significa que esta é a primeira Migration. Já o nome eu coloquei para ficar bem claro o que ele faz (Adiciona o campo <strong>datahora</strong> na tabela <strong>visitantes</strong>).<br />
+<br />
+Dentro do arquivo deve existir uma classe com o nome <strong>Migration_</strong> substituindo o <strong>001</strong> do nome do arquivo. Veja o exemplo abaixo:<br />
+<code lang="php"><br />
+<?php<br />
+<br />
+// Perceba os maiúsculos em Migration e na primeira letra do restante<br />
+class Migration_Datahora_visitantes extends CI_Migration {<br />
+<br />
+    public function up() {<br />
+        // Verificando se o campo já existe<br />
+        if (! $this->db->field_exists('datahora', 'visitantes')) {<br />
+            // Criando o campo.<br />
+            $this->load->dbforge(); // DB Forge, para manipular o banco<br />
+<br />
+            $campos = array(<br />
+                'datahora' => array(<br />
+                    'type'      => 'datetime',<br />
+                    'default'   => '2012-01-01 00:00:00'<br />
+                )<br />
+            );<br />
+<br />
+            $this->dbforge->add_column('visitantes', $campos);<br />
+        }<br />
+    }<br />
+}<br />
+</code><br />
+<br />
+Certo, hora de executar.<br />
+<br />
+<h2>Executando</h2><br />
+<br />
+Para executar você precisa ativar as <strong>Migrations</strong> na configuração do CodeIgniter. Para isso altere o arquivo<strong>application/config/migration.php</strong>:<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+$config['migration_enabled'] = TRUE;  // Ativar aqui<br />
+$config['migration_version'] = 1;     // Colocar o número da versão aqui<br />
+</code><br />
+<br />
+E também é necessário criar um <strong>Controller</strong> para ativar tudo:<br />
+<br />
+<code lang="php"><br />
+<?php<br />
+class Migrate extends CI_Controller {<br />
+<br />
+    /**<br />
+     * Método construtor<br />
+     */<br />
+    public function  __construct() {<br />
+        parent::__construct();<br />
+    }<br />
+<br />
+    public function index() {<br />
+        $this->load->library('migration');<br />
+<br />
+        if ($this->migration->current()) {<br />
+            echo "Migração bem sucedida!";<br />
+        }<br />
+        else {<br />
+            echo $this->migration->error_string();<br />
+        }<br />
+    }<br />
+}<br />
+</code><br />
+Beleza, agora é só acessar o seu controller e voilã! Ele deve exibir o “Migração bem sucedida!”. Se não exibir, leia os erros e tente corrigir qualquer problema.<br />
+<br />
+Veja como ficou a minha tabela depois do Migration:<br />
+<br />
+<pre><br />
+SELECT * FROM visitantes;<br />
+<br />
+=======<br />
+<br />
++----+---------------+-----------------+---------------------+<br />
+| id | nome          | email           | datahora            |<br />
++----+---------------+-----------------+---------------------+<br />
+|  1 | Evaldo Junior | email@email.com | 2012-01-01 00:00:00 |<br />
++----+---------------+-----------------+---------------------+<br />
+</pre><br />
+<br />
+Legal né? Agora vai lá e faça seus teste bote em pratica =D<br />
+<br />
+Ah, e se você quiser aprender mais sobre CodeIgniter e como tirar o melhor dele, eu tenho um curso online, o <a href="Turbine-se com CodeIgniter"><strong>Turbine-se com CodeIgniter</strong></a>. As inscrições estão abertas, então corre lá para garantir a sua vaga!<br />
+<br />
+<p><a href="http://turbinesecomcodeigniter.com.br/"><img class="aligncenter size-full wp-image-1081" title="Turbine-se com CodeIgniter" src="http://evaldojunior.com.br/blog/wp-content/uploads/2011/09/turbinese.png" alt="" width="414" height="193" /></a></p><br />
+<br />
 InFog

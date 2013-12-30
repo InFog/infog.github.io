@@ -15,56 +15,56 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/24jp8za
   _sexybookmarks_permaHash: d2ac8400d361681c6399b303de7d9671
 ---
-<p style="text-align: justify;">Olá pessoal! Como foram de festas de fim de ano? Espero que bem =)</p>
-<p style="text-align: justify;">Na aula passada falamos um pouco sobre as listas em Python, mas lendo os comentários e o fórum e revendo as aulas eu vi que deixei algumas coisas de fora e também falei algumas besteiras =( Bem, mas como eu disse no começo do curso eu também estou aprendendo, então nesta aula vou corrigir alguns "enganos" da aula anterior e mostrar mais alguns assuntos.</p>
-<p style="text-align: justify;">Ahh o João Paulo Farias, que eu não conheço, mas vi esta notícia no <a title="Br-Linux - Aprendendo a programar em Python" href="http://br-linux.org/2009/aprendendo-a-programar-com-python/" target="_blank">BR-Linux</a>, também está publicando aulas sobre Python, o blog dele é <a title="Aprendendo com Python" href="http://aprendendocompython.blogspot.com" target="_blank">aprendendocompython.blogspot.com</a>, e eu recomendo que vocês passem por lá. Pelo que eu vi no site ele tem bastante experiência com a linguagem, e as aulas são bem legais, ou seja acaba sendo uma nova fonte para vocês, além das minhas aulas =)</p>
-<p style="text-align: justify;">Então vamos às observações sobre a aula anterior... Só para deixar claro, não é que os exemplos da aula anterior estejam errados, o problema é que eles são o "hard level", então é melhor partirmos para o "easy level", não?</p>
-<p style="text-align: justify;">Primeiro vou falar mais sobre as listas, eu acredito que apenas com o código abaixo e seus comentários já é possível ver que as listas não são tão feias quanto eu havia falado:</p>
-
-<code lang="python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# criando uma lista vazia
-lista_vazia = []
-# agora uma lista com itens
-lista_itens = ["python", "php", "c++"]
-# adicionando ítens à lista
-lista_vazia.append("item1")
-lista_vazia.append("item2")
-# removendo um item de uma lista
-lista_itens.remove("php")
-# retorna e remove o último ítem da lista
-ultimo = lista_itens.pop()
-print(ultimo) # mostra "c++"
-# inverte a ordem da lista
-lista_vazia.reverse()
-lista_vazia.append("item5")
-lista_vazia.append("item3")
-lista_vazia.append("item4")
-lista_vazia.sort()</code>
-<p style="text-align: justify;">Viram como a operações das listas pode ser bem mais simples? Agora deixa eu explicar o código:</p>
-<p style="text-align: justify;">Nas linhas 4 e 6 são criadas duas listas, uma vazia e outra já com alguns elementos.</p>
-<p style="text-align: justify;">Nas linhas 8 e 9 são adicionados itens à lista vazia, o mesmo procedimento pode ser usado em listas com elementos.</p>
-<p style="text-align: justify;">Na linha 11 é removido o primeiro elemento que casa com "php", caso tivesse mais de um elemento "php" apenas o primeiro seria removido.</p>
-<p style="text-align: justify;">Na linha 13 temos uma função bem interessante já que ela retorna e remove o último item da lista, neste caso o último item é "c++", então a variável "ultimo" recebe este valor, e logo após ele é removido da lista.</p>
-<p style="text-align: justify;">Na linha 16 a ordem da lista é invertida.</p>
-<p style="text-align: justify;">Já na linha 20 a lista é ordenada com a função sort().</p>
-<p style="text-align: justify;">Agora vamos ver uma coisa bem legal: Como embaralhar listas em Python:</p>
-
-<code lang="python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# importando o módulo random
-import random
-# criando uma lista
-lista = ["joão", "maria", "josé", "ana"]
-# embaralhando a lista
-random.shuffle(lista)
-print(lista)</code>
-<p style="text-align: justify;">Como vocês podem ver eu usei o módulo "random" do Python, este módulo possui várias funções interessantes para gerar números aleatórios, mas vamos falar mais dele mais para frente, ok?</p>
-<p style="text-align: justify;">Na linha 4 é importado o módulo random, assim como fizemos com o módulo math <a title="A biblioteca Math" href="http://evaldojunior.com.br/blog/?p=289" target="_blank">umas aulas atrás</a>.</p>
-<p style="text-align: justify;">Na linha 6 é criada uma lista com 4 elementos e na linha 8 usei a função "shuffle()" do módulo random para embaralhar a lista. A linha 9 exibe a lista embaralhada.</p>
-
-<h3 style="text-align: justify;">Lição de casa</h3>
-<p style="text-align: justify;">1 - Sorteio - Crie uma lista com o nome de 10 pessoas, embaralhe esta lista e sorteie uma pessoa, depois embaralhe novamente e sorteie outra pessoa, lembrando que não poderá ser a mesma pessoa a ser sorteada.</p>
-<p style="text-align: justify;">2 - Mega Sena - Crie duas listas com números de 0 a 9, embaralhe as listas e sorteie um número de cada uma para formar uma dezena, repita a operação 5 vezes para sortear 5 dezenas, assim como na mega sena. Caso a dezena caia como 00 (zero, zero) faça o sorteio dela novamente até sair outra combinação. Depois disso exiba as dezenas sorteadas.</p>
-<p style="text-align: justify;">Eu gostei bastante de fazer estes 2 exercícios :-)</p>
+<p style="text-align: justify;">Olá pessoal! Como foram de festas de fim de ano? Espero que bem =)</p><br />
+<p style="text-align: justify;">Na aula passada falamos um pouco sobre as listas em Python, mas lendo os comentários e o fórum e revendo as aulas eu vi que deixei algumas coisas de fora e também falei algumas besteiras =( Bem, mas como eu disse no começo do curso eu também estou aprendendo, então nesta aula vou corrigir alguns "enganos" da aula anterior e mostrar mais alguns assuntos.</p><br />
+<p style="text-align: justify;">Ahh o João Paulo Farias, que eu não conheço, mas vi esta notícia no <a title="Br-Linux - Aprendendo a programar em Python" href="http://br-linux.org/2009/aprendendo-a-programar-com-python/" target="_blank">BR-Linux</a>, também está publicando aulas sobre Python, o blog dele é <a title="Aprendendo com Python" href="http://aprendendocompython.blogspot.com" target="_blank">aprendendocompython.blogspot.com</a>, e eu recomendo que vocês passem por lá. Pelo que eu vi no site ele tem bastante experiência com a linguagem, e as aulas são bem legais, ou seja acaba sendo uma nova fonte para vocês, além das minhas aulas =)</p><br />
+<p style="text-align: justify;">Então vamos às observações sobre a aula anterior... Só para deixar claro, não é que os exemplos da aula anterior estejam errados, o problema é que eles são o "hard level", então é melhor partirmos para o "easy level", não?</p><br />
+<p style="text-align: justify;">Primeiro vou falar mais sobre as listas, eu acredito que apenas com o código abaixo e seus comentários já é possível ver que as listas não são tão feias quanto eu havia falado:</p><br />
+<br />
+<code lang="python">#!/usr/bin/env python<br />
+# -*- coding: utf-8 -*-<br />
+# criando uma lista vazia<br />
+lista_vazia = []<br />
+# agora uma lista com itens<br />
+lista_itens = ["python", "php", "c++"]<br />
+# adicionando ítens à lista<br />
+lista_vazia.append("item1")<br />
+lista_vazia.append("item2")<br />
+# removendo um item de uma lista<br />
+lista_itens.remove("php")<br />
+# retorna e remove o último ítem da lista<br />
+ultimo = lista_itens.pop()<br />
+print(ultimo) # mostra "c++"<br />
+# inverte a ordem da lista<br />
+lista_vazia.reverse()<br />
+lista_vazia.append("item5")<br />
+lista_vazia.append("item3")<br />
+lista_vazia.append("item4")<br />
+lista_vazia.sort()</code><br />
+<p style="text-align: justify;">Viram como a operações das listas pode ser bem mais simples? Agora deixa eu explicar o código:</p><br />
+<p style="text-align: justify;">Nas linhas 4 e 6 são criadas duas listas, uma vazia e outra já com alguns elementos.</p><br />
+<p style="text-align: justify;">Nas linhas 8 e 9 são adicionados itens à lista vazia, o mesmo procedimento pode ser usado em listas com elementos.</p><br />
+<p style="text-align: justify;">Na linha 11 é removido o primeiro elemento que casa com "php", caso tivesse mais de um elemento "php" apenas o primeiro seria removido.</p><br />
+<p style="text-align: justify;">Na linha 13 temos uma função bem interessante já que ela retorna e remove o último item da lista, neste caso o último item é "c++", então a variável "ultimo" recebe este valor, e logo após ele é removido da lista.</p><br />
+<p style="text-align: justify;">Na linha 16 a ordem da lista é invertida.</p><br />
+<p style="text-align: justify;">Já na linha 20 a lista é ordenada com a função sort().</p><br />
+<p style="text-align: justify;">Agora vamos ver uma coisa bem legal: Como embaralhar listas em Python:</p><br />
+<br />
+<code lang="python">#!/usr/bin/env python<br />
+# -*- coding: utf-8 -*-<br />
+# importando o módulo random<br />
+import random<br />
+# criando uma lista<br />
+lista = ["joão", "maria", "josé", "ana"]<br />
+# embaralhando a lista<br />
+random.shuffle(lista)<br />
+print(lista)</code><br />
+<p style="text-align: justify;">Como vocês podem ver eu usei o módulo "random" do Python, este módulo possui várias funções interessantes para gerar números aleatórios, mas vamos falar mais dele mais para frente, ok?</p><br />
+<p style="text-align: justify;">Na linha 4 é importado o módulo random, assim como fizemos com o módulo math <a title="A biblioteca Math" href="http://evaldojunior.com.br/blog/?p=289" target="_blank">umas aulas atrás</a>.</p><br />
+<p style="text-align: justify;">Na linha 6 é criada uma lista com 4 elementos e na linha 8 usei a função "shuffle()" do módulo random para embaralhar a lista. A linha 9 exibe a lista embaralhada.</p><br />
+<br />
+<h3 style="text-align: justify;">Lição de casa</h3><br />
+<p style="text-align: justify;">1 - Sorteio - Crie uma lista com o nome de 10 pessoas, embaralhe esta lista e sorteie uma pessoa, depois embaralhe novamente e sorteie outra pessoa, lembrando que não poderá ser a mesma pessoa a ser sorteada.</p><br />
+<p style="text-align: justify;">2 - Mega Sena - Crie duas listas com números de 0 a 9, embaralhe as listas e sorteie um número de cada uma para formar uma dezena, repita a operação 5 vezes para sortear 5 dezenas, assim como na mega sena. Caso a dezena caia como 00 (zero, zero) faça o sorteio dela novamente até sair outra combinação. Depois disso exiba as dezenas sorteadas.</p><br />
+<p style="text-align: justify;">Eu gostei bastante de fazer estes 2 exercícios :-)</p><br />
 <p style="text-align: justify;">InFog</p>

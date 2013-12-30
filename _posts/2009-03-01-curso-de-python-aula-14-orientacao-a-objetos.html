@@ -15,78 +15,78 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/cc62yy
   _sexybookmarks_permaHash: 87d3cc457b66e0d982dbc5818a56c506
 ---
-[ad#propaganda]
-<p style="text-align: justify;">Olá alunos!</p>
-<p style="text-align: justify;">Depois da pausa para o carnaval estamos de volta! (Não, eu não gosto de carnaval, mas aproveito o feriado para descansar)</p>
-<p style="text-align: justify;">O curso de Python está bem legal, eu aprendi muito ensinando durante esse meses aqui no blog. Para vocês terem uma ideia eu consegui migrar o<a title="Site do GeSpeak" href="http://gespeak.googlecode.com" target="_blank"> GeSpeak</a> para <a title="Site do PyGTK" href="http://pygtk.org" target="_blank">PyGTK</a>, e eu garanto que foi bem simples, tudo o que eu tive que fazer foi ter um pouco de paciência e entender bem a referência da biblioteca no site dela. Se tem uma coisa que eu aprendi com Python é que o código não precisa ser uma coisa de maluco para que funcione bem, Python deixa tudo muito simples e tem vários módulos que adicionam muitas funcionalidades extras. Enfim, se você está lendo isso é por que já deve ter visto as outras aulas e se você está acompanhando o curso também já deve ter percebido essa simplicidade. Agora chega de papo e vamos à aula.</p>
-<p style="text-align: justify;">O conceito de classes, objetos e afins é bem chatinho de entender no começo, mas depois que se entende é difícil de querer trabalhar de outra forma. Este assunto é bem genérico e também é suportado por várias linguagens de programação, por isso não vou escrever sobre isso, em vez disso vou usar o arsenal de informações livres que temos na <span style="text-decoration: line-through;">matrix</span> grande rede chamada internet. Comecem lendo <a title="Orientação à Objetos" href="http://pt.wikipedia.org/wiki/Poo" target="_blank">este artigo</a> da Wikipedia. Tentem entender os conceitos do que é uma classe, um atributo, um método... Durante as próximas aulas vamos tratar deste assunto, ok?</p>
-<p style="text-align: justify;">Mas, como fazer uma classe em Python?</p>
-<p style="text-align: justify;">Vamos ver um exemplo de uma classe muito usada no ensino de orientação à objetos, a classe Aluno:</p>
-
-<code lang="python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-class Aluno:
-    __doc__ = """
-        Classe de estudo
-    """
-    Nome = ''
-    Serie = 0
-    Notas = [0,0,0,0]
-#
-    def __init__(self, Nome, Serie):
-        __doc__ = """
-            Instancia da classe Aluno
-            Parâmetros
-            Nome: String com o nome do aluno
-            Serie: Integer com a classe do aluno (1 a 9)
-        """
-        self.Nome = Nome
-        self.Serie = Serie
-#
-    def pega_nome(self):
-        __doc__ = """
-            Esta função retorna uma string com o nome do aluno
-        """
-        return self.Nome
-#
-    def define_nota(self, Semestre, Nota):
-        __doc__ = """
-            Esta função serve para definir uma nota para um aluno
-            Parâmetros
-            Semestre: Integer de 1 a 4
-            Nota: Float de 0 a 10
-        """
-        self.Notas[Semestre] = Nota
-#
-    def fecha_media(self):
-        __doc__ = """
-            Esta função função tira a média do aluno
-            e returna um float
-        """
-        Notas = 0
-        Media = 0
-        i = 0
-        while (i < 4):
-            Notas += self.Notas[i]
-            i += 1
-        Media = Notas / 4
-        return Media
-#
-# Iniciando o programa
-nome = str(raw_input("Nome do aluno: "))
-serie = int(raw_input("Serie: "))
-aluno = Aluno(Nome=nome, Serie=serie)
-i = 0
-while (i < 4):
-    nota = float(raw_input("Digite a %sª nota: " % str(i+1)))
-    aluno.define_nota(Semestre=i, Nota=nota)
-    i += 1
-print("O aluno %s terminou o ano com média %f" % (aluno.pega_nome(),aluno.fecha_media()))</code>
-<p style="text-align: justify;">Vamos à explicação da classe...</p>
-<p style="text-align: justify;">Esta classe <strong>Aluno</strong> possui três atributos: Nome, Serie e Notas, uma string, um inteiro e uma lista. O método construtor da classe <strong>__init__()</strong> recebe o nome do aluno e também a série que ele está. A classe também tem o método <strong>define_nota()</strong> que recebe o semestre e a nota, vejam que aqui o aluno tem apenas uma nota geral e não por matéria. As funções <strong>fecha_media()</strong> e <strong>pega_nome</strong> são funções que retornam algum valor. Depois da definição da classe criamos uma <strong>instância</strong> dela chamada <strong>aluno</strong>, reparem que eu usei o mesmo nome mas com letras minúsculas, isso não é obrigatório, viu? Você pode dar qualquer nome às instâncias de uma classe, que também são conhecidas como <strong>objetos</strong>.</p>
-<p style="text-align: justify;">Classes nos ajudam muito em muitas tarefas, nesse caso poderiamos ter, por exemplo, trinta objetos da classe Aluno, cada um com as informações de um aluno.</p>
-
-<h3 style="text-align: justify;">Lição de Casa!</h3>
-<p style="text-align: justify;">Mais uma aula curta essa, não? Mas vamos discutir esse assunto ainda por algum tempo, enquanto isso vamos à lição de casa!</p>
-<p style="text-align: justify;">Se preparem, essa vai ser pesadinha! Quero que vocês construam uma classe chamada Aluno (podem aproveitar o código dessa aula), mas ela deve conter as notas de português, matemática e ciências. Para cada matéria são quatro notas. Então o programa começa e pede o nome do aluno e a classe dele, depois pede as quatro notas de cada matéria, depois disso ele tira as médias e monta um boletim em HTML (uma tabela mesmo), mostrando as notas abaixo de 5 na cor vermelha, além das médias. Se o aluno tiver até duas médias vermelhas o programa diz que ele está de recuperação, se tiver três vermelhas ele está reprovado!</p>
+[ad#propaganda]<br />
+<p style="text-align: justify;">Olá alunos!</p><br />
+<p style="text-align: justify;">Depois da pausa para o carnaval estamos de volta! (Não, eu não gosto de carnaval, mas aproveito o feriado para descansar)</p><br />
+<p style="text-align: justify;">O curso de Python está bem legal, eu aprendi muito ensinando durante esse meses aqui no blog. Para vocês terem uma ideia eu consegui migrar o<a title="Site do GeSpeak" href="http://gespeak.googlecode.com" target="_blank"> GeSpeak</a> para <a title="Site do PyGTK" href="http://pygtk.org" target="_blank">PyGTK</a>, e eu garanto que foi bem simples, tudo o que eu tive que fazer foi ter um pouco de paciência e entender bem a referência da biblioteca no site dela. Se tem uma coisa que eu aprendi com Python é que o código não precisa ser uma coisa de maluco para que funcione bem, Python deixa tudo muito simples e tem vários módulos que adicionam muitas funcionalidades extras. Enfim, se você está lendo isso é por que já deve ter visto as outras aulas e se você está acompanhando o curso também já deve ter percebido essa simplicidade. Agora chega de papo e vamos à aula.</p><br />
+<p style="text-align: justify;">O conceito de classes, objetos e afins é bem chatinho de entender no começo, mas depois que se entende é difícil de querer trabalhar de outra forma. Este assunto é bem genérico e também é suportado por várias linguagens de programação, por isso não vou escrever sobre isso, em vez disso vou usar o arsenal de informações livres que temos na <span style="text-decoration: line-through;">matrix</span> grande rede chamada internet. Comecem lendo <a title="Orientação à Objetos" href="http://pt.wikipedia.org/wiki/Poo" target="_blank">este artigo</a> da Wikipedia. Tentem entender os conceitos do que é uma classe, um atributo, um método... Durante as próximas aulas vamos tratar deste assunto, ok?</p><br />
+<p style="text-align: justify;">Mas, como fazer uma classe em Python?</p><br />
+<p style="text-align: justify;">Vamos ver um exemplo de uma classe muito usada no ensino de orientação à objetos, a classe Aluno:</p><br />
+<br />
+<code lang="python">#!/usr/bin/env python<br />
+# -*- coding: utf-8 -*-<br />
+class Aluno:<br />
+    __doc__ = """<br />
+        Classe de estudo<br />
+    """<br />
+    Nome = ''<br />
+    Serie = 0<br />
+    Notas = [0,0,0,0]<br />
+#<br />
+    def __init__(self, Nome, Serie):<br />
+        __doc__ = """<br />
+            Instancia da classe Aluno<br />
+            Parâmetros<br />
+            Nome: String com o nome do aluno<br />
+            Serie: Integer com a classe do aluno (1 a 9)<br />
+        """<br />
+        self.Nome = Nome<br />
+        self.Serie = Serie<br />
+#<br />
+    def pega_nome(self):<br />
+        __doc__ = """<br />
+            Esta função retorna uma string com o nome do aluno<br />
+        """<br />
+        return self.Nome<br />
+#<br />
+    def define_nota(self, Semestre, Nota):<br />
+        __doc__ = """<br />
+            Esta função serve para definir uma nota para um aluno<br />
+            Parâmetros<br />
+            Semestre: Integer de 1 a 4<br />
+            Nota: Float de 0 a 10<br />
+        """<br />
+        self.Notas[Semestre] = Nota<br />
+#<br />
+    def fecha_media(self):<br />
+        __doc__ = """<br />
+            Esta função função tira a média do aluno<br />
+            e returna um float<br />
+        """<br />
+        Notas = 0<br />
+        Media = 0<br />
+        i = 0<br />
+        while (i < 4):<br />
+            Notas += self.Notas[i]<br />
+            i += 1<br />
+        Media = Notas / 4<br />
+        return Media<br />
+#<br />
+# Iniciando o programa<br />
+nome = str(raw_input("Nome do aluno: "))<br />
+serie = int(raw_input("Serie: "))<br />
+aluno = Aluno(Nome=nome, Serie=serie)<br />
+i = 0<br />
+while (i < 4):<br />
+    nota = float(raw_input("Digite a %sª nota: " % str(i+1)))<br />
+    aluno.define_nota(Semestre=i, Nota=nota)<br />
+    i += 1<br />
+print("O aluno %s terminou o ano com média %f" % (aluno.pega_nome(),aluno.fecha_media()))</code><br />
+<p style="text-align: justify;">Vamos à explicação da classe...</p><br />
+<p style="text-align: justify;">Esta classe <strong>Aluno</strong> possui três atributos: Nome, Serie e Notas, uma string, um inteiro e uma lista. O método construtor da classe <strong>__init__()</strong> recebe o nome do aluno e também a série que ele está. A classe também tem o método <strong>define_nota()</strong> que recebe o semestre e a nota, vejam que aqui o aluno tem apenas uma nota geral e não por matéria. As funções <strong>fecha_media()</strong> e <strong>pega_nome</strong> são funções que retornam algum valor. Depois da definição da classe criamos uma <strong>instância</strong> dela chamada <strong>aluno</strong>, reparem que eu usei o mesmo nome mas com letras minúsculas, isso não é obrigatório, viu? Você pode dar qualquer nome às instâncias de uma classe, que também são conhecidas como <strong>objetos</strong>.</p><br />
+<p style="text-align: justify;">Classes nos ajudam muito em muitas tarefas, nesse caso poderiamos ter, por exemplo, trinta objetos da classe Aluno, cada um com as informações de um aluno.</p><br />
+<br />
+<h3 style="text-align: justify;">Lição de Casa!</h3><br />
+<p style="text-align: justify;">Mais uma aula curta essa, não? Mas vamos discutir esse assunto ainda por algum tempo, enquanto isso vamos à lição de casa!</p><br />
+<p style="text-align: justify;">Se preparem, essa vai ser pesadinha! Quero que vocês construam uma classe chamada Aluno (podem aproveitar o código dessa aula), mas ela deve conter as notas de português, matemática e ciências. Para cada matéria são quatro notas. Então o programa começa e pede o nome do aluno e a classe dele, depois pede as quatro notas de cada matéria, depois disso ele tira as médias e monta um boletim em HTML (uma tabela mesmo), mostrando as notas abaixo de 5 na cor vermelha, além das médias. Se o aluno tiver até duas médias vermelhas o programa diz que ele está de recuperação, se tiver três vermelhas ele está reprovado!</p><br />
 <p style="text-align: justify;">Boa sorte! Este está complicadinho heheheh, mas com o que eu ensinei até aqui vocês conseguem, tenho certeza!</p>

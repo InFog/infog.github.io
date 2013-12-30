@@ -15,49 +15,49 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/3xbr5y7
   _sexybookmarks_permaHash: 4031a37aec32df39ec2ad191e045c9d9
 ---
-<p style="text-align: justify;">Olá alunos!</p>
-<p style="text-align: justify;">hoje vamos continuar falando sobre <a title="PyGTK" href="http://pygtk.org" target="_blank">PyGTK</a>. Na <a title="Aula 16 - PyGTK" href="http://evaldojunior.com.br/blog/?p=541" target="_blank">aula passada</a> vimos uma pequena introdução ao PyGTK, acredito que vocês não tenham encontrado muitas dificuldades com ele.</p>
-<p style="text-align: justify;">Pois bem, até agora fizemos uma janela com um botão, coisa simples, mas como eu faço para adicionar mais botões? Será que eu posso utilizar o mesmo método que usei para o primeiro botão? Usar a função <strong>add()</strong> da classe <strong>gtk.Window</strong>?</p>
-<p style="text-align: justify;">Hum, agora a coisa começa a complicar um pouquinho pois teremos que usar as "<strong>Caixas</strong>", mais precisamente as caixas verticais e horizontais, vejam o desenho abaixo, ele mostra o GeSpeak, mostrando as tais caixas:</p>
-<p style="text-align: justify;"><img class="aligncenter size-full wp-image-563" title="gespeak_box" src="http://evaldojunior.com.br/blog/wp-content/uploads/2009/03/gespeak_box.png" alt="gespeak_box" width="512" height="306" /></p>
-<p style="text-align: justify;">Bem, o desenho acima não está completo, o GeSpeak ainda tem um menu, mais SpinButtons e mais uma Caixa Horizontal abaixo da primeira, mas serve como exemplo, vamos às explicações:</p>
-<p style="text-align: justify;">Em vermelho está a janela em sí, <strong>gtk.Window</strong>, este widget suporta apenas mais UM widget acoplado à ele. E é este o motivo que nos faz usar, neste caso, uma caixa vertical, <strong>gtk.VBox</strong>, em verde, este widget já suporta quantos widgets precisarmos, vejam que dentro dele temos, em roxo, duas caixas horizontais, <strong>gtk.HBox</strong>, e também um <strong>gtk.TextView</strong>. O mesmo acontece com as caixas horinzontais, elas suportam vários widgets.</p>
-<p style="text-align: justify;">No começo isso parece um pouco complicado, mas é bem simples. Vamos ver um código de exemplo:</p>
-
-<code lang="python">#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-import pygtk
-import gtk
-def ola_mundo(widget):
-    print "Hello World"
-# criando a janela
-janela = gtk.Window(gtk.WINDOW_TOPLEVEL)
-# agora uma caixa vertical
-caixa_v = gtk.VBox()
-# agora um label e uma caixa de entrada
-label1 = gtk.Label("Sou um label")
-entrada = gtk.Entry()
-# agora uma caixa horizontal, para o label e entry
-caixa_h = gtk.HBox()
-# adicionando o label e o entry à caixa horizontal
-caixa_h.pack_start(label1, expand=False, fill=True)
-caixa_h.pack_start(entrada, expand=False, fill=True)
-# agora a caixa horizontal é adicionada à ciaxa vertical
-caixa_v.pack_start(caixa_h, expand=False, fill=True)
-# ufa, quase lá
-# Agora um botão
-botao = gtk.Button("Clique aqui")
-botao.connect('clicked', ola_mundo)
-# agora o botão é adicionado à caixa vertical
-caixa_v.pack_start(botao, expand=False, fill=True)
-# e finalmente adicionamos a caixa vertical à janela
-janela.add(caixa_v)
-janela.show_all()
-gtk.main()</code>
-
-<p style="text-align: justify;">O código está bem comentado, vejam a janela que ele gerou:</p>
-<p style="text-align: justify;"><img class="aligncenter size-full wp-image-564" title="widgets python gtk pygtk" src="http://evaldojunior.com.br/blog/wp-content/uploads/2009/03/captura_de_tela-widgetspy.png" alt="widgets python gtk pygtk" width="237" height="70" /></p>
-<p style="text-align: justify;">Simples, não? As opções expand e fill fazem referência ao preenchimento que o widget terá na janela, se ele irá se expandir junto com a janela ou não, etc.</p>
-<p style="text-align: justify;">E esta foi a nossa aula de hoje!</p>
-<h3 style="text-align: justify;">Lição de Casa!</h3>
+<p style="text-align: justify;">Olá alunos!</p><br />
+<p style="text-align: justify;">hoje vamos continuar falando sobre <a title="PyGTK" href="http://pygtk.org" target="_blank">PyGTK</a>. Na <a title="Aula 16 - PyGTK" href="http://evaldojunior.com.br/blog/?p=541" target="_blank">aula passada</a> vimos uma pequena introdução ao PyGTK, acredito que vocês não tenham encontrado muitas dificuldades com ele.</p><br />
+<p style="text-align: justify;">Pois bem, até agora fizemos uma janela com um botão, coisa simples, mas como eu faço para adicionar mais botões? Será que eu posso utilizar o mesmo método que usei para o primeiro botão? Usar a função <strong>add()</strong> da classe <strong>gtk.Window</strong>?</p><br />
+<p style="text-align: justify;">Hum, agora a coisa começa a complicar um pouquinho pois teremos que usar as "<strong>Caixas</strong>", mais precisamente as caixas verticais e horizontais, vejam o desenho abaixo, ele mostra o GeSpeak, mostrando as tais caixas:</p><br />
+<p style="text-align: justify;"><img class="aligncenter size-full wp-image-563" title="gespeak_box" src="http://evaldojunior.com.br/blog/wp-content/uploads/2009/03/gespeak_box.png" alt="gespeak_box" width="512" height="306" /></p><br />
+<p style="text-align: justify;">Bem, o desenho acima não está completo, o GeSpeak ainda tem um menu, mais SpinButtons e mais uma Caixa Horizontal abaixo da primeira, mas serve como exemplo, vamos às explicações:</p><br />
+<p style="text-align: justify;">Em vermelho está a janela em sí, <strong>gtk.Window</strong>, este widget suporta apenas mais UM widget acoplado à ele. E é este o motivo que nos faz usar, neste caso, uma caixa vertical, <strong>gtk.VBox</strong>, em verde, este widget já suporta quantos widgets precisarmos, vejam que dentro dele temos, em roxo, duas caixas horizontais, <strong>gtk.HBox</strong>, e também um <strong>gtk.TextView</strong>. O mesmo acontece com as caixas horinzontais, elas suportam vários widgets.</p><br />
+<p style="text-align: justify;">No começo isso parece um pouco complicado, mas é bem simples. Vamos ver um código de exemplo:</p><br />
+<br />
+<code lang="python">#!/usr/bin/env python<br />
+# -*- coding: utf-8 -*-<br />
+import pygtk<br />
+import gtk<br />
+def ola_mundo(widget):<br />
+    print "Hello World"<br />
+# criando a janela<br />
+janela = gtk.Window(gtk.WINDOW_TOPLEVEL)<br />
+# agora uma caixa vertical<br />
+caixa_v = gtk.VBox()<br />
+# agora um label e uma caixa de entrada<br />
+label1 = gtk.Label("Sou um label")<br />
+entrada = gtk.Entry()<br />
+# agora uma caixa horizontal, para o label e entry<br />
+caixa_h = gtk.HBox()<br />
+# adicionando o label e o entry à caixa horizontal<br />
+caixa_h.pack_start(label1, expand=False, fill=True)<br />
+caixa_h.pack_start(entrada, expand=False, fill=True)<br />
+# agora a caixa horizontal é adicionada à ciaxa vertical<br />
+caixa_v.pack_start(caixa_h, expand=False, fill=True)<br />
+# ufa, quase lá<br />
+# Agora um botão<br />
+botao = gtk.Button("Clique aqui")<br />
+botao.connect('clicked', ola_mundo)<br />
+# agora o botão é adicionado à caixa vertical<br />
+caixa_v.pack_start(botao, expand=False, fill=True)<br />
+# e finalmente adicionamos a caixa vertical à janela<br />
+janela.add(caixa_v)<br />
+janela.show_all()<br />
+gtk.main()</code><br />
+<br />
+<p style="text-align: justify;">O código está bem comentado, vejam a janela que ele gerou:</p><br />
+<p style="text-align: justify;"><img class="aligncenter size-full wp-image-564" title="widgets python gtk pygtk" src="http://evaldojunior.com.br/blog/wp-content/uploads/2009/03/captura_de_tela-widgetspy.png" alt="widgets python gtk pygtk" width="237" height="70" /></p><br />
+<p style="text-align: justify;">Simples, não? As opções expand e fill fazem referência ao preenchimento que o widget terá na janela, se ele irá se expandir junto com a janela ou não, etc.</p><br />
+<p style="text-align: justify;">E esta foi a nossa aula de hoje!</p><br />
+<h3 style="text-align: justify;">Lição de Casa!</h3><br />
 <p style="text-align: justify;">A lição de casa para hoje é: "Faça o código para montar a janela do GeSpeak mostrado na figura ali em cima, está bem colorido e fácil de acompanhar =) Boa sorte!</p>

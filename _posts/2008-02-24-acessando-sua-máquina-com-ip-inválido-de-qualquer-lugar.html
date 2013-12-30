@@ -13,20 +13,20 @@ type: post
 published: false
 meta: {}
 ---
-Acessar máquinas remotamente é algo bem comum hoje em dia. A popularização da banda larga favorece aqueles que estão distantes geograficamente e precisam acessar algum serviço no computador pessoal.
-
-...
-
-O problema é o seguinte: Você precisa acessar algum serviço na sua máquina que está em uma rede particular e não tem um IP válido, outro problema é que a sua máquina se conecta através de um modem ADSL com IP válido, e esse modem  não tem IP estático!
-
-O esquema é esse:
-
-<img src="http://evaldojunior.com.br/blog/wp-includes/images/esquema_modem.png" />
-
-A rede interna é a 192.168.1.0 e a internet é a 200.200.1.0, nesse caso o modem tem dois IPs, o válido (internet) e o inválido (rede interna).
-
-Caso a sua máquina tivesse acesso direto à internet, com IP válido, mas variável, você poderia utilizar um serviço de DNS como o <a href="https://www.dyndns.com/" target="_blank">DynDNS</a>, que é bem fácil de configurar e você poderia usar o <a href="http://ez-ipupdate.com/" target="_blank">ez-ipupdate</a> para manter o DynDNS atualizado.
-
-Se o IP do modem fosse estático bastaria você decorar o número e configurar as regras de NAT do modem.
-
+Acessar máquinas remotamente é algo bem comum hoje em dia. A popularização da banda larga favorece aqueles que estão distantes geograficamente e precisam acessar algum serviço no computador pessoal.<br />
+<br />
+...<br />
+<br />
+O problema é o seguinte: Você precisa acessar algum serviço na sua máquina que está em uma rede particular e não tem um IP válido, outro problema é que a sua máquina se conecta através de um modem ADSL com IP válido, e esse modem  não tem IP estático!<br />
+<br />
+O esquema é esse:<br />
+<br />
+<img src="http://evaldojunior.com.br/blog/wp-includes/images/esquema_modem.png" /><br />
+<br />
+A rede interna é a 192.168.1.0 e a internet é a 200.200.1.0, nesse caso o modem tem dois IPs, o válido (internet) e o inválido (rede interna).<br />
+<br />
+Caso a sua máquina tivesse acesso direto à internet, com IP válido, mas variável, você poderia utilizar um serviço de DNS como o <a href="https://www.dyndns.com/" target="_blank">DynDNS</a>, que é bem fácil de configurar e você poderia usar o <a href="http://ez-ipupdate.com/" target="_blank">ez-ipupdate</a> para manter o DynDNS atualizado.<br />
+<br />
+Se o IP do modem fosse estático bastaria você decorar o número e configurar as regras de NAT do modem.<br />
+<br />
 Mas nenhuma das duas opções acima é válida... e agora, como resolver o problema? O ez-ipupdate monitora alguma interface de rede e atualiza o DynDNS de acordo com o IP dessa interface. No nosso caso nós não temos uma interface com IP válido para ser monitorada...

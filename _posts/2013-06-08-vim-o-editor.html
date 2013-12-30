@@ -18,94 +18,94 @@ meta:
   Hide SexyBookmarks: '0'
   Hide OgTags: '0'
 ---
-Olá, pessoal!
-
-Quem me acompanha pelo Twitter (<a title="Twitter do Evaldo Junior" href="https://twitter.com/InFog9">@InFog9)</a>, ou me conhece pessoalmente, já deve ter me ouvido falar, muito, do editor <a title="Página oficial do Vim" href="http://www.vim.org/">Vim</a> e de mil e uma maravilhas que eu falo a respeito dele. Alguns levam um susto quando percebem que eu utilizo o Vim no meu dia a dia e até me perguntam como é que eu consigo trabalhar com um editor tão velho, antiquado e sem recursos.
-
-<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2012/05/vim.png"><img class="aligncenter size-full wp-image-1187" alt="vim" src="http://evaldojunior.com.br/blog/wp-content/uploads/2012/05/vim.png" width="135" height="155" /></a>
-
-Pois bem, resolvi escrever este texto para ajudar a colocar mais um pouco de material de Vim na web e de repente até inspirar novatos e não iniciados no Vim a se aprofundar e a realmente entender e usar o editor com tudo o que ele tem de melhor.
-<h3>Um pouco de história</h3>
-Eu, assim como a maioria dos alunos de cursos de computação na época faculdade, sempre achei que as ferramentas de programação eram oferecidas pelos "fabricantes das linguagens". Como cheguei à esta brilhante conclusão? Muito simples: Aprendi que C++ era feito com o Borland Turbo C++, ou com o Borland C++ Builder. Aprendi que Pascal era com o Turbo Pascal e para usar Pascal com interfaces gráficas eu deveria usar o Delphi. Aprendi que Visual Basic se escrevia usando o Visual Basic (heim? mesmo nome de linguagem e IDE?). Aprendi que para Java tinha um tal de <a title="Site oficial do Eclipse" href="http://eclipse.org/">Eclipse</a>. E é claro, aprendi que para PHP, HTML e outras linguagens do conjunto para WEB era feito com o DreamWeaver (Ou similares, acho que nunca usei o Dreamweaver, ufa!).
-
-Pois bem, quando eu comecei a brincar com desenvolvimento para web, eu escolhi PHP e descobri uma coisa muito legal, (Eu já usava GNU/Linux, na época) que eu podia usar qualquer editor de textos para fazer PHP. E então eu escolhi um editor que já estava lá no meu ambiente gráfico (KDE, na época) e fiquei trabalhando com ele nas opções padrão mesmo, sem nem saber que dava para mudar o esquema de cores ou algo assim (O editor era o Kate).
-
-Fiquei trabalhando com o Kate e mais tarde o Gedit por um bom tempo, e eu sentia falta de coisas como auto completar e ferramentas para auxiliar no dia a dia. até que fui apresentado ao <a title="Site oficial do NetBeans" href="http://netbeans.org/">NetBeans</a>. Na hora eu falei: Ué, mas ele não é para Java? E descobri que, assim como o Eclipse, ele também suportava uma lista de linguagens e ferramentas.
-
-O NetBeans, assim como o Eclipse, já se encaixam na categoria IDE, que é um ambiente mais completo para desenvolvimento, com ferramentas para debug, controle de versões, auto completar, documentação em balões na tela e coisas assim.
-
-Durante todo este tempo o Vim era um editor usado muito lá de vez em nunca, apenas para editar arquivos de configuração e um shell script aqui e outro ali. E o engraçado é que muita gente vê o Vim assim mesmo, como uma ferramenta chata, esquisita e que só serve para complicar ainda mais as disciplinas que ensinam GNU/Linux e outros Unix.
-
-E então, em um dia chuvoso, com raios, trovões e uma trilha sonora triste (ou não, nem lembro como estava o tempo, mas no cinema os dias tristes são sempre chuvosos) meu notebook praticamente morreu. Ele não ligava mais e eu tive que enviá-lo para uma assistência técnica. Eu iria ficar sem meu notebook por uma semana, mas não poderia deixar de trabalhar neste período, por isso peguei a única máquina disponível em casa, o Netbook da minha esposa. A máquina é um Acer Aspire One, telinha de 10", recursos limitados e certamente não o melhor local para rodar o Netbeans, minha IDE na época. Foi então que resolvi dar uma chance ao Vim.
-<h3>Os primeiros passos</h3>
-É claro que os primeiros passos foram desajeitados. A primeira coisa que fiz foi buscar referências e descobri que era possível deixar a configuração do Vim no Github. Nisso encontrei algumas configurações já prontas, mas não achei legal usar assim, pois eram configurações já cheias de coisas que eu provavelmente nem usaria. Aí resolvi começar o meu Vim. Criei um <a title="Meu Vim no Github" href="https://github.com/InFog/meuvim">repositório no Github</a> e comecei a brincar com as opções.
-
-Em busca de referências, achei o <a title="Site do Net Tuts +" href="http://net.tutsplus.com/">Net Tuts +</a> e um monte de dicas legais sobre <a title="Plugins essenciais para Vim" href="http://net.tutsplus.com/sessions/vim-essential-plugins/?search_index=5">plugins essenciais para Vim</a>. Ao mesmo tempo em que buscava novos plugins, fui aprendendo os comandos do Vim. Eu pensei assim:
-
-<strong>"Vou aprender um ou dois comandos novos por dia, assim, em apenas um mês saberei algo entre 30 a 60 comandos e com isso é possível fazer muita coisa."</strong>
-
-E realmente foi mais ou menos assim. Com alguns comandos novos todos os dias, sem forçar a barra, acabei aprendendo bastante.
-<h3>Encarando o desafio</h3>
-Depois de uma semana usando o Vim, meu notebook voltou e lá estava o Netbeans me esperando, com todas as facilidades já embutidas (e o peso incrível na ram...). Eu removi o Netbeans para não cair na vontade de abri-lo, baixei minha configuração do Vim no note, inspirei fundo e resolvi encarar mais um tempo com o Vim.
-
-<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.jpg"><img class="aligncenter size-full wp-image-1315" alt="vim" src="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.jpg" width="309" height="339" /></a>
-
-A busca por novos plugins continuou e eu basicamente jogava os plugins na configuração, deixando o repositório uma bela bagunça. Remover um plugin era bem complicado, além da mistureba de readmes que tinha lá.
-
-Aí conheci umas opções interessantes para gerenciar os plugins, uma delas é o <a title="Vundle no Github" href="https://github.com/gmarik/vundle">Vundle</a>. Com o Vundle é possível gerenciar facilmente os plugins, indicando seus repositórios no Github ou no Vim Scripts.
-
-Uma coisa que comecei a fazer após começar a usar  o Vim é ler o vimrc (arquivo de configuração do Vim) de outras pessoas. É incrível com dá para pegar boas ideias olhando as configurações de outras pessoas. Acho que isso não é possível com opções como Eclipse e Netbeans, onde você usa o que tem nele e pronto.
-<h3>Evoluindo com o Vim</h3>
-Aprender alguns comandos do Vim é legal e realmente é possível se virar bem com o editor sabendo apenas uns 10 ou 20 comandos. Mas quanto mais se aprende, mais é possível extrair das ferramentas que se usa. Uma coisa que demorei bastante para fazer foi a navegação usando as teclas h, j, k e l. Sempre preferi ficar com as setas mesmo, mas depois que resolvi dar uma chance para a navegação padrão do Vim, acabei me acostumando e gostando bastante, pois agora preciso mover os braços menos vezes, e isso é menos cansativo. Pode parecer que não, mas ajuda até a manter uma postura melhor usando o teclado, além de reduzir drasticamente o uso do mouse.
-
-Uma opção bacana é aprender a usar a VimL, a linguagem de programação do Vim, com ela é possível fazer seus próprios plugins. Eu até já estou me arriscando a escrever uns plugins e a ajudar em outros que eu uso no dia a dia.
-
-Como muita gente me pergunta os plugins que eu uso, aqui está uma lista dos mais interessantes:
-<ul>
-	<li><span style="line-height: 16px;"><a title="Nerdtree" href="https://github.com/scrooloose/nerdtree">Nerdtree</a> para navegação em árvore de diretórios</span></li>
-	<li><a title="CtrlP no Github" href="https://github.com/kien/ctrlp.vim">CtrlP</a> para pesquisa de arquivos</li>
-	<li><a title="Powerline no Github" href="https://github.com/Lokaltog/powerline">Powerline</a> para uma barra de status que diz muito</li>
-	<li><a title="Syntastic no Github" href="https://github.com/scrooloose/syntastic">Syntastic</a> para indicar erros de sintaxe e até padrões como a PEP8 (Python) e PSRs (PHP)</li>
-	<li><a title="VDebug no Github" href="https://github.com/joonty/vdebug">VDebug</a> para usar o XDebug com PHP, funciona para outras linguagens, eu contribuí com este plugin =)</li>
-	<li><a title="Snipmate no Github" href="https://github.com/msanders/snipmate.vim">Snipmate</a> para snippets em código (Existem algumas versões interessantes deste)</li>
-	<li><a title="Numbers no Github" href="https://github.com/myusuf3/numbers.vim">Numbers</a> para alternar entre a numeração absoluta e relativa das linhas, ótimo para se movimentar usando coisas como "10j" para descer 10 linhas.</li>
-</ul>
-Ah, para acompanhar melhor, veja o <a title="Meu vim no Github" href="https://github.com/InFog/meuvim">repositório do meu vim no Github</a> e é claro, leia o meu <a title="Meu vimrc" href="https://github.com/InFog/meuvim/blob/master/vimrc">vimrc</a> para se inspirar.
-
-Eu já uso o Vim há uns 2 anos, então deu tempo de aprender bastante coisa =)
-
-Olha o meu vim atual (já que eu mudo coisas frequentemente). Veja que ele exibe o branch no Git, lista de diretórios, lista de métodos, etc:
-
-<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.png"><img class="aligncenter size-full wp-image-1316" alt="vim" src="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.png" width="1180" height="764" /></a>
-<h3>Algumas dicas</h3>
-Agora, mais algumas dicas para você usar Vim:
-<ul>
-	<li><span style="line-height: 16px;">Tenha uma boa motivação pessoal.</span>
-<ul>
-	<li>Não queira usar Vim por que fulano usa ou por que é cool, use por ele ser um ótimo editor.</li>
-</ul>
-</li>
-	<li>Estude com alguém ou algumas pessoas
-<ul>
-	<li>Isso ajuda bastante a manter a motivação e vocês podem trocar ideias</li>
-</ul>
-</li>
-	<li>Não desista!
-<ul>
-	<li>os primeiros dias serão difíceis, você vai querer voltar para a sua IDE, mas se mantenha firme!</li>
-</ul>
-</li>
-	<li>Monte seu vimrc
-<ul>
-	<li>Use os outros vimrc como inspiração, mas monte o seu, uma peça por vez. Não adianta começar com quinhentos plugins, o ideal é conhecer um a um, conforme a necessidade</li>
-</ul>
-</li>
-	<li>Calma, a curva de aprendizado é grande
-<ul>
-	<li>É isso mesmo, não é tão simples começar a usar Vim, a curva de aprendizado é um pouco alta, por isso, se acalme e siga em frente</li>
-</ul>
-</li>
-</ul>
-<span style="font-size: medium;"><span style="line-height: 24px;">E por enquanto é isso. Se você for usar o Vim, boa sorte e seja bem vindo =)</span></span>
-
+Olá, pessoal!<br />
+<br />
+Quem me acompanha pelo Twitter (<a title="Twitter do Evaldo Junior" href="https://twitter.com/InFog9">@InFog9)</a>, ou me conhece pessoalmente, já deve ter me ouvido falar, muito, do editor <a title="Página oficial do Vim" href="http://www.vim.org/">Vim</a> e de mil e uma maravilhas que eu falo a respeito dele. Alguns levam um susto quando percebem que eu utilizo o Vim no meu dia a dia e até me perguntam como é que eu consigo trabalhar com um editor tão velho, antiquado e sem recursos.<br />
+<br />
+<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2012/05/vim.png"><img class="aligncenter size-full wp-image-1187" alt="vim" src="http://evaldojunior.com.br/blog/wp-content/uploads/2012/05/vim.png" width="135" height="155" /></a><br />
+<br />
+Pois bem, resolvi escrever este texto para ajudar a colocar mais um pouco de material de Vim na web e de repente até inspirar novatos e não iniciados no Vim a se aprofundar e a realmente entender e usar o editor com tudo o que ele tem de melhor.<br />
+<h3>Um pouco de história</h3><br />
+Eu, assim como a maioria dos alunos de cursos de computação na época faculdade, sempre achei que as ferramentas de programação eram oferecidas pelos "fabricantes das linguagens". Como cheguei à esta brilhante conclusão? Muito simples: Aprendi que C++ era feito com o Borland Turbo C++, ou com o Borland C++ Builder. Aprendi que Pascal era com o Turbo Pascal e para usar Pascal com interfaces gráficas eu deveria usar o Delphi. Aprendi que Visual Basic se escrevia usando o Visual Basic (heim? mesmo nome de linguagem e IDE?). Aprendi que para Java tinha um tal de <a title="Site oficial do Eclipse" href="http://eclipse.org/">Eclipse</a>. E é claro, aprendi que para PHP, HTML e outras linguagens do conjunto para WEB era feito com o DreamWeaver (Ou similares, acho que nunca usei o Dreamweaver, ufa!).<br />
+<br />
+Pois bem, quando eu comecei a brincar com desenvolvimento para web, eu escolhi PHP e descobri uma coisa muito legal, (Eu já usava GNU/Linux, na época) que eu podia usar qualquer editor de textos para fazer PHP. E então eu escolhi um editor que já estava lá no meu ambiente gráfico (KDE, na época) e fiquei trabalhando com ele nas opções padrão mesmo, sem nem saber que dava para mudar o esquema de cores ou algo assim (O editor era o Kate).<br />
+<br />
+Fiquei trabalhando com o Kate e mais tarde o Gedit por um bom tempo, e eu sentia falta de coisas como auto completar e ferramentas para auxiliar no dia a dia. até que fui apresentado ao <a title="Site oficial do NetBeans" href="http://netbeans.org/">NetBeans</a>. Na hora eu falei: Ué, mas ele não é para Java? E descobri que, assim como o Eclipse, ele também suportava uma lista de linguagens e ferramentas.<br />
+<br />
+O NetBeans, assim como o Eclipse, já se encaixam na categoria IDE, que é um ambiente mais completo para desenvolvimento, com ferramentas para debug, controle de versões, auto completar, documentação em balões na tela e coisas assim.<br />
+<br />
+Durante todo este tempo o Vim era um editor usado muito lá de vez em nunca, apenas para editar arquivos de configuração e um shell script aqui e outro ali. E o engraçado é que muita gente vê o Vim assim mesmo, como uma ferramenta chata, esquisita e que só serve para complicar ainda mais as disciplinas que ensinam GNU/Linux e outros Unix.<br />
+<br />
+E então, em um dia chuvoso, com raios, trovões e uma trilha sonora triste (ou não, nem lembro como estava o tempo, mas no cinema os dias tristes são sempre chuvosos) meu notebook praticamente morreu. Ele não ligava mais e eu tive que enviá-lo para uma assistência técnica. Eu iria ficar sem meu notebook por uma semana, mas não poderia deixar de trabalhar neste período, por isso peguei a única máquina disponível em casa, o Netbook da minha esposa. A máquina é um Acer Aspire One, telinha de 10", recursos limitados e certamente não o melhor local para rodar o Netbeans, minha IDE na época. Foi então que resolvi dar uma chance ao Vim.<br />
+<h3>Os primeiros passos</h3><br />
+É claro que os primeiros passos foram desajeitados. A primeira coisa que fiz foi buscar referências e descobri que era possível deixar a configuração do Vim no Github. Nisso encontrei algumas configurações já prontas, mas não achei legal usar assim, pois eram configurações já cheias de coisas que eu provavelmente nem usaria. Aí resolvi começar o meu Vim. Criei um <a title="Meu Vim no Github" href="https://github.com/InFog/meuvim">repositório no Github</a> e comecei a brincar com as opções.<br />
+<br />
+Em busca de referências, achei o <a title="Site do Net Tuts +" href="http://net.tutsplus.com/">Net Tuts +</a> e um monte de dicas legais sobre <a title="Plugins essenciais para Vim" href="http://net.tutsplus.com/sessions/vim-essential-plugins/?search_index=5">plugins essenciais para Vim</a>. Ao mesmo tempo em que buscava novos plugins, fui aprendendo os comandos do Vim. Eu pensei assim:<br />
+<br />
+<strong>"Vou aprender um ou dois comandos novos por dia, assim, em apenas um mês saberei algo entre 30 a 60 comandos e com isso é possível fazer muita coisa."</strong><br />
+<br />
+E realmente foi mais ou menos assim. Com alguns comandos novos todos os dias, sem forçar a barra, acabei aprendendo bastante.<br />
+<h3>Encarando o desafio</h3><br />
+Depois de uma semana usando o Vim, meu notebook voltou e lá estava o Netbeans me esperando, com todas as facilidades já embutidas (e o peso incrível na ram...). Eu removi o Netbeans para não cair na vontade de abri-lo, baixei minha configuração do Vim no note, inspirei fundo e resolvi encarar mais um tempo com o Vim.<br />
+<br />
+<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.jpg"><img class="aligncenter size-full wp-image-1315" alt="vim" src="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.jpg" width="309" height="339" /></a><br />
+<br />
+A busca por novos plugins continuou e eu basicamente jogava os plugins na configuração, deixando o repositório uma bela bagunça. Remover um plugin era bem complicado, além da mistureba de readmes que tinha lá.<br />
+<br />
+Aí conheci umas opções interessantes para gerenciar os plugins, uma delas é o <a title="Vundle no Github" href="https://github.com/gmarik/vundle">Vundle</a>. Com o Vundle é possível gerenciar facilmente os plugins, indicando seus repositórios no Github ou no Vim Scripts.<br />
+<br />
+Uma coisa que comecei a fazer após começar a usar  o Vim é ler o vimrc (arquivo de configuração do Vim) de outras pessoas. É incrível com dá para pegar boas ideias olhando as configurações de outras pessoas. Acho que isso não é possível com opções como Eclipse e Netbeans, onde você usa o que tem nele e pronto.<br />
+<h3>Evoluindo com o Vim</h3><br />
+Aprender alguns comandos do Vim é legal e realmente é possível se virar bem com o editor sabendo apenas uns 10 ou 20 comandos. Mas quanto mais se aprende, mais é possível extrair das ferramentas que se usa. Uma coisa que demorei bastante para fazer foi a navegação usando as teclas h, j, k e l. Sempre preferi ficar com as setas mesmo, mas depois que resolvi dar uma chance para a navegação padrão do Vim, acabei me acostumando e gostando bastante, pois agora preciso mover os braços menos vezes, e isso é menos cansativo. Pode parecer que não, mas ajuda até a manter uma postura melhor usando o teclado, além de reduzir drasticamente o uso do mouse.<br />
+<br />
+Uma opção bacana é aprender a usar a VimL, a linguagem de programação do Vim, com ela é possível fazer seus próprios plugins. Eu até já estou me arriscando a escrever uns plugins e a ajudar em outros que eu uso no dia a dia.<br />
+<br />
+Como muita gente me pergunta os plugins que eu uso, aqui está uma lista dos mais interessantes:<br />
+<ul><br />
+	<li><span style="line-height: 16px;"><a title="Nerdtree" href="https://github.com/scrooloose/nerdtree">Nerdtree</a> para navegação em árvore de diretórios</span></li><br />
+	<li><a title="CtrlP no Github" href="https://github.com/kien/ctrlp.vim">CtrlP</a> para pesquisa de arquivos</li><br />
+	<li><a title="Powerline no Github" href="https://github.com/Lokaltog/powerline">Powerline</a> para uma barra de status que diz muito</li><br />
+	<li><a title="Syntastic no Github" href="https://github.com/scrooloose/syntastic">Syntastic</a> para indicar erros de sintaxe e até padrões como a PEP8 (Python) e PSRs (PHP)</li><br />
+	<li><a title="VDebug no Github" href="https://github.com/joonty/vdebug">VDebug</a> para usar o XDebug com PHP, funciona para outras linguagens, eu contribuí com este plugin =)</li><br />
+	<li><a title="Snipmate no Github" href="https://github.com/msanders/snipmate.vim">Snipmate</a> para snippets em código (Existem algumas versões interessantes deste)</li><br />
+	<li><a title="Numbers no Github" href="https://github.com/myusuf3/numbers.vim">Numbers</a> para alternar entre a numeração absoluta e relativa das linhas, ótimo para se movimentar usando coisas como "10j" para descer 10 linhas.</li><br />
+</ul><br />
+Ah, para acompanhar melhor, veja o <a title="Meu vim no Github" href="https://github.com/InFog/meuvim">repositório do meu vim no Github</a> e é claro, leia o meu <a title="Meu vimrc" href="https://github.com/InFog/meuvim/blob/master/vimrc">vimrc</a> para se inspirar.<br />
+<br />
+Eu já uso o Vim há uns 2 anos, então deu tempo de aprender bastante coisa =)<br />
+<br />
+Olha o meu vim atual (já que eu mudo coisas frequentemente). Veja que ele exibe o branch no Git, lista de diretórios, lista de métodos, etc:<br />
+<br />
+<a href="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.png"><img class="aligncenter size-full wp-image-1316" alt="vim" src="http://evaldojunior.com.br/blog/wp-content/uploads/2013/06/vim.png" width="1180" height="764" /></a><br />
+<h3>Algumas dicas</h3><br />
+Agora, mais algumas dicas para você usar Vim:<br />
+<ul><br />
+	<li><span style="line-height: 16px;">Tenha uma boa motivação pessoal.</span><br />
+<ul><br />
+	<li>Não queira usar Vim por que fulano usa ou por que é cool, use por ele ser um ótimo editor.</li><br />
+</ul><br />
+</li><br />
+	<li>Estude com alguém ou algumas pessoas<br />
+<ul><br />
+	<li>Isso ajuda bastante a manter a motivação e vocês podem trocar ideias</li><br />
+</ul><br />
+</li><br />
+	<li>Não desista!<br />
+<ul><br />
+	<li>os primeiros dias serão difíceis, você vai querer voltar para a sua IDE, mas se mantenha firme!</li><br />
+</ul><br />
+</li><br />
+	<li>Monte seu vimrc<br />
+<ul><br />
+	<li>Use os outros vimrc como inspiração, mas monte o seu, uma peça por vez. Não adianta começar com quinhentos plugins, o ideal é conhecer um a um, conforme a necessidade</li><br />
+</ul><br />
+</li><br />
+	<li>Calma, a curva de aprendizado é grande<br />
+<ul><br />
+	<li>É isso mesmo, não é tão simples começar a usar Vim, a curva de aprendizado é um pouco alta, por isso, se acalme e siga em frente</li><br />
+</ul><br />
+</li><br />
+</ul><br />
+<span style="font-size: medium;"><span style="line-height: 24px;">E por enquanto é isso. Se você for usar o Vim, boa sorte e seja bem vindo =)</span></span><br />
+<br />
 InFog

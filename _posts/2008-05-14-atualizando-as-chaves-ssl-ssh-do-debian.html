@@ -18,50 +18,50 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/32zujkq
   _sexybookmarks_permaHash: 9e5e5429ed6f09c92513c88325b5d5cb
 ---
-<p style="text-align: justify;">Como muitos já sabem o Debian passou por uma atualização crítica, os pacotes de criação de chaves SSL (Utilizadas pelo SSH) estavam com um bug muito sério, e acabavam gerando chaves menos seguras do que deveriam.
-Para quem tem servidores SSH instalados é obrigatório fazer a atualização do sistema e também das chaves.
-Eu utilizo, nos servidores, o Debian Etch, então fiz esses procedimentos para atualizar os pacotes necessários e gerar as chaves novamente:</p>
-
-<p style="text-align: justify;"><span style="color: #008000;"> # aptitude update
-# atitude dist-upgrade</span></p>
-
-<p style="text-align: justify;">Ele pediu para atualizar os seguintes pacotes:
-<span style="color: #000080;"> openssh-client openssh-server</span></p>
-
-<p style="text-align: justify;">E pediu também para instalar o novo pacote:
-<span style="color: #333399;"> openssh-blacklist</span></p>
-<p style="text-align: justify;"><!--adsense#propaganda--></p>
-
-<p style="text-align: justify;">Esse pacote é novo no Debian e tem uma lista de chaves OpenSSH ruins e conhecidas, que são usadas pelo sistema para reconhecer chaves SSH suspeitas.
-Durante a instalação dos pacotes o instalador vai lhe sugerir a renovação das chaves, ele NÃO fará isso automaticamente! Então temos que fazer "na unha" mesmo, primeiro é possível ver as chaves atuais:</p>
-
-<p style="text-align: justify;"><span style="color: #008000;"> # ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key
-# ssh-keygen -l -f /etc/ssh/ssh_host_dsa_key</span></p>
-<p style="text-align: justify;">Claro que você não precisa vê-las. Então removemos as chaves atuais:</p>
-
-<p style="text-align: justify;"><span style="color: #008000;"> # rm /etc/ssh/ssh_host_rsa_key
-# rm -l -f /etc/ssh/ssh_host_dsa_key</span></p>
-<p style="text-align: justify;">Agora simplificamos a renovação das chaves assim:</p>
-<p style="text-align: justify;"><span style="color: #008000;"># dpkg-reconfigura openssh-server</span></p>
-<p style="text-align: justify;">Pronto, chaves renovadas e sistema seguro novamente. Mas espere um pouco, se eu troquei a identificação OpenSSH da máquina, os clientes que logavam nela não mais a reconhecerão? É isso mesmo! Veja só, eu fui logar no meu servidor e ele deu esse erro:</p>
-
-<p style="text-align: justify;"><span style="color: #008000;"> # ssh infog@192.168.1.1
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that the RSA host key has just been changed.
-The fingerprint for the RSA key sent by the remote host is
-00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00.
-Please contact your system administrator.</span></p>
-
-<p style="text-align: justify;">Ou seja, ele está me dizendo que existe a possibilidade de estar acontecendo um ataque, ou que simplesmente a chave RSA (do SHH) foi alterada. Isso acontece porque o cliente SSH guarda as chaves dos hosts que ele conhece (onde já logou), e quando ele tenta conferir a chave ele vê que ela foi alterada. Isso é muito importante pois previne que você digite seu usuário e senha em um servidor que está tentando se passar pelo que você se loga sempre.
-Ok, como corrijo isso? Usando o comando ssh-keygen você pode retirar o host da sua lista de hosts conhecidos, no meu caso o comando foi esse:</p>
-<p style="text-align: justify;"><span style="color: #008000;"> $ ssh-keygen -R 192.168.1.1</span></p>
-
-<p style="text-align: justify;">Com isso ele remove a chave da lista (que fica no arquivo ~/.ssh/known_hosts) e você pode fazer a conexão normalmente. É claro que na primeira conexão ele irá perguntar se você quer adicionar a nova chave à lista de hosts conhecidos, basta aceitar.
-É importante lembrar que você não pode remover o hosts da sua lista de hosts conhecidos sempre que a identificação dele mudar, lembre-se sempre se contatar o administrador do servidor para perguntar se realmente a chave mudou, ou se tem algum engraçadinho pelo caminho.
-Os filhotes do Debian, como o Ubuntu, também precisam de atualização. Este texto recebeu algumas modificações depois de alguns teste realizados com o sr. Kretcheu.
-O SSH também permite o login sem senha com a utilização de chaves públicas e privadas, para saber mais sobre isso leia <a href="http://evaldojunior.com.br/blog/?p=18">esse texto</a>.</p>
+<p style="text-align: justify;">Como muitos já sabem o Debian passou por uma atualização crítica, os pacotes de criação de chaves SSL (Utilizadas pelo SSH) estavam com um bug muito sério, e acabavam gerando chaves menos seguras do que deveriam.<br />
+Para quem tem servidores SSH instalados é obrigatório fazer a atualização do sistema e também das chaves.<br />
+Eu utilizo, nos servidores, o Debian Etch, então fiz esses procedimentos para atualizar os pacotes necessários e gerar as chaves novamente:</p><br />
+<br />
+<p style="text-align: justify;"><span style="color: #008000;"> # aptitude update<br />
+# atitude dist-upgrade</span></p><br />
+<br />
+<p style="text-align: justify;">Ele pediu para atualizar os seguintes pacotes:<br />
+<span style="color: #000080;"> openssh-client openssh-server</span></p><br />
+<br />
+<p style="text-align: justify;">E pediu também para instalar o novo pacote:<br />
+<span style="color: #333399;"> openssh-blacklist</span></p><br />
+<p style="text-align: justify;"><!--adsense#propaganda--></p><br />
+<br />
+<p style="text-align: justify;">Esse pacote é novo no Debian e tem uma lista de chaves OpenSSH ruins e conhecidas, que são usadas pelo sistema para reconhecer chaves SSH suspeitas.<br />
+Durante a instalação dos pacotes o instalador vai lhe sugerir a renovação das chaves, ele NÃO fará isso automaticamente! Então temos que fazer "na unha" mesmo, primeiro é possível ver as chaves atuais:</p><br />
+<br />
+<p style="text-align: justify;"><span style="color: #008000;"> # ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key<br />
+# ssh-keygen -l -f /etc/ssh/ssh_host_dsa_key</span></p><br />
+<p style="text-align: justify;">Claro que você não precisa vê-las. Então removemos as chaves atuais:</p><br />
+<br />
+<p style="text-align: justify;"><span style="color: #008000;"> # rm /etc/ssh/ssh_host_rsa_key<br />
+# rm -l -f /etc/ssh/ssh_host_dsa_key</span></p><br />
+<p style="text-align: justify;">Agora simplificamos a renovação das chaves assim:</p><br />
+<p style="text-align: justify;"><span style="color: #008000;"># dpkg-reconfigura openssh-server</span></p><br />
+<p style="text-align: justify;">Pronto, chaves renovadas e sistema seguro novamente. Mas espere um pouco, se eu troquei a identificação OpenSSH da máquina, os clientes que logavam nela não mais a reconhecerão? É isso mesmo! Veja só, eu fui logar no meu servidor e ele deu esse erro:</p><br />
+<br />
+<p style="text-align: justify;"><span style="color: #008000;"> # ssh infog@192.168.1.1<br />
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br />
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br />
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br />
+It is also possible that the RSA host key has just been changed.<br />
+The fingerprint for the RSA key sent by the remote host is<br />
+00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00.<br />
+Please contact your system administrator.</span></p><br />
+<br />
+<p style="text-align: justify;">Ou seja, ele está me dizendo que existe a possibilidade de estar acontecendo um ataque, ou que simplesmente a chave RSA (do SHH) foi alterada. Isso acontece porque o cliente SSH guarda as chaves dos hosts que ele conhece (onde já logou), e quando ele tenta conferir a chave ele vê que ela foi alterada. Isso é muito importante pois previne que você digite seu usuário e senha em um servidor que está tentando se passar pelo que você se loga sempre.<br />
+Ok, como corrijo isso? Usando o comando ssh-keygen você pode retirar o host da sua lista de hosts conhecidos, no meu caso o comando foi esse:</p><br />
+<p style="text-align: justify;"><span style="color: #008000;"> $ ssh-keygen -R 192.168.1.1</span></p><br />
+<br />
+<p style="text-align: justify;">Com isso ele remove a chave da lista (que fica no arquivo ~/.ssh/known_hosts) e você pode fazer a conexão normalmente. É claro que na primeira conexão ele irá perguntar se você quer adicionar a nova chave à lista de hosts conhecidos, basta aceitar.<br />
+É importante lembrar que você não pode remover o hosts da sua lista de hosts conhecidos sempre que a identificação dele mudar, lembre-se sempre se contatar o administrador do servidor para perguntar se realmente a chave mudou, ou se tem algum engraçadinho pelo caminho.<br />
+Os filhotes do Debian, como o Ubuntu, também precisam de atualização. Este texto recebeu algumas modificações depois de alguns teste realizados com o sr. Kretcheu.<br />
+O SSH também permite o login sem senha com a utilização de chaves públicas e privadas, para saber mais sobre isso leia <a href="http://evaldojunior.com.br/blog/?p=18">esse texto</a>.</p><br />
 <p style="text-align: justify;">Gostou do Blog? Assine nosso <a href="http://feeds.feedburner.com/casoft/RhIq">Feed RSS</a></p>

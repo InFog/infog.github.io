@@ -17,38 +17,38 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/297yuhk
   _sexybookmarks_permaHash: 7bd4dc8eba3f2e043657ad0e63cf1ce7
 ---
-<p style="text-align: justify;">Olá pessoal!</p>
-<p style="text-align: justify;">Hoje eu começo uma série nova chamada "Nos tempos do TuxMasters". O <a title="TuxMasters" href="http://tuxmasters.blogspot.com" target="_blank">TuxMasters</a> foi o primeiro blog de Linux que eu participei e ele era bem divertido, mas este blog "InFog", acabou se tornando o principal e o TuxMasters morreu =( Dele também participava o sr. <a title="Diego Souza" href="http://diego-souza.blogspot.com/" target="_blank">Diego Souza</a> e o sr. Shikamaru Sharingan.</p>
-<p style="text-align: justify;">Bem, essa série é apenas uns re-posts de coisas que eu postei lá com alguma possível revisão =) Espero que gostem!</p>
-
-<h3 style="text-align: justify;">Configurando Mouse Canhoto no xorg.conf</h3>
-<div style="text-align: justify;"><strong>Post de Outubro de 2007</strong></div>
-<div style="text-align: justify;">De um tempo para cá estou sendo incomodado por dores no pulso direito, e não adianta usar tala ortopédica, almofada no mousepad... nada resolve... Então resolvi começar tudo novo e trocar o mouse para a mão esquerda, a direita ainda dói, mas incomoda menos =)</div>
-<div style="text-align: justify;"><img class="size-full wp-image-303 aligncenter" title="mouse" src="http://evaldojunior.com.br/blog/wp-content/uploads/2008/11/mouse.jpg" alt="" width="200" height="200" />
-Bem, mas é bem aqui que começou um probleminha, recentemente passei a utilizar o fluxbox no trabalho, abandonando o Gnome, isso deixou a máquina consideravelmente mais rápida, mas o fluxbox não tem uma interface de configuração onde você pode simplesmente marcar uma caixa dizendo que seu mouse é para canhoto, assim como existe em ambientes mais amistosos como o Gnome e o KDE, então a solução foi configurar isso no xorg.conf.
-Lendo o manual do mousedrv:
-
-<strong>$ man 4 mousedrv</strong>
-
-Eu vi que existe a opção "ButtonMapping" que pode ser utilizada na sessão InputDevice onde o mouse é definido. Essa opção serve para mapear logicamente os botões físicos do mouse, e uma entrada padrão para ela seria essa:
-
-<strong>Option "ButtonMapping" "1 2 3"</strong>
-
-Essa entrada serve para um mouse com três botões (direito, esquerdo e o click da roda). Mas como entender isso? É bem simples, basta contar os botões do mouse da esquerda para a direita:
-
-O botão esquerdo é o número 1 fisicamente e neste caso logicamente também.
-O click da roda do mouse é o botão 2 (física e logicamente).
-E o botão direito é o botão 3 (também física e logicamente).
-
-Sabendo isso fica fácil configurar o mouse para ser utilizado por canhotos, basta colocar esta entrada na sessão do mouse no arquivo /etc/X11/xorg.conf:
-
-<strong>Option "ButtonMapping" "3 2 1"</strong>
-
-Ou seja o botão esquerdo que é o botão físico número 1, mas agora ele é o botão lógico número 3.
-O botão 2 (click do mouse) continua sendo ele mesmo.
-E o botão físico número 3 que é o botão direito passa a ser o botão lógico número 1.
-
-Como o X trata os botões através de seus valores lógicos essa configuração faz com que o mouse trabalhe no modo "canhoto".
-Não é algo tão simples, e pode ser que você precise ver direito como são os botões físicos e lógicos do seu mouse, mas é uma solução que atende pessoas que precisam do mouse com os botões invertidos e que têm preferência por gerenciadores de janelas mais leves como o fluxbox, blackbox, windowmaker, etc.
-
+<p style="text-align: justify;">Olá pessoal!</p><br />
+<p style="text-align: justify;">Hoje eu começo uma série nova chamada "Nos tempos do TuxMasters". O <a title="TuxMasters" href="http://tuxmasters.blogspot.com" target="_blank">TuxMasters</a> foi o primeiro blog de Linux que eu participei e ele era bem divertido, mas este blog "InFog", acabou se tornando o principal e o TuxMasters morreu =( Dele também participava o sr. <a title="Diego Souza" href="http://diego-souza.blogspot.com/" target="_blank">Diego Souza</a> e o sr. Shikamaru Sharingan.</p><br />
+<p style="text-align: justify;">Bem, essa série é apenas uns re-posts de coisas que eu postei lá com alguma possível revisão =) Espero que gostem!</p><br />
+<br />
+<h3 style="text-align: justify;">Configurando Mouse Canhoto no xorg.conf</h3><br />
+<div style="text-align: justify;"><strong>Post de Outubro de 2007</strong></div><br />
+<div style="text-align: justify;">De um tempo para cá estou sendo incomodado por dores no pulso direito, e não adianta usar tala ortopédica, almofada no mousepad... nada resolve... Então resolvi começar tudo novo e trocar o mouse para a mão esquerda, a direita ainda dói, mas incomoda menos =)</div><br />
+<div style="text-align: justify;"><img class="size-full wp-image-303 aligncenter" title="mouse" src="http://evaldojunior.com.br/blog/wp-content/uploads/2008/11/mouse.jpg" alt="" width="200" height="200" /><br />
+Bem, mas é bem aqui que começou um probleminha, recentemente passei a utilizar o fluxbox no trabalho, abandonando o Gnome, isso deixou a máquina consideravelmente mais rápida, mas o fluxbox não tem uma interface de configuração onde você pode simplesmente marcar uma caixa dizendo que seu mouse é para canhoto, assim como existe em ambientes mais amistosos como o Gnome e o KDE, então a solução foi configurar isso no xorg.conf.<br />
+Lendo o manual do mousedrv:<br />
+<br />
+<strong>$ man 4 mousedrv</strong><br />
+<br />
+Eu vi que existe a opção "ButtonMapping" que pode ser utilizada na sessão InputDevice onde o mouse é definido. Essa opção serve para mapear logicamente os botões físicos do mouse, e uma entrada padrão para ela seria essa:<br />
+<br />
+<strong>Option "ButtonMapping" "1 2 3"</strong><br />
+<br />
+Essa entrada serve para um mouse com três botões (direito, esquerdo e o click da roda). Mas como entender isso? É bem simples, basta contar os botões do mouse da esquerda para a direita:<br />
+<br />
+O botão esquerdo é o número 1 fisicamente e neste caso logicamente também.<br />
+O click da roda do mouse é o botão 2 (física e logicamente).<br />
+E o botão direito é o botão 3 (também física e logicamente).<br />
+<br />
+Sabendo isso fica fácil configurar o mouse para ser utilizado por canhotos, basta colocar esta entrada na sessão do mouse no arquivo /etc/X11/xorg.conf:<br />
+<br />
+<strong>Option "ButtonMapping" "3 2 1"</strong><br />
+<br />
+Ou seja o botão esquerdo que é o botão físico número 1, mas agora ele é o botão lógico número 3.<br />
+O botão 2 (click do mouse) continua sendo ele mesmo.<br />
+E o botão físico número 3 que é o botão direito passa a ser o botão lógico número 1.<br />
+<br />
+Como o X trata os botões através de seus valores lógicos essa configuração faz com que o mouse trabalhe no modo "canhoto".<br />
+Não é algo tão simples, e pode ser que você precise ver direito como são os botões físicos e lógicos do seu mouse, mas é uma solução que atende pessoas que precisam do mouse com os botões invertidos e que têm preferência por gerenciadores de janelas mais leves como o fluxbox, blackbox, windowmaker, etc.<br />
+<br />
 InFog</div>

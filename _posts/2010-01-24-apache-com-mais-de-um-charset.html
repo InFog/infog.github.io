@@ -20,16 +20,16 @@ meta:
   _sexybookmarks_shortUrl: http://tinyurl.com/35a2xm4
   _sexybookmarks_permaHash: d62fa4cf913522e42b8e70c9ab0f6080
 ---
-[ad#propaganda]
-<p style="text-align: justify;">Olá pessoal!</p>
-<p style="text-align: justify;">Hoje eu resolvi um probleminha que já me afetava fazia um certo tempo: Utilizar o <strong>apache com 2 charsets</strong> (ou com mais charsets).</p>
-<p style="text-align: center;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2010/01/apache.gif"><img class="aligncenter size-full wp-image-782" title="apache" src="http://evaldojunior.com.br/blog/wp-content/uploads/2010/01/apache.gif" alt="" width="248" height="70" /></a></p>
-<p style="text-align: justify;">O interessante é que eu vivia mudando a opção "<strong>AddDefaultCharset</strong>" e usando os valores UTF-8 e ISO-8859-1.</p>
-<p style="text-align: justify;">Hoje eu estava lendo o manual do Apache para ver se encontrava uma luz e descobri que a luz que faltava era apenas um pouco de leitura mesmo. No próprio arquivo <strong>/etc/apache2/conf.d/charset</strong> (No Debian) tinha uma boa explicação: "Se você definir um charset com a opção AddDefaultCharset o Apache vai ignorar os demais charsets, então use com cuidado e apenas se tiver certeza que seus arquivos são apenas de um determinado charset". Não é bem dessa forma que está escrito, mas é mais ou menos este o sentido.</p>
-<p style="text-align: justify;">Pois bem, comentei a linha (# é para comentar):</p>
-<p style="text-align: justify;"><strong># AddDefaultCharset UTF-8
-</strong></p>
-<p style="text-align: justify;">E então o Apache começou a seguir o que a tag meta http-equiv lhe dizia, como em:</p>
-<p style="text-align: justify;"><strong>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;</strong></p>
-<p style="text-align: justify;">Agora sim, posso testar várias páginas com os charsets diferentes e o Apache vai reconhece-los.</p>
+[ad#propaganda]<br />
+<p style="text-align: justify;">Olá pessoal!</p><br />
+<p style="text-align: justify;">Hoje eu resolvi um probleminha que já me afetava fazia um certo tempo: Utilizar o <strong>apache com 2 charsets</strong> (ou com mais charsets).</p><br />
+<p style="text-align: center;"><a href="http://evaldojunior.com.br/blog/wp-content/uploads/2010/01/apache.gif"><img class="aligncenter size-full wp-image-782" title="apache" src="http://evaldojunior.com.br/blog/wp-content/uploads/2010/01/apache.gif" alt="" width="248" height="70" /></a></p><br />
+<p style="text-align: justify;">O interessante é que eu vivia mudando a opção "<strong>AddDefaultCharset</strong>" e usando os valores UTF-8 e ISO-8859-1.</p><br />
+<p style="text-align: justify;">Hoje eu estava lendo o manual do Apache para ver se encontrava uma luz e descobri que a luz que faltava era apenas um pouco de leitura mesmo. No próprio arquivo <strong>/etc/apache2/conf.d/charset</strong> (No Debian) tinha uma boa explicação: "Se você definir um charset com a opção AddDefaultCharset o Apache vai ignorar os demais charsets, então use com cuidado e apenas se tiver certeza que seus arquivos são apenas de um determinado charset". Não é bem dessa forma que está escrito, mas é mais ou menos este o sentido.</p><br />
+<p style="text-align: justify;">Pois bem, comentei a linha (# é para comentar):</p><br />
+<p style="text-align: justify;"><strong># AddDefaultCharset UTF-8<br />
+</strong></p><br />
+<p style="text-align: justify;">E então o Apache começou a seguir o que a tag meta http-equiv lhe dizia, como em:</p><br />
+<p style="text-align: justify;"><strong>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;</strong></p><br />
+<p style="text-align: justify;">Agora sim, posso testar várias páginas com os charsets diferentes e o Apache vai reconhece-los.</p><br />
 <p style="text-align: justify;">InFog</p>
