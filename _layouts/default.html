@@ -6,38 +6,44 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
+        <link rel="stylesheet" href="/css/ink-min.css">
+        <link rel="stylesheet" href="/css/blog.css">
+
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
-
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
-
     </head>
+
     <body>
+        <div class="ink-grid">
+            <div class="">
+                <h1><a href="/">{{ site.name }}</a></h1>
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
+                <p>Um blog sobre GNU/Linux, PHP, Python e outras coisas sobre programação, TI e nerdices.</p>
 
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Evaldo Junior<br />
-                Web Developer<br />
-                evaldojuniorbento at gmail
-              </p>
+                <nav class="ink-navigation">
+                    <ul class="menu horizontal blue flat">
+                        <li><a class="" href="/">home</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/InFog">github.com/InFog</a><br />
-                <a href="https://twitter.com/InFog9">twitter.com/InFog9</a><br />
-              </p>
+
+            {{ content }}
+
+            <div class="footer">
+                <div class="contact">
+                    <p>
+                        Evaldo Junior<br />
+                        Web Developer<br />
+                        evaldojuniorbento at gmail
+                    </p>
+                </div>
+                <div class="contact">
+                    <p>
+                        <a href="https://github.com/InFog">github.com/InFog</a><br />
+                        <a href="https://twitter.com/InFog9">twitter.com/InFog9</a><br />
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
 
     </body>
