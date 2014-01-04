@@ -2,3 +2,16 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
 }
+
+.center {
+    text-align: center;
+}
+
+.f-right {
+    display: inline-block;
+    float: right;
+}
+
+.post {
+    clear: both;
+}
