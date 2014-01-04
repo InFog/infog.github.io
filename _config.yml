@@ -2,3 +2,4 @@ name: Evaldo Junior (InFog)
 markdown: redcarpet
 pygments: true
 timezone: America/Sao_Paulo
+paginate: 30
