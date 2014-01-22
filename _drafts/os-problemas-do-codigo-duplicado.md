@@ -60,3 +60,44 @@ coisa aqui e ali em vez de criar alguma espécie de biblioteca que pode ser
 usada pelos dois softwares.
 
 ### Um exemplo simples de duplicação: Página de login
+
+Este é um exemplo comum de problema de duplicação de código. Imagine que você
+está desenvolvendo um site que contenha uma página de login. O primeiro
+pensamento é que isso é bem fácil de resolver, pois basta criar uma página com
+um formulário, adicionar umas validações em javascript, adicionar um backend
+com validação dos dados e o login em si.
+
+Mas depois de um tempo surge uma nova necessidade: Agora todas as páginas terão
+um bloco de login no menu superior para facilitar a vida do usuário, assim ele
+não precisa necessariamente ir para a página de login, basta digitar as
+credenciais no bloco de login em qualquer página e pronto, está autenticado.
+
+O problema é que com a nova necessidade vem também a vontade de simplesmente
+copiar tudo o que é relacionado à primeira página de login e simplesmente colar
+no novo bloco mudando uns nomes aqui e ali. Essa cópia parece inocente em um
+exemplo pequeno assim, mas imagine algo copiado e colado em vinte partes
+diferentes.
+
+A cada pequeno trecho copiado se cria um pequeno débito técnico que vai
+acumulando e acumulando até explodir, ou alguém pagar por ele.
+
+### Identificando a duplicação de código
+
+Identificar a duplicação não é uma tarefa muito simples, mas existem algumas
+forma de se fazer este trabalho.
+
+Uma das formas é a identificação manual, que pode acontecer sem querer quando
+se esbarra em uma duplicação ou quando se procura por uma deliberadamente. O
+problema é que quando se procura você tem que saber bem o que quer, pois você
+já suspeita que existe algum tipo de duplicação.
+
+Outra forma é usando ferramentas como *diff** e *meld*. O trabalho é mais
+simples do que a busca totalmente manual, mas ainda é bastante trabalhosa e é
+necessário saber bem o que se procura para poder comparar dois ou mais arquivos
+diferentes em busca de possíveis duplicações.
+
+E uma terceira forma é com o uso de ferramentas especializadas do tipo *CPD*
+que são *Copy and Paste Detectors*.
+
+No caso do PHP temos o (PHPCPD)[https://github.com/sebastianbergmann/phpcp]
+que consegue varrer todo um projeto eidentificar sequências de linhas iguais.
