@@ -11,10 +11,20 @@
 
 ## Code
 
-Just add identation
+Code in markdown style:
 
+```python
     text = "Code block"
     print(text)
+```
+
+Or
+
+```php
+    <?php
+
+    echo "Hello World"
+```
 
 ## Links
 
