@@ -30,8 +30,8 @@ os alunos examinam diversas construções e problemas de arquitetura existentes,
 assim eles aprendem com os erros e acertos daqueles que vieram antes.
 
 Eu gosto de pensar neste exemplo com algo que está próximo da minha realidade
-atual é o caso dos prédios de Santos/SP. Na cidade há diversos prédios que
-entortaram com o passar dos anos, chegando a inclinações de até 1,80m! Isso
+atual que é o caso dos prédios de Santos/SP. Na cidade há diversos prédios que
+entortaram com o passar dos anos, chegando à inclinações de até 1,80m! Isso
 é bastante coisa e o problema acontece por conta de os prédios terem sido
 construídos sobre sapatas de 3 a 4 metros de profundidade.
 
@@ -93,7 +93,7 @@ Atualmente estou lendo o primeiro livro e estou gostando bastante. Você pode
 ler online ou comprar uma versão para o seu e-reader favorito. Eu comprei o
 epub para ler no Kobo por apenas $10 e foi um investimento muito bem feito.
 
-Agora imagine se os cursos de programação também fizessem uso deste material?
+Agora imagine: E se os cursos de programação também fizessem uso deste material?
 Acredito que isso ajudaria a preparar melhor o futuro da nossa profissão pois
 pelo menos ajudaria a evitar os erros comuns do passado e a aprender com os
 acertos daqueles que deram certo e continuam até hoje. Isso ajudaria a
