@@ -23,7 +23,7 @@ uns 5 ao mesmo tempo. Eu leio um ou dois capítulos de um livro técnico, aí
 passo para algum clássico ou para algum livro que esteja nas vitrines das
 livrarias. Em geral fico intercalando também entre português e inglês.
 
-Fazer esse processo de ler u mpouco daqui e outro daqui durante o percurso
+Fazer esse processo de ler um pouco daqui e outro daqui durante o percurso
 trabalho-casa não é fácil se você for carregar livros impressos. Ainda mais
 para quem resolveu encarar as trocentas páginas das Crônicas de Gelo e Fogo.
 Quer dizer, carregar apenas um volume das crônicas já ocupa 80% da mochila,
@@ -78,7 +78,7 @@ um livro de papel, mas funciona muito bem, graças à tela touch.
 Ah, uma coisa muito legal são os dicionários dele. Eu coloquei um dicionário de
 português, um de inglês e um de inglês-português. Aí, durante a leitura, basta
 tocar a palavra desejada por alguns segundos que ele mostra o significado.
-Caso o texto seja em inglẽs ele oferece o significa em inglês mesmo e também
+Caso o texto seja em inglẽs ele oferece o significado em inglês mesmo e também
 uma opção de tradução para português.
 
 Como eu comprei pela Livraria Cultura, eu acabei fazendo a conta por lá mesmo.
@@ -101,7 +101,7 @@ livros apareceram. Os livros da
 Atualmente meu Kobo tem mais de 50 livros e eu já li uma parte deles e tenho
 uma liberdade bem grande para escolher o que vou ler e não preciso carregar
 peso para isso. A memória interna dele é de 2GB o que é suficientes para muitos
-e muitos livros, já que um livro pode ter de 200kb até uns 3mb ou 5mb.
+e muitos livros, já que um livro pode ter de 200kb até uns 2mb ou 3mb.
 
 Enfim, a minha recomendação final é: Se você gosta de ler e precisa de
 facilidade para carregar uma grande quantidade de livros, compre um e-reader.
