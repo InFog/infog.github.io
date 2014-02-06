@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kobo: Uma resenha
+title: Kobo, Uma resenha
 categories:
 - leitura
 tags:
