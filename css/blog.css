@@ -18,3 +18,7 @@ body {
 .footer {
     text-align: center;
 }
+
+iframe {
+    margin: 20px 0;
+}
