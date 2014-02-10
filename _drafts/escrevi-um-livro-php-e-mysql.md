@@ -20,7 +20,7 @@ pela
 [Casa do Código](www.casadocodigo.com.br/). E agora estou escrevendo este post
 para contar como foi este experiência para mim e o que eu aprendi com ela.
 
-[CAPA DO LIVRO](http://www.casadocodigo.com.br/products/livro-php-mysql)
+[![Livro PHP e MySQL](/assets/images/livro-php-e-mysql.png)](http://www.casadocodigo.com.br/products/livro-php-mysql)
 
 Tudo começou em maio de 2013 quando o Caio (http://crpunderground.wordpress.com/)
 estava nos momentos finais da escrita do livro
@@ -93,7 +93,7 @@ de mais de uma forma. Acho que este tipo de estilo é muito legal para quem est�
 aprendendo algo novo, pois é possível entender com uma das diferentes
 explicações.
 
-Claro que eu sabia que este estilo não agradaria a todos, mas acho que sua
+Claro que eu sabia que este estilo não agradaria a todos, mas acho que a
 escolha foi uma boa decisão para o livro.
 
 Com cerca de 25% do livro concluído eu passei a escrever usando praticamente
@@ -114,6 +114,8 @@ Depois que lançamos o beta, com cerca de 60% concluído, eu tinha uma meta para
 finalizar o livro em um mês. Seria tipo a corrida final. Levou cerca cinco
 meses para escrever 60% do livro e eu queria escrever os outros 40% em apenas
 um mês.
+
+![O livro impresso](/assets/images/boneco-mysql.png)
 
 Mas desta vez eu já estava mais acostumado ao ritmo e aumentei o tempo de
 escrita. Teve domingo que eu trabalhei no livro por mais de seis horas. E
@@ -171,3 +173,5 @@ começar um novo processo de escrita =)
 
 Para os interessados, o livro pode ser adquirido no
 [site da Casa do Código](http://www.casadocodigo.com.br/products/livro-php-mysql).
+
+InFog
