@@ -55,6 +55,8 @@ Por isso em vez de escrever comecei pelo melhor modo que foi o planejamento dos
 capítulos. Com a ideia de cada capítulo planejada já ficou bem mais fácil para
 começar.
 
+![O livro impresso](/assets/images/livro_php_mysql.jpg)
+
 A ideia recomendada pelo pessoal da Casa do Código é a de reservar cerca de uma
 hora por dia para escrever. E como eu faço uma bela viagem de ônibus de cerca
 de 2h30 todos os dias da semana eu pensei em aproveitar este tempo para
@@ -115,7 +117,7 @@ finalizar o livro em um mês. Seria tipo a corrida final. Levou cerca cinco
 meses para escrever 60% do livro e eu queria escrever os outros 40% em apenas
 um mês.
 
-![O livro impresso](/assets/images/boneco-mysql.png)
+![O livro impresso](/assets/images/livro_php_mysql_2.jpg)
 
 Mas desta vez eu já estava mais acostumado ao ritmo e aumentei o tempo de
 escrita. Teve domingo que eu trabalhei no livro por mais de seis horas. E
