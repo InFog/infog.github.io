@@ -17,14 +17,14 @@ published: true
 Há pouco mais de dois meses foi lançado o meu
 [livro de PHP e MySQL](http://www.casadocodigo.com.br/products/livro-php-mysql)
 pela
-[Casa do Código](www.casadocodigo.com.br/). E agora estou escrevendo este post
+[Casa do Código](http://www.casadocodigo.com.br/). E agora estou escrevendo este post
 para contar como foi este experiência para mim e o que eu aprendi com ela.
 
 [![Livro PHP e MySQL](/assets/images/livro-php-e-mysql.png)](http://www.casadocodigo.com.br/products/livro-php-mysql)
 
 Tudo começou em maio de 2013 quando o Caio (http://crpunderground.wordpress.com/)
 estava nos momentos finais da escrita do livro
-[Aplicações web real-time com Node.js](www.casadocodigo.com.br/products/livro-nodejs)
+[Aplicações web real-time com Node.js](http://www.casadocodigo.com.br/products/livro-nodejs)
 e acabou me indicando para o pessoal da Casa do Código para escrever um livro
 também. A ideia que o Caio teve foi a de transformar as
 [Aulas de Python](http://blog.evaldojunior.com.br/aulas-de-python.html) aqui do
