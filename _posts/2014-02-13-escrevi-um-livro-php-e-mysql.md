@@ -22,7 +22,7 @@ para contar como foi este experiência para mim e o que eu aprendi com ela.
 
 [![Livro PHP e MySQL](/assets/images/livro-php-e-mysql.png)](http://www.casadocodigo.com.br/products/livro-php-mysql)
 
-Tudo começou em maio de 2013 quando o Caio (http://crpunderground.wordpress.com/)
+Tudo começou em maio de 2013 quando o Caio (http://twitter.com/crp_underground)
 estava nos momentos finais da escrita do livro
 [Aplicações web real-time com Node.js](http://www.casadocodigo.com.br/products/livro-nodejs)
 e acabou me indicando para o pessoal da Casa do Código para escrever um livro
