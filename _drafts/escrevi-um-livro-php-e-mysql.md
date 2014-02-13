@@ -37,9 +37,6 @@ A minha ideia era mesmo a de escrever um livro para iniciantes em programação 
 focar no Python como primeira linguagem. Mas o meu dia a dia é com PHP e eu
 ainda me sinto mais confortável com esta linguagem.
 
-É mais ou menos assim: PHP é como se fosse o meu idioma nativo e Python um
-idioma estrangeiro que ainda estou aprendendo e não sou exatamente *fluente*.
-
 E assim ficou decidido que o livro seria mesmo sobre PHP. E como o MySQL anda
 sempre junto do PHP em diversas aplicações para a web, ele acabou entrando no
 escopo do livro também.
@@ -84,11 +81,13 @@ E isso acabava quebrando o ritmo e o estilo. Diversas vezes eu me peguei
 lendo capítulos anteriores e tendo que alterar alguns trechos pois eu não
 achava mais que eles combinavam com os capítulos mais novos.
 
+Por isso o trabalho de revisão é muito importante.
+
 ### O meio
 
 Eu tinha uma meta que eu mesmo coloquei para o número de páginas do livro
 impresso: 150. Não sei bem como eu cheguei a este número, mas eu não queria
-oferecer um livro com poucas páginas, mesmo que seu conteúdo fosse mais denso.
+oferecer um livro curto demais e nem denso demais.
 
 Por isso adotei um estilo que eu gosto bastante que é a explicação detalhada e
 de mais de uma forma. Acho que este tipo de estilo é muito legal para quem está
@@ -120,7 +119,7 @@ um mês.
 ![O livro impresso](/assets/images/livro_php_mysql_2.jpg)
 
 Mas desta vez eu já estava mais acostumado ao ritmo e aumentei o tempo de
-escrita. Teve domingo que eu trabalhei no livro por mais de seis horas. E
+escrita. Teve final de semana que eu trabalhei no livro por mais de seis horas seguidas. E
 trabalhar no livro não necessariamente significa escrever e escrever. Muitas
 horas foram de revisão e de adequação do conteúdo para ficar mais uniforme.
 
@@ -167,6 +166,8 @@ No geral a escrita do livro foi uma experiência muito legal e eu fiquei muito
 satisfeito com o resultado. Claro que eu mudaria uma coisinha aqui e outra ali,
 mas se entrar nisso com certeza vai rolar um laço infinito de correções e
 aperfeiçoamentos.
+
+![Alguns livros impressos](/assets/images/livro_php_mysql_3.jpg)
 
 A minha ideia agora é escrever um livro para avançar no assunto e mostrar o PHP
 como a ferramenta séria que ele está se tornando e as ferramentas mais atuais
