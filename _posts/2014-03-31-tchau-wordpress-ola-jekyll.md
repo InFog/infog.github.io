@@ -33,7 +33,8 @@ com a formatação enquanto escrevo. Por isso eu queria uma ferramenta mais
 simples e que de preferência usasse markdown ou alguma outra tecnologia
 de marcação de textos semelhante para escrever.
 
-Nessa busca acabei encontrando o Jekyll, um sistema pronto para blogs e com
+Nessa busca acabei encontrando o
+[Jekyll](http://jekyllrb.com/), um sistema pronto para blogs e com
 uma ideia diferente do que em geral existe por aí: Páginas estáticas.
 
 **O que? Páginas estáticas?**
