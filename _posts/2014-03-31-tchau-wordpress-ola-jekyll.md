@@ -51,7 +51,7 @@ Git e hospedagem no GitHub. Alias, a hospedagem no GitHub trouxe outra
 vantagem, poder usar as páginas estáticas do serviço! Com isso nem mesmo
 a hospedagem do blog eu preciso fazer mais =)
 
-## Adicionando comentários
+### Adicionando comentários
 
 Agora, um problema para sites estáticos é: como colocar comentários? Afinal
 não é possível se conectar a um banco de dados e gravar e adicionar comentários
@@ -64,7 +64,7 @@ estáticas podem ter comentários.
 Após uma pesquisa rápida eu optei pelo
 [Disqus](http://disqus.com/) que já filtra spams e tem uma aparência bem legal.
 
-## Edição de textos
+### Edição de textos
 
 Como eu disse, os textos no Jekyll são em formato markdown, então basta ter um
 editor de textos para escrever.
@@ -74,7 +74,7 @@ O legal é que agora eu consigo escrever usando o
 e em praticamente de qualquer lugar, depois é só fazer o commit para o GitHub e lá
 estará o post no blog.
 
-## Conclusão
+### Conclusão
 
 Este não é um texto para falar mal do Wordpress! Essa ferramenta tem seus
 usos (muitas vezes equivicados...) e tem seu público. O fato de o Wordpress não
