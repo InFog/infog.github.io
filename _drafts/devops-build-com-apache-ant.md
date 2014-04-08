@@ -99,12 +99,12 @@ incorreta em algum momento.
 
 ### O arquivo build.xml
 
-Certo, não faça cara feia agora. O arquivo principal do Ant é **build.xml** e,
-como se pode ser pela extensão, ele é um XML... Arquivos XML não são
+Certo, não faça cara feia agora. O arquivo principal do Ant é o **build.xml** e,
+como se pode ver pela extensão, ele é um XML... Arquivos XML não são
 necessariamente a coisa mais linda e/ou prática deste mundo, não para quem
 conhece formatos como JSON e YAML. No meu caso, tive que encarar o fato de que
 teria que trabalhar com XML e tentar tirar proveito disso. No final das contas
-não o formato tem suas vantagens e, se você fizer um bom trabalho, o arquivo
+o formato tem suas vantagens e, se você fizer um bom trabalho, o arquivo
 fica bem legível e com fácil manutenção.
 
 Bem, a primeira coisa no **build.xml** é definir o **project**:
