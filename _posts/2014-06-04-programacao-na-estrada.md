@@ -24,16 +24,16 @@ voltar. Ou seja, é um bom tempo que eu passo sentado no banco de um ônibus.
 
 Logo no começo eu planejei usar esse tempo para trabalhar em projetos pessoais,
 freelas, posts do blog e, pouco depois, na escrita do
-(meu primeiro livro)[http://www.casadocodigo.com.br/products/livro-php-mysql].
+[meu primeiro livro](http://www.casadocodigo.com.br/products/livro-php-mysql).
 O problema é que nops primeiros dia/semanas eu enjoava muito na viagem e
 precisava tomar dramin praticamente todos os dias. Mas, com a ajuda da
-(Cássia Luz)[http://twiller.com/cassialuz] eu fui largando o remédio aos poucos
+[Cássia Luz](http://twitter.com/cassialuz) eu fui largando o remédio aos poucos
 até conseguir abandonar de vez. Parece que minha cabeça e meu estômago foram
 se acostumando com a ideia de viajar de ônibus todos os dias.
 
 Mesmo com a melhora, eu ainda enjoava um pouco com leitura e uso do smartphone.
 Com o passar do tempo eu comecei a me sentir mais confiante para ler livros,
-meu (e-reader)[http://blog.evaldojunior.com.br/leitura/2014/02/06/kobo-uma-resenha.html]
+meu [e-reader](http://blog.evaldojunior.com.br/leitura/2014/02/06/kobo-uma-resenha.html)
 e para usar o smartphone. O problema era quando eu tantava usar um notebook ou
 netbook... O enjoo sempre voltava.
 
@@ -56,7 +56,7 @@ ter sido feito tranquilamente com PHP.
 
 A minha ideia para o site, sendo um projeto pequeno e ótimo para reescrever e
 praticar coisas novas, foi migrar para Python usando
-(Flask)[http://flask.pocoo.org]. Como eu ainda não sou muito ágil com o Flask,
+[Flask](http://flask.pocoo.org). Como eu ainda não sou muito ágil com o Flask,
 eu preciso consultar referências o tempo todo e não ter conexão com a internet
 se mostrou um problema sério que eu resolvi assim:
 
@@ -64,8 +64,8 @@ se mostrou um problema sério que eu resolvi assim:
 - Não usar CDNs para Javascript e CSS para desenvolvimento local.
 - Manter uma cópia dos manuais das ferramentas.
 
-No caso das dependências, o (Virtualenv)[https://pypi.python.org/pypi/virtualenv/]
-junto com o (PIP)[https://pypi.python.org/pypi/pip/]
+No caso das dependências, o [Virtualenv](https://pypi.python.org/pypi/virtualenv/)
+junto com o [PIP](https://pypi.python.org/pypi/pip/)
 resolvem todos os problemas deixando tudo instalado apenas para o projeto.
 
 Os Javascripts e CSSs também foram fáceis de resolver mantendo cópias locais
@@ -76,7 +76,7 @@ grande parte dos projetos Python (ligados ao Flask, neste caso) disponibilizam
 versões em PDF das documentações! Muito legal, não? E tem em ePub e Mobi também!
 
 No caso do PHP, alguns projetos também disponibilizam versões em PDF e ePub das
-documentações, como é o caso do (Silex)[http://silex.sensiolabs.org/].
+documentações, como é o caso do [Silex](http://silex.sensiolabs.org/).
 
 Uma parte muito boa disso foi me forçar a entender ainda melhor o uso das
 ferramentas e a saber ler com calma os manuais. Sem conexão não adiante correr
@@ -96,7 +96,7 @@ Usando um netbook, nem mesmo games dá para usar muito, então o que sobra é se
 concentrar e produzir :D (Ei, sem ficar bitolado com produtividade aqui! Tem
 dias que eu apenas leio ou jogo algo no smartphone, descanso é fundamental!)
 
-A produção de textos para o blog também é fácil usando o (Jekyll)[http://jekyllrb.com/],
+A produção de textos para o blog também é fácil usando o [Jekyll](http://jekyllrb.com/),
 pois não preciso de paineis administrativos e coisas assim. É só escrever usando
 markdown e, quando tiver conexão, mandar um push no Github.
 
