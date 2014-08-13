@@ -103,7 +103,7 @@ Claro que essa é uma forma bem simplista de usar um autoloader e hoje em dia
 os frameworks vêm com seus autoloaders e você precisa apenas manter os arquivos
 com as classes nos lugares corretos para que tudo funcione.
 
-Outra forma bastante usada hoje em diam, inclusive pelos frameworks, é com o
+Outra forma bastante usada hoje em dia, inclusive pelos frameworks, é com o
 autoloader do [composer](http://getcomposer.org "Site do Composer").
 
 Existem também alguns padrões da comunidade PHP para autoloaders. Dois famosos
