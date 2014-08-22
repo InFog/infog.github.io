@@ -14,7 +14,7 @@ type: post
 published: true
 ---
 
-O know this issue is kinda old and everybory already wrote something about it,
+I know this issue is kinda old and everybody already wrote something about it,
 but I think it's worth to talk about it one more time. This post is for the
 PHP beginners :)
 
