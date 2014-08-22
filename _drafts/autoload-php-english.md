@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Como funciona o autoload do PHP
+title: How does the PHP autoload works?
 categories:
 - PHP
 - Development
@@ -18,7 +18,7 @@ O know this issue is kinda old and everybory already wrote something about it,
 but I think it's worth to talk about it one more time. This post is for the
 PHP beginners :)
 
-The PHP source files are just plain text files with the php extension, or not
+PHP source files are just plain text files with the php extension, or not
 even it, if you don't want, but using an extension helps people identify the
 filetype and also helps text editors and IDEs to know what syntax highlight
 to use.
@@ -51,7 +51,7 @@ $u = new User();
 ```
 
 No problems so far, it's just one class after all. But if we need four classes
-do load:
+do be loaded:
 
 ```php
 <?php
@@ -86,31 +86,32 @@ function my_loader($class)
 
 spl_autoload_register("my_loader");
 
-$u = new User(); // Aqui o arquivo será carregado automaticamente
+$u = new User(); // File will be autoloaded here
 ```
 
-Simple, right? I created the funcion *my_loader()* and it receives a class name
+Simple, right? I created the function *my_loader()* and it receives a class name
 to load. Inside the function I created a variable with the full path to the
 class' file. Then I just check up if the file exists to include it.
 
 Then I used the *spl_autoload_register()* function to let PHP know that it can
-also use my *my_loader()* function to find a class.
+also use my *my_loader()* to find a class.
 
-Cool, right? And pretty simple, also.
+Cool, right? And pretty simple, too.
 
 Of course this is a pretty simple way to use an autoloader and nowadays
-frameworks have their own autoloaders and all you havbe to do it keep your file
+frameworks have their own autoloaders and all you have to do is keep your files
 in the right places and everything will just work.
 
 Other well know autoloader is the
 [composer's](http://getcomposer.org "Composer's page") autoloader.
 
-There are also the PHP comunity's autoload standards. The most used are [PSR-0]()
-which is kinda deprecated, and [PSR-4](), which is the most recent and accepted
-standard. So if you want to know how to load the class
-*Awesome\\Service\\Twitter*, just check out the *PSR-4* standard.
+There are also the PHP comunity's autoload standards. The most used are
+[PSR-0](http://www.php-fig.org/psr/psr-0/)
+which is kinda deprecated, and [PSR-4](http://www.php-fig.org/psr/psr-4/),
+which is the most recent and accepted standard. So if you want to know how to
+load the class *Awesome\\Service\\Twitter*, just check out the *PSR-4* standard.
 
-What abou you? Do you have any tips about PHP autoloader? Share the love in the
+What about you? Do you have any tips about PHP autoloaders? Share the love in the
 comments.
 
 InFog
