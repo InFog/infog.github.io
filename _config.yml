@@ -2,6 +2,6 @@ name: Evaldo Junior (InFog)
 description: Um blog sobre GNU/Linux, PHP, Python e outras coisas sobre programação, TI e nerdices.
 url: http://blog.evaldojunior.com.br
 markdown: redcarpet
-pygments: true
+highlighter: true
 timezone: America/Sao_Paulo
 paginate: 30

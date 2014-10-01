@@ -9,16 +9,16 @@
         <meta name="title" content="{{ page.title }}" />
         <meta name="description" content="{{ site.description }}" />
 
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}'s feed"  href="/feed.xml" />
 
-        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/css/ink-min.css">
-        <link rel="stylesheet" href="/css/blog.css">
+        <link rel="stylesheet" type="text/css" href="http://fastly.ink.sapo.pt/3.1.0/css/ink.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/blog.css">
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/assets/css/syntax.css">
 
         <script type="text/javascript">var switchTo5x=true;</script>
         <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -26,96 +26,137 @@
     </head>
 
     <body>
-        <div class="ink-grid">
-            <header>
-                <h1><a href="/">{{ site.name }}</a></h1>
+        <div id="header-image">
+        </div>
 
-                <p>Desenvolvedor web, palestrante, escritor e usuário e contribuidor do Software Livre</p>
+        <header>
+            <div class="ink-grid">
+                <div class="column-group gutters">
+                    <div class="all-100">
+                        <h1><a href="/">{{ site.name }}</a></h1>
 
-                <nav class="ink-navigation">
-                    <ul class="menu horizontal blue flat">
-                        <li><a class="" href="/">Home</a></li>
-                        <li><a class="" href="/livros.html">Livros</a></li>
-                        <li><a class="" href="/aulas-de-python.html">Aulas de Python</a></li>
-                        <li><a class="" href="/sobre-about.html">Sobre|About</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-            <div class="column-group gutters">
-                <div class="large-75 medium-70 small-100">
-                    {{ content }}
-                </div>
-                <div class="large-25 medium-30 small-100">
-                    <aside>
-                        <h3>Livro PHP e MySQL</h3>
-                        <ul class="unstyled">
-                            <li>
-                                <a href="https://casadocodigo.refersion.com/l/b56.3565">
-                                    <img src="/assets/images/livro-php-e-mysql-menu.png" alt="Livro PHP e MySQL" />
-                                </a>
-                            </li>
-                        </ul>
-                        <h3>Consultorias</h3>
                         <p>
-                            Ensinar e realizar consultorias e treinamentos são coisas que
-                            eu gosto muito. Se você ou sua equipe precisam melhorar as
-                            habilidades em PHP, frameworks, OO, Git, TDD, etc, me
-                            contate através do meu
-                            <a href="http://www.linkedin.com/in/evaldojunior">perfil no LinkedIn</a>.
+                            Desenvolvedor web, palestrante, escritor e usuário e contribuidor do Software Livre.
                         </p>
-                        <h3>Acompanhe</h3>
-                        <ul class="unstyled">
-                            <li>
-                                <a href="{{ site.url }}/feed.xml">
-                                    <i class="icon-rss-sign"></i> RSS Feed
-                                </a>
-                            </li>
-                        </ul>
-                        <h3>Onde me encontrar</h3>
-                        <ul class="unstyled">
-                            <li>
-                                <a href="https://github.com/InFog">
-                                    <i class="icon-github-sign"></i> GitHub
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/InFog9">
-                                    <i class="icon-twitter-sign"></i> Twitter
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://about.me/evaldojunior">
-                                    <i class="icon-user"></i> About me
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://br.linkedin.com/in/evaldojunior/">
-                                    <i class="icon-linkedin-sign"></i> LinkedIn
-                                </a>
-                            </li>
-                        </ul>
-                        <h3>Eu uso</h3>
-                        <ul class="unstyled">
-                            <li><a href="http://www.debian.org/">Debian</a></li>
-                            <li><a href="http://php.net/">PHP</a></li>
-                            <li><a href="http://www.vim.org">Vim</a></li>
-                        </ul>
-                    </aside>
+
+                        <nav>
+                            <ul class="unstyled horizontal">
+                                <li><a class="" href="/">Home</a></li>
+                                <li><a class="" href="/livros.html">Livros</a></li>
+                                <li><a class="" href="/sobre.html">Sobre</a></li>
+                            </ul>
+                        </nav>
+
+                        <nav>
+                            <ul class="unstyled horizontal links-top">
+                                <li>
+                                    <a href="https://github.com/InFog">
+                                        <i class="fa fa-github-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/InFog9">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
+        </header>
 
-            <div class="footer">
-                <p>
-                    &copy; Evaldo Junior (InFog) - 2007 - 2014
-                </p>
+        <div class="ink-grid">
+            <div class="column-group gutters">
+                <div class="all-15 small-100"></div>
+                <div class="all-70 small-100">
+                    <hr />
+                    {{ content }}
+                </div>
+                <div class="all-15 small-100"></div>
+            </div>
+
+            <aside>
+                <div class="column-group gutters">
+                    <div class="all-15 small-100"></div>
+                    <div class="all-70 small-100">
+                        <div class="column-group gutters">
+                            <div class="all-33 medium-100 small-100">
+                                <h3>Livro PHP e MySQL</h3>
+                                <ul class="unstyled">
+                                    <li>
+                                        <a href="https://casadocodigo.refersion.com/l/b56.3565">
+                                            <img src="/assets/images/livro-php-e-mysql-menu.png" alt="Livro PHP e MySQL" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="all-33 medium-100 small-100">
+                                <h3>Acompanhe</h3>
+                                <ul class="unstyled">
+                                    <li>
+                                        <a href="{{ site.url }}/feed.xml">
+                                            <i class="icon-rss-sign"></i> RSS Feed
+                                        </a>
+                                    </li>
+                                </ul>
+                                <h3>Onde me encontrar</h3>
+                                <ul class="unstyled">
+                                    <li>
+                                        <a href="https://github.com/InFog">
+                                            <i class="fa fa-github-square"></i> GitHub
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/InFog9">
+                                            <i class="fa fa-twitter"></i> Twitter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/user/EvaldoJuniorBento/videos">
+                                            <i class="fa fa-youtube"></i> YouTube
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://about.me/evaldojunior">
+                                            <i class="fa fa-user"></i> About me
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://br.linkedin.com/in/evaldojunior/">
+                                            <i class="fa fa-linkedin"></i> LinkedIn
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="all-33 medium-100 small-100">
+                                <h3>Eu uso</h3>
+                                <ul class="unstyled">
+                                    <li><a href="http://www.debian.org/">Debian</a></li>
+                                    <li><a href="http://php.net/">PHP</a></li>
+                                    <li><a href="http://www.vim.org">Vim</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="column-group gutters">
+                <div class="all-100">
+                    <div class="footer">
+                        <p>
+                            &copy; Evaldo Junior (InFog) 2007 - 2014
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
             ga('create', 'UA-47412319-1', 'evaldojunior.com.br');
