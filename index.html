@@ -9,11 +9,10 @@ title: Evaldo Junior (InFog)
             <span>{{ post.date | date_to_string }}</span>
             <a href="{{ post.url }}">
                 <h2 class="post-title">{{ post.title }}</h2>
+                <p>
+                    {{ post.content | strip_html | truncatewords: 30 }}
+                </p>
             </a>
-            <p>
-                {{ post.content | strip_html | truncatewords: 30 }}
-                <a href="{{ post.url }}">Leia mais</a>
-            </p>
         </li>
     {% endfor %}
 </ul>
