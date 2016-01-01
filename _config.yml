@@ -4,4 +4,17 @@ url: http://blog.evaldojunior.com.br
 markdown: redcarpet
 highlighter: pygments
 timezone: America/Sao_Paulo
-paginate: 30
+paginate: 10
+defaults:
+  -
+    scope:
+      path: ""
+      type: post
+    values:
+      mainimage: "default.jpg"
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      mainimage: "default.jpg"

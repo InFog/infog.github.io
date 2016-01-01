@@ -12,6 +12,7 @@ tags:
 status: publish
 type: post
 published: true
+mainimage: "german_keyboard.jpg"
 ---
 
 Uma dica rápida para quem está usando um teclado em Alemão no XFCE outros
