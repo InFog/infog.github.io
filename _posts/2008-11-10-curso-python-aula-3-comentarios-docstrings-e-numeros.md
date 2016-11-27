@@ -28,7 +28,7 @@ Você sabe o que são comentários em um programa? Comentários são pequenos te
 # -*- coding: utf-8 -*-
 # Isto é um comentário
 print("oi")
-print("Tudo bem?) #Outro comentário
+print("Tudo bem?") #Outro comentário
 ```
 
 A linha 3 tem apenas um comentário, já na linha 5 tem uma função print() e também um comentário.
