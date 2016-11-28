@@ -106,7 +106,7 @@ A biblioteca **math** é muito mais do que apenas essas funções, mas isso foi 
 
 Bom acho que com isso já conseguimos ir para uns exercícios, certo?
 
-###Lista de exercícios
+### Lista de exercícios
 
 Hoje a lista de exercícios será um pouquinho mais complexa do que as outras que já fizemos, mas não desanime, refaça quantas vezes for necessário para assimilar bem o conteúdo.
 
