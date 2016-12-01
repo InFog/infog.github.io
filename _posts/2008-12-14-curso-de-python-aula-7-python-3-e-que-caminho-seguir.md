@@ -45,9 +45,9 @@ A construção do "if" em Python é bem simples, vejam estes exemplos:
 
 a = 10
 if a < 20:
-	print("menor que vinte")
+    print("menor que vinte")
 else:
-	print("maior ou igual a vinte")
+    print("maior ou igual a vinte")
 ```
 
 Vejam este outro exemplo:
@@ -57,11 +57,11 @@ Vejam este outro exemplo:
 
 sexo = 'f'
 if sexo == 'm':
-	print('masculino')
+    print('masculino')
 elif sexo == 'f':
-	print('feminino')
+    print('feminino')
 else:
-	print('outro')
+    print('outro')
 ```
 
 Então? Simples? Algo que eu acho interessante no Python é que ele tenta parecer, às vezes, com uma linguagem humana, e não de máquina, sim, sim, vejam este último exemplo, o uso de "dois pontos" para indicar o que fazer é muito comum, vejam este exemplo:
@@ -111,9 +111,9 @@ Mão na massa! Vamos fazer o código:
 
 n = 10
 if n % 2 == 0 :
-	if n % 5 == 0 :
-		print(n),
-		print("É par e divisível por 5")
+    if n % 5 == 0 :
+        print(n),
+        print("É par e divisível por 5")
 ```
 
 Pronto, nós definimos a variável "n" com o valor 10, verificamos se o resto da divisão por 2 é zero (então é par), se for zero mesmo então verificamos se o resto da divisão por 5 é zero também, se esta segunda condição também for verdadeira então nós mostramos uma mensagem. E é assim que colocamos um "if" dentro do outro, percebam que a verificação da divisão por 5 só vai acontecer se a condição da divisão por 2 for verdadeira.
@@ -130,8 +130,8 @@ Bom o while é o chamado "enquanto", ele é chamado de "laço" por que repete se
 
 n = 1
 while n <= 20 :
-	print(n)
-	n = n + 1
+    print(n)
+    n = n + 1
 ```
 
 Acho que o exemplo fala por si mesmo, mas vamos verificar... Nele é definida a variável 'n' com o valor '1', então eu uso o "while" para dizer que o próximo bloco deve ser executando "enquanto 'n' for menor ou igual a 20", ai dentro do bloco é exibido o valor de 'n' e então é somado 1 ao seu valor atual. É muito importante somarmos 1 à 'n', se não fizermos isso o laço "while" será executado indeterminadamente, isso é um erro de programação também conhecido como "loop infinito" (loop pode ser considerado como laço em inglês). Estes loops infinitos são uma beleza para travar programas =)
