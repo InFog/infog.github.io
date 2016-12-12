@@ -1,26 +1,35 @@
 body {
-    padding: 0 0 20px 0;
+    padding: 0 0 0 0;
+    margin: 0px;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 h1 {
-    font-size: 3em;
-}
-
-h2, h3 {
     font-size: 1.5em;
 }
 
+h2, h3 {
+    font-size: 1.2em;
+}
+
 h2.post-title {
-    font-size: 2.5em;
+    font-size: 1.2em;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 .center {
     text-align: center;
 }
 
+.clear {
+    clear: both;
+}
+
 header {
-    text-align: center;
-    padding: 50px 0 0 0;
 }
 
 header,
@@ -33,6 +42,31 @@ header a:hover {
     color: #404040;
 }
 
+.sticky-top {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.blog-name {
+    display: inline-block;
+    width: 40%;
+    text-align: left;
+}
+
+.blog-name h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.blog-top-menu {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+}
+
 .links-top {
     font-size: 2em;
     margin: 0;
@@ -42,16 +76,38 @@ header a:hover {
     margin: 0;
 }
 
+#content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.post-date {
+    font-size: 0.8em;
+    background-color: #EEE;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 3px;
+}
+
 article {
     padding: 15px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
 }
 
 a:hover {
     text-decoration: none;
 }
 
+ul.posts-list {
+    list-style-type: none;
+}
+
 ul.posts-list li {
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 ul.horizontal li {
@@ -62,11 +118,13 @@ ul.horizontal li {
 .postmainimage {
     border-radius: 0.4em;
     margin-bottom: 1.3em;
+    width: 100%;
 }
 
 .post {
     clear: both;
-    font-size: 1.2em;
+    font-size: 1em;
+    text-align: justify;
 }
 
 .post p img {
@@ -74,7 +132,50 @@ ul.horizontal li {
     margin: 0 auto;
 }
 
-.footer {
+hr {
+    color: #DDD;
+}
+
+.author {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.author img {
+    border-radius: 50%;
+}
+
+ul.pagination {
+    list-style-type: none;
+}
+
+ul.pagination li {
+    display: inline-block;
+    padding: 0 3px 0 0;
+}
+
+ul.pagination li.disabled a {
+    color: #888;
+}
+
+#footer_info {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#footer_info > div {
+    width: 32%;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+
+#footer_info ul {
+    list-style-type: none;
+}
+
+#footer {
     text-align: center;
 }
 
