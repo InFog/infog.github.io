@@ -156,6 +156,10 @@ ul.horizontal li {
     text-align: justify;
 }
 
+.post a {
+    text-decoration: underline;
+}
+
 .post p img {
     display: block;
     margin: 0 auto;
