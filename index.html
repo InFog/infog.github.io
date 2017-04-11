@@ -6,8 +6,8 @@ title: Evaldo Junior (InFog)
 <ul class="unstyled posts-list">
     {% for post in paginator.posts %}
         <li>
-            <span class="post-date">{{ post.date | date_to_string }}</span>
             <a href="{{ post.url }}">
+                <span class="post-date">{{ post.date | date_to_string }}</span>
                 <h2 class="post-title">{{ post.title }}</h2>
                 <p>
                     {{ post.content | strip_html | truncatewords: 30 }}
@@ -18,7 +18,7 @@ title: Evaldo Junior (InFog)
 </ul>
 
 <nav class="ink-navigation">
-    <ul class="pagination">
+    <ul class="pagination unstyled">
         {% if paginator.previous_page %}
             <li class="previous">
                 <a href="/page{{ paginator.previous_page }}">Anterior</a>
