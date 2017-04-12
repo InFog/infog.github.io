@@ -28,7 +28,7 @@ a:active {
 header,
 #content,
 #footer_info {
-    width: 1000px;
+    width: 900px;
     margin: 0 auto;
 }
 
@@ -105,4 +105,20 @@ ul.horizontal li {
 
 #footer {
     text-align: center;
+}
+
+@media (max-width: 900px) {
+
+    header,
+    #content,
+    #footer_info {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #footer_info div {
+        display: block;
+        width: 100%;
+    }
+
 }
