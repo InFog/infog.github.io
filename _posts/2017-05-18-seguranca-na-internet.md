@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Segurança na WEB
+title: Sobre segurança na Web
 categories:
 - segurança
 - virus
@@ -14,7 +14,7 @@ tags:
 status: publish
 type: post
 published: true
-mainimage: "image.png"
+mainimage: "seguranca.jpg"
 ---
 
 A internet é diferente dos meios de comunicação tradicionais como o rádio e a
@@ -46,7 +46,7 @@ previne a exploração das brechas para uso indevido.
 Funciona assim: Você compra um smartphone Android versão 1 e alguns meses depois
 alguém descobre uma falha no sistema Android versão 1 e começa a se utilizar
 desta falha para acessar os smartphones com Android versão 1 e roubar as
-informações pessoais dos donos dos smartphones. Alguém tempo depois a empresa
+informações pessoais dos donos dos smartphones. Algum tempo depois a empresa
 que fabrica o seu smartphone disponibiliza uma correção para o problema e você
 recebe uma notificação para atualizar o sistema do seu smartphone para a versão
 1.1 e assim ficar imune contra a falha de segurança.
@@ -83,4 +83,8 @@ adotar hábitos que ajudam a prevenir problemas é simples.
 
 Veja no vídeo a seguir algumas dicas para melhorar a sua segurança na internet.
 
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/-XxzF8COijM" frameborder="0" allowfullscreen></iframe>
+
 InFog
+
+Imagem do cadeado sobre Creative Commons por [Mark Fischer](https://www.flickr.com/photos/fischerfotos/7454996046/).
