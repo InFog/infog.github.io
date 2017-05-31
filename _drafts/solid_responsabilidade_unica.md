@@ -86,6 +86,7 @@ uso do repositório?
 Vamos agora aplicar algumas mudanças no código para que este método tenha apenas
 a responsabilidade de autenticar um usuário:
 
+{% highlight php %}
 <?php
 class Autenticador
 {
@@ -102,6 +103,7 @@ alterarmos seu código é o caso de mudanças na forma como a senha é verificad
 Legal, mas para onde foi o restante do código? Vamos colocar a parte que cria
 a sessão em uma nova classe responsável apenas por isso:
 
+{% highlight php %}
 <?php
 class Sessao
 {
@@ -121,6 +123,7 @@ E por último podemos mover o restante do código para a o cliente que estava
 usando a classe `Autenticador` no começo, que pode ser por exemplo um
 `Controller` em uma estrutura **MVC**:
 
+{% highlight php %}
 <?php
 
 use Form; // Apenas um exemplo para gerenciar os dados de formulários
