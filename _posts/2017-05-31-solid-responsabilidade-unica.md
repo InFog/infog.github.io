@@ -12,8 +12,8 @@ tags:
 status: publish
 type: post
 published: true
+mainimage: "solid_srp.png"
 ---
-mainimage: "solid.png"
 
 O Princípio de Responsabilidade única faz parte do SOLID, um conjunto de princípios
 que têm como objetivo fazer com que um software seja mais simples de manter e
@@ -170,7 +170,7 @@ usar os diferentes módulos da aplicação. Como este cliente é um controller
 de uma aplicação web, ele vai tomar conta de iniciar a sessão e de redirecionar
 o usuário para a página correta em caso de falha ou de sucesso no login.
 
-Repare também que eu tomei algumas "liberdades poéticas" e no iniciei os
+Repare também que eu tomei algumas "liberdades poéticas" e não iniciei os
 objetos `$sessao` e `$repositorioUsuarios`.
 
 Ainda podemos exercitar um pouco mais e separar mais as responsabilidades do
@@ -192,7 +192,7 @@ do código.
 Eu também gravei um vídeo falando sobre SOLID e sobre o Príncípio da
 Responsabilidade Única. Veja aqui:
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/-Gw7_RCUEGQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/-Gw7_RCUEGQ" frameborder="0" allowfullscreen></iframe>
 
 Agora você já pode começar a exercitar o primeiro princípio do SOLID em
 seus projetos.
