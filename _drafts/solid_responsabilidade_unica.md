@@ -17,7 +17,7 @@ mainimage: "solid.png"
 
 O Princípio de Responsabilidade única faz parte do SOLID, um conjunto de princípios
 que têm como objetivo fazer com que um software seja mais simples de manter e
-estender com o passar do tempo.
+extender com o passar do tempo.
 
 Este princípio diz que um módulo em uma aplicação deve ter apenas uma responsabilidade
 e a maneira de identificar se um trecho de código tem apenas uma responsabilidade
@@ -25,94 +25,58 @@ e a maneira de identificar se um trecho de código tem apenas uma responsabilida
 contiver mais de um motivo isso é um sinal de que o trecho de código em foco
 tem mais de uma responsabilidade.
 
-Veja este exemplo:
-
+Veja este exemplo em PHP:
 
 {% highlight php %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Lista de pedidos</title>
-    </head>
-    <body>
-        <?php
+<?php
+class Autenticador
+{
+    private $repositorioUsuarios;
 
-        if (isset($_GET["status"])) {
-            $status = $_GET["status"];
-        } else {
-            $status = "pendentes";
+    public function autenticarUsuario(string $email, string $senha): bool
+    {
+        $usuario = $this->repositorioUsuarios->buscarPorEmail($email);
+
+        if (null == $usuario) {
+            return false;
         }
 
-        ?>
+        if (! password_verify($senha, $usuario->getHashSenha())) {
+            return false;
+        }
 
-        <h1>Lista de pedidos <?php echo $status; ?></h1>
+        $_SESSION["usuario"] = $usuario;
+        $_SESSION["autenticacao"] = true;
 
-        <?php
-        $conexao = PDO("mysql:host=localhost;dbname=loja", "usuario", "senha");
+        $this->repositorioUsuarios->registrarLogin($usuario);
 
-        $query = <<<SQL
-            SELECT * FROM `pedidos` WHERE `status` = "{$status}"
-SQL;
-
-        $resultado = $conexao->query($sql, PDO::FETCH_ASSOC);
-        ?>
-
-        <?php if (count($resultado) == 0) : ?>
-            <p>Não há pedidos <?php echo $status; ?> no momento</p>
-        <?php else: ?>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Cliente</th>
-                        <th>Data</th>
-                        <th>Forma de pagamento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($resultado as $pedido) : ?>
-                        <tr>
-                            <td><a href="pedido.php?codigo=<?php echo $pedido["codigo"]; ?>">
-                                <?php echo $pedido["codigo"]; ?></a>
-                            </td>
-                            <td>
-                                <?php
-                                    $query = <<<SQL
-                                        SELECT * FROM `clientes` WHERE `id` = {$pedido["cliente_id"]}
-SQL;
-
-                                    $cliente = $conexao->query($query, PDO::FETCH_ASSOC);
-                                    echo $cliente[0]["nome"];
-                                ?>
-                            </td>
-                            <td><?php echo date_format(new DateTime($pedido["data"]), "d/m/Y"); ?></td>
-                            <td><?php switch ($pedido["forma_pagamento"]) {
-                                case "1":
-                                    echo "Boleto";
-                                break;
-                                case "2":
-                                    echo "Cartão de crédito";
-                                break;
-                                case "3":
-                                    echo "Débito em conta corrente";
-                                break;
-                                default:
-                                    echo "Não definido";
-                                break;
-                            }
-                            ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php endif; ?>
-    </body>
-</html>
+        return true;
+    }
+}
 {% endhighlight %}
 
-Mas mesmo sendo um exemplo bem pequeno, este código tem diversas responsabilidades,
-como receber dados através da requisição, fazer a comunicação com o banco de dados
-e formatar o resultado para exibir no navegador. Sim, de maneira geral até dá
-para dizer que este trecho tem uma "responsabilidade única", que é a exibição
-dos dados no navegador, mas perceba que várias coisas precisam acontecer para
-que a exibição dos dados seja possível.
+Agora vamos analisar este trecho de código. Temos uma classe chamada
+`Autenticador` com um método `autenticarUsuario()`. Tudo parece bastante simples
+e o método parece ter apenas uma responsabilidade: Autenticar um usuário
+através de uma combinação de email e senha.
+
+Mas leia atentamente o que o método `autenticarUsuario()` está fazendo:
+
+- Verifica se o usuário existe no banco de dados;
+- Verifica se a senha é válida;
+- Cria os dados de sessão;
+- Registra um histórico de login.
+
+Até é possível argumentar de que isso ainda é uma responsabilidade única
+chamada "autenticar um usuário", mas quando tentamos fazer a pergunta "Quais
+são os motivos para se alterar este trecho de código?" teremos mais de uma
+resposta:
+
+- Adicionamos um campo `ativo` no cadastro do usuário e apenas usuários ativos podem se autenticar;
+- Por motivos de segurança o método de verificação da senha foi alterado;
+- Os dados de sessão serão armazenados de uma maneira diferente;
+- O método vai ser usado para autenticar usuários do aplicativo Android onde não há sessão.
+
+Além disso os valores retornados por esse método podem significar diferentes
+coisas, um retorno `false` pode significar que o usuário não existe ou que a
+senha está incorreta.
