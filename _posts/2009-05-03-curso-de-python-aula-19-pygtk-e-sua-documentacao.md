@@ -97,6 +97,7 @@ gtk.main()
 {% endhighlight %}
 
 Vejam o resultado:
+
 ![Mouse sobre o botão](http://evaldojunior.com.br/blog/wp-content/uploads/2009/05/captura_de_tela-aula-19-sinais.png)
 
 ![Mouse saiu de cima do botão](http://evaldojunior.com.br/blog/wp-content/uploads/2009/05/captura_de_tela-aula-19-sinais-1.png)
