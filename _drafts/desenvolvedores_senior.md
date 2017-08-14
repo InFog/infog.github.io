@@ -104,3 +104,46 @@ aplicação se comporta, para isso são necessárias ferramentas como [NewRelic]
 [Datadog](https://www.datadoghq.com/) e [Sentry](https://sentry.io/welcome/),
 que são ferramentas SaaS que podem ser facilmente integradas à servidores e
 aplicações. Também existem opções grátis como o [ELK](https://www.elastic.co/products).
+
+Saber trabalhar com cache também é importante. Saber onde aplicar uma técnica de
+caching pode ser a diferença entre ter uma experiência de usuário rápida ou uma
+lenta com os servidores pegando fogo enquanto o cliente aguarda a página carregar.
+E usuários não vão esperar a página carregar, eles vão procurar alguma outra
+opção. Lembre-se de que é possível usar cache de diversas maneiras e é importante
+saber onde e como aplicar técnicas de cache, do código à cdn.
+
+**Importante**: Não dependa da empresa onde você trabalha para aprender coisas
+novas. Se você não tem oportunidade de aprender testes unitários no seu cargo
+atual, você pode fazer isso em casa construindo um projeto pessoal, por exemplo.
+O mesmo se aplica para os demais itens deste texto. Hoje em dia é super simples
+de se preparar um ambiente GNU/Linux virtual onde você pode testar diversas
+técnicas e melhorar suas habilidades, inclusive para aprender algo novo que pode
+ser usado em seu emprego atual ou mesmo para conseguir um novo. Sempre é possível
+usar um cupom de [$10 na Digital Ocean](https://m.do.co/c/1059a87d7c47) para
+fazer testes com um servidor privado e fazer o deploy de suas aplicações usando
+até mesmo ferramentas para automatizar o processo como GitHub, BitBucket e
+[Codeship](https://codeship.com/).
+
+Desenvolvedores sênior também devem ter boas habilidades em comunicação com
+outras pessoas e devem ser capazes de entender o negócio das empresas para as
+quais trabalham. Vamos falar a verdade, um número muito pequeno de pessoas
+trabalha para empresas como Google, GitHub, Atlassian, Oracle e outras grandes
+empresas focadas em software. A maioria de nós trabalha para lojas virtuais,
+bancos, agências web e outros tantos tipos de empresas que estão fazendo negócios
+online e dependem de uma plataforma sólida para sobreviver. Esse tipo de empresa
+dificilmente vai jogar dinheiro no desenvolvimento de software e vai te dar
+autorização para jogar tudo fora e reescrever todas as aplicações antigas que
+você não aguenta mais dar suporte. Então, tente entender a empresa e tente
+alinhar o lado técnico com o negócio para criar um ambiente onde todos podem
+sair ganhando, pois sabemos que código ruim pode arruinar uma empresa.
+
+Mais um detalhe importante: Você não precisa fazer tudo perfeitamente e saber
+tudo o que eu listei aqui de cór, mas você precisa entender os conceitos e saber
+procurar por ajuda nos lugares corretos quando necessário.
+
+Você acha que eu deixei algo de fora deste post? A comunidade PHP é muito grande
+e profissionais PHP existem em todos os formatos, cores e tamanhos e isso faz
+essa comunidade ser muito especial. Deixe suas ideias nos comentários abaixo
+e ajude a expandir o foco deste post.
+
+InFog.
