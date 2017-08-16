@@ -2,15 +2,20 @@
 layout: post
 title: O que desenvolvedores PHP sênior precisam sabem em 2017
 categories:
-- Categories
+- php
+- carreira
+- desenvolvimento
 tags:
-- Some
-- Tags
+- php
+- carreira
+- desenvolvimento
 status: publish
 type: post
 published: true
-mainimage: "image.png"
+mainimage: "developer_magic.png"
 ---
+
+Tradução do original em inglês [aqui](http://blog.evaldojunior.com/php/developers/carrier/2017/07/11/senior-developers.html).
 
 Este post é a minha opinião sobre o que eu acredito que desenvolvedores e
 desenvolvedoras PHP sênior precisam saber em 2017. A principal razão para eu
@@ -23,15 +28,15 @@ leitura.
 
 É claro que o requisito número um é um bom conhecimento da linguagem PHP. Você
 não precisa saber dos detalhes mais obscuros da linguagem, mas você deve conhecer
-a linguagem bem o suficiente para se sentir confortável lendo código fonte e
-você deve saber onde encontrar documentação e ajuda quando precisar. Sim,
-desenvolvedores sênior também buscam por exemplos de código e aprendem à partir
-destes exemplos, então não tenha medo de pesquisar por respostas online, apenas
-certifique-se de diferenciar entre as boas fontes e as fontes ruins. Na dúvida
-opte sempre pela [documentação oficial](http://php.net/docs.php) e dê sempre
-uma passada no [PHP the Right Way](http://www.phptherightway.com/).
+a linguagem bem o suficiente para se sentir confortável lendo código fonte seu e
+de outras pessoas e você deve saber onde encontrar documentação e ajuda quando
+precisar. Sim, desenvolvedores sênior também buscam por exemplos de código e
+aprendem à partir destes exemplos, então não tenha medo de pesquisar por
+respostas online, apenas certifique-se de diferenciar entre as boas fontes e as
+fontes ruins. Na dúvida opte sempre pela [documentação oficial](http://php.net/docs.php)
+e dê sempre uma passada no [PHP the Right Way](http://www.phptherightway.com/).
 
-O PHP7 já foi lançado faz tem tempinho e até mesmo a versão 7.1 já está
+O PHP7 foi lançado faz tem tempinho e até mesmo a versão 7.1 já está
 disponível como uma versão estável, então você deve saber o que há de novidades
 na versão 7.x da linguagem. Velocidade é a primeira coisa que vem à cabeça e que
 em geral todo mundo que desenvolve em PHP sabe, mas coisas como o
@@ -40,7 +45,7 @@ a [tipagem de escalares para parâmetros](http://php.net/manual/de/migration70.n
 e o uso de exceções no lugar de erros são super úteis e podem te ajudar a deixar
 o seu código mais seguro e confiável.
 
-Usa o [composer](https://getcomposer.org/) para gerenciar as dependências de suas
+Usar o [composer](https://getcomposer.org/) para gerenciar as dependências de suas
 aplicações deve ser a maneira padrão de gerenciar as dependências para você e
 coisas simples como adicionar scripts personalizados no composer não devem ser
 um mistério. Também é importante saber a diferença entre os comandos `install` e
@@ -75,8 +80,8 @@ não testado e de refatorar tal código. Nossa indústria está em constante mud
 e ferramentas e bibliotecas estão em constante evolução. Ser capaz de remover
 uma biblioteca não mantida de uma base de código e colocar uma outra no lugar é
 uma ótima habilidade para se ter. Essa não é uma habilidade simples, pois requer
-investigação e paciência em geral, mas essa não é uma habilidade que muitos
-desenvolvedores possues, pois em geral temos vontade de jogar tudo fora e reescrever
+investigação e paciência, mas essa não é uma habilidade que muitos
+desenvolvedores possuem, pois em geral temos vontade de jogar tudo fora e reescrever
 o software como um todo usando as bibliotecas e ferramentas que são mais modernas
 e legais (e um dia serão de novo as piores, velhas e abandonadas, mas no geral
 ignoramos esta parte).
@@ -124,7 +129,7 @@ fazer testes com um servidor privado e fazer o deploy de suas aplicações usand
 até mesmo ferramentas para automatizar o processo como GitHub, BitBucket e
 [Codeship](https://codeship.com/).
 
-Desenvolvedores sênior também devem ter boas habilidades em comunicação com
+Desenvolvedoras sênior também devem ter boas habilidades em comunicação com
 outras pessoas e devem ser capazes de entender o negócio das empresas para as
 quais trabalham. Vamos falar a verdade, um número muito pequeno de pessoas
 trabalha para empresas como Google, GitHub, Atlassian, Oracle e outras grandes
