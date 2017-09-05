@@ -27,4 +27,13 @@ se o seu sistema estiver em alemão.
 Agora basta usar `AltGr + ~` para fazer o til, `´` para fazer o acento agudo
 e `AltGr + ´` e então `c` ou `C` para fazer o cedilha.
 
+**Atualização**
+
+O layout "German (legacy)" foi removido de algumas distribuições GNU/Linux,
+então eu fiz um backup deste layout antigo e coloquei aqui:
+
+[https://github.com/InFog/GermanKeyboardPortuguese](https://github.com/InFog/GermanKeyboardPortuguese)
+
+Basta baixar o arquivo `de` e seguir as instruções de instalação.
+
 Fica a dica ;)
