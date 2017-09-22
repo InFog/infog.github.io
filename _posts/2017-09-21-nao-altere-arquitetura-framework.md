@@ -27,7 +27,7 @@ já tenha conhecimento no framework pode se preocupar apenas em aprender as
 regras do negócio, enquanto alguém sem experiência no framework pode contar com
 documentação e até livros sobre o framework escolhido para o projeto.
 
-Podemos dizer que um o framework correto para a aplicação sendo construída vai
+Podemos dizer que o framework correto para a aplicação sendo construída vai
 suprir a maioria, se não todas, as necessidades do projeto. Mesmo assim ainda
 podem surgir áreas onde um funcionamento um pouco diferente é necessário e como
 temos acesso ao código fonte dos frameworks caímos na tentação de alterar partes
