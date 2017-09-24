@@ -1,6 +1,6 @@
 ---
 layout: post
-title: O que desenvolvedores PHP sênior precisam sabem em 2017
+title: O que desenvolvedores PHP sênior precisam saber em 2017
 categories:
 - php
 - carreira
