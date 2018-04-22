@@ -126,3 +126,12 @@ ul.horizontal li {
     }
 
 }
+
+td.rouge-gutter {
+    border-right: 1px solid #444;
+    padding-right: 0.5em;
+}
+
+td.rouge-code {
+    padding-left: 0.5em;
+}

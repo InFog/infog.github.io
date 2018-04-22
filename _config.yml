@@ -1,9 +1,17 @@
 name: Evaldo Junior (InFog)
 description: Um blog sobre GNU/Linux, PHP, Python e outras coisas sobre programação, TI e nerdices.
 url: http://blog.evaldojunior.com.br
-markdown: kramdown
-gems: [jekyll-paginate, jekyll-feed]
 highlighter: rouge
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+plugins: [jekyll-paginate, jekyll-feed]
 timezone: America/Sao_Paulo
 paginate: 10
 defaults:

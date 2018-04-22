@@ -27,7 +27,7 @@ tem mais de uma responsabilidade.
 
 Veja este exemplo em PHP:
 
-{% highlight php %}
+```php
 <?php
 class Autenticador
 {
@@ -53,7 +53,7 @@ class Autenticador
         return true;
     }
 }
-{% endhighlight %}
+```
 
 Agora vamos analisar este trecho de código. Temos uma classe chamada
 `Autenticador` com um método `autenticarUsuario()`. Tudo parece bastante simples
@@ -86,7 +86,7 @@ uso do repositório?
 Vamos agora aplicar algumas mudanças no código para que este método tenha apenas
 a responsabilidade de autenticar um usuário:
 
-{% highlight php %}
+```php
 <?php
 class Autenticador
 {
@@ -95,7 +95,7 @@ class Autenticador
         return password_verify($senha, $usuario->getHashSenha());
     }
 }
-{% endhighlight %}
+```
 
 Conseguimos reduzir o método para apenas uma linha e agora o único motivo para
 alterarmos seu código é o caso de mudanças na forma como a senha é verificada.
@@ -103,7 +103,7 @@ alterarmos seu código é o caso de mudanças na forma como a senha é verificad
 Legal, mas para onde foi o restante do código? Vamos colocar a parte que cria
 a sessão em uma nova classe responsável apenas por isso:
 
-{% highlight php %}
+```php
 <?php
 class Sessao
 {
@@ -111,19 +111,19 @@ class Sessao
     {
         $_SESSION["usuario"] = $usuario;
         $_SESSION["autenticacao"] = true;
-        
+
         return true;
     }
-    
+
     // ...
 }
-{% endhighlight %}
+```
 
 E por último podemos mover o restante do código para a o cliente que estava
 usando a classe `Autenticador` no começo, que pode ser por exemplo um
 `Controller` em uma estrutura **MVC**:
 
-{% highlight php %}
+```php
 <?php
 
 use Form; // Apenas um exemplo para gerenciar os dados de formulários
@@ -139,17 +139,17 @@ class LoginController extends BaseController
     public function actionLogin()
     {
         $form = new Form($_POST);
-        
+
         $email = $form->pegarValor("usuario", "");
         $senha = $form->pegarValor("senha", "");
-        
+
         $usuario = $this->repositorioUsuarios->buscarPorEmail($email);
 
         if (null == $usuario) {
             $this->sessao->adicionarFlash("erro_login", "Usuário ou senha inválidos");
             return new Redirect("/login");
         }
-        
+
         $autenticador = new Autenticador();
 
         if (! $autenticador->autenticarUsuario($usuario, $senha)) {
@@ -163,7 +163,7 @@ class LoginController extends BaseController
         return Redirect("/perfil");
     }
 }
-{% endhighlight %}
+```
 
 Repare que agora o cliente, no caso o `Controller`, é o responsável por
 usar os diferentes módulos da aplicação. Como este cliente é um controller
