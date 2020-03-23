@@ -57,7 +57,7 @@ As expressões acima são mais comuns para tratar números. Para fazer comparaç
 - **=** : Igual à (isso mesmo apenas um sinal de igual)
 - **!=** : Diferente de
 - **-n** : String existe e não é vazia (apenas um operador)
-- **-z **: String existe e é vazia (apenas um operador)
+- **-z**: String existe e é vazia (apenas um operador)
 
 Veja um exemplo com Strings:
 
@@ -81,12 +81,12 @@ Também no script acima foi usada a palavra "**else**" que significa "**senão**
 
 Mas o shell oferece mais opções para o "**if**" do que as linguagens de programação o fazem! Veja outras opções bem interessantes:
 
-- **-s **: Arquivo existe, não vazio (apenas um operador)
-- **-f **: Arquivo existe, não é um diretório (apenas um operador)
-- **-d **: Diretório existe (apenas um operador)
-- **-w **: Arquivo, com permissão de escrita (apenas um operador)
-- **-r** : Arquivo, com permissão de leitura (apenas um operador)
-- **-x **: Arquivo, com parmissão de execução  -x  (apenas um operador)
+- **-s**: Arquivo existe, não vazio (apenas um operador)
+- **-f**: Arquivo existe, não é um diretório (apenas um operador)
+- **-d**: Diretório existe (apenas um operador)
+- **-w**: Arquivo, com permissão de escrita (apenas um operador)
+- **-r**: Arquivo, com permissão de leitura (apenas um operador)
+- **-x**: Arquivo, com parmissão de execução  -x  (apenas um operador)
 
 Veja um exemplo:
 
