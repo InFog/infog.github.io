@@ -8,6 +8,19 @@
 
         <meta name="title" content="{{ page.title }}" />
         <meta name="description" content="{{ site.description }}" />
+        
+        <meta name="twitter:site" content="@InFog9" />
+
+        {% if page.description != "" %}
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:description" content="{{ page.description }}">
+        {% endif %}
+        <meta name="twitter:title" content="{{ page.title }}">
+        <meta name="twitter:creator" content="@InFog9">
+        {% if page.mainimage != "" %}
+            <meta name="twitter:image" content="{{ site.url }}/assets/images/{{ page.mainimage }}">
+        {% endif %}
+        
         {% feed_meta %}
 
         <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
